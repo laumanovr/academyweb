@@ -1,0 +1,20 @@
+@import "vars";
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+body * {
+  font-family: 'Nunito';
+}
+body {
+  margin: 0;
+}
+
+.space-container {
+  padding: 0 120px;
+  height: 100%;
+  @media #{$lg} {
+    padding: 0 40px;
+  }
+  @media #{$sm} {
+    padding: 0 20px;
+  }
+}
