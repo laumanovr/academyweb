@@ -1,13 +1,18 @@
 <template>
   <div class="main-container">
       <Header />
+      <Learning />
   </div>
 </template>
 
 <script>
 import Header from '../../components/Header';
+import Learning from '../../components/Learning';
 export default {
-	components: {Header}
+	components: {
+	  Header,
+    Learning
+	}
 };
 </script>
 
