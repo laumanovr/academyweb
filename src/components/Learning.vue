@@ -40,24 +40,24 @@
 
 <script>
 export default {
-  computed: {
-    lg() {
-      return window.innerWidth <= 1024;
-    },
-    sm() {
-      return window.innerWidth <= 640;
-    },
-    linearImgPath() {
-      if (this.sm) {
-        return require('../../src/assets/img/linear-line-short.svg')
-      }
-      if (this.lg) {
-        return require('../../src/assets/img/linear-line-middle.svg')
-      }
-      return require('../../src/assets/img/linear-line-long.svg');
-    }
-  }
-}
+	computed: {
+		lg() {
+			return window.innerWidth <= 1024;
+		},
+		sm() {
+			return window.innerWidth <= 640;
+		},
+		linearImgPath() {
+			if (this.sm) {
+				return require('../../src/assets/img/linear-line-short.svg');
+			}
+			if (this.lg) {
+				return require('../../src/assets/img/linear-line-middle.svg');
+			}
+			return require('../../src/assets/img/linear-line-long.svg');
+		}
+	}
+};
 </script>
 
 <style lang="scss">

@@ -11,7 +11,7 @@ import Learning from '../../components/Learning';
 export default {
 	components: {
 	  Header,
-    Learning
+		Learning
 	}
 };
 </script>
