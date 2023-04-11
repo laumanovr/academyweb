@@ -20,14 +20,81 @@
         </p>
       </div>
     </section>
+    <section class="main-page__with-academy">
+      <div class="container">
+        <h2 class="main-page__with-academy-title">
+          With Bimi Boo Academy <span>your child will learn</span>
+        </h2>
+        <div class="main-page__with-academy-items">
+          <div class="main-page__with-academy-item">
+            <div class="main-page__with-academy-image-wrap">
+              <img
+                src="@/assets/img/reading.jpg"
+                alt="Reading"
+                class="main-page__with-academy-image"
+              />
+            </div>
+            <div class="main-page__with-academy-item-title">Reading</div>
+          </div>
+          <div class="main-page__with-academy-item">
+            <div class="main-page__with-academy-image-wrap">
+              <img
+                src="@/assets/img/math.jpg"
+                alt="Basic Math"
+                class="main-page__with-academy-image"
+              />
+            </div>
+            <div class="main-page__with-academy-item-title">Basic Math</div>
+          </div>
+          <div class="main-page__with-academy-item">
+            <div class="main-page__with-academy-image-wrap">
+              <img
+                src="@/assets/img/colors.jpg"
+                alt="Shapes & colors"
+                class="main-page__with-academy-image"
+              />
+            </div>
+            <div class="main-page__with-academy-item-title">
+              Shapes & colors
+            </div>
+          </div>
+          <div class="main-page__with-academy-item">
+            <div class="main-page__with-academy-image-wrap">
+              <img
+                src="@/assets/img/creativity.jpg"
+                alt="Creativity"
+                class="main-page__with-academy-image"
+              />
+            </div>
+            <div class="main-page__with-academy-item-title">Creativity</div>
+          </div>
+          <div class="main-page__with-academy-item">
+            <div class="main-page__with-academy-image-wrap">
+              <img
+                src="@/assets/img/social.jpg"
+                alt="Social skills"
+                class="main-page__with-academy-image"
+              />
+            </div>
+            <div class="main-page__with-academy-item-title">Social skills</div>
+          </div>
+        </div>
+        <VButton class="main-page__with-academy-buttom"
+          >Start free trial</VButton
+        >
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
 import Learning from "../../components/Learning";
+import VButton from "@/components/VButton.vue";
+
 export default {
   components: {
     Learning,
+    VButton,
   },
 };
 </script>
@@ -79,7 +146,6 @@ export default {
   &__love-us-image {
     width: 100%;
     height: 100%;
-    flex-shrink: 0;
   }
   &__love-us-subtitle {
     margin: 0 auto 30px;
@@ -97,7 +163,78 @@ export default {
     line-height: 150%;
     color: #9da3af;
   }
-
+  &__with-academy {
+    &:before {
+      content: "";
+      display: block;
+      height: 140px;
+      background: #ffffff;
+      border-radius: 140px;
+    }
+    margin-top: -70px;
+    text-align: center;
+  }
+  &__with-academy-title {
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 110%;
+    color: #2a364d;
+    span {
+      display: block;
+      color: #7fcc4e;
+    }
+  }
+  &__with-academy-items {
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 17px;
+  }
+  &__with-academy-item {
+    width: auto;
+    &:nth-child(1) {
+      grid-area: 1 / 1 / 2 / 2;
+    }
+    &:nth-child(2) {
+      grid-area: 1 / 2 / 2 / 3;
+    }
+    &:nth-child(3) {
+      grid-area: 1 / 3 / 2 / 4;
+    }
+    &:nth-child(4) {
+      grid-area: 1 / 4 / 2 / 5;
+    }
+    &:nth-child(5) {
+      grid-area: 1 / 5 / 2 / 6;
+    }
+  }
+  &__with-academy-image-wrap {
+    margin-bottom: 30px;
+    width: 226.8px;
+    height: 226px;
+    border-radius: 60px;
+  }
+  &__with-academy-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 60px;
+  }
+  &__with-academy-item-title {
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 32px;
+    color: #2a364d;
+  }
+  &__with-academy-buttom {
+    margin: 0 auto;
+  }
+  @media #{$xl} {
+    &__with-academy-items {
+      flex-wrap: wrap;
+    }
+  }
   @media #{$lg} {
     &__love-us {
       padding: 130px 0 100px;
@@ -118,6 +255,29 @@ export default {
     &__love-us-paragraph {
       max-width: 276px;
     }
+    &__with-academy {
+    }
+    &__with-academy-items {
+    }
+    &__with-academy-item {
+      &:nth-child(1) {
+        grid-area: 1 / 1 / 2 / 2;
+      }
+      &:nth-child(2) {
+        grid-area: 1 / 3 / 2 / 4;
+      }
+      &:nth-child(3) {
+        grid-area: 1 / 5 / 2 / 6;
+      }
+      &:nth-child(4) {
+        grid-area: 2 / 2 / 3 / 3;
+      }
+      &:nth-child(5) {
+        grid-area: 2 / 4 / 3 / 5;
+      }
+    }
+  }
+  @media #{$sm} {
   }
   @media #{$xs} {
     &__love-us {
@@ -151,6 +311,9 @@ export default {
       width: 100%;
       font-size: 15px;
       line-height: 150%;
+    }
+    &__with-academy-title {
+      font-size: 30px;
     }
   }
 }
