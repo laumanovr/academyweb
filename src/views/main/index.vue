@@ -1,5 +1,80 @@
 <template>
   <div class="main-page">
+    <section class="main-page__header">
+      <div class="container">
+        <img
+          src="@/assets/img/icons/books.svg"
+          alt="books"
+          class="main-page__header-overtitle"
+        />
+        <h1 class="main-page__header-title">
+          Fun educational program <span>for your toddlers</span>
+        </h1>
+        <div class="main-page__header-items">
+          <div class="main-page__header-item">
+            <div class="main-page__header-item-title">100%</div>
+            <div class="main-page__header-item-subtitle">
+              safe content without ads
+            </div>
+          </div>
+          <div class="main-page__header-item">
+            <div class="main-page__header-item-title">1 700</div>
+            <div class="main-page__header-item-subtitle">
+              games, video, songs, and books
+            </div>
+          </div>
+          <div class="main-page__header-item">
+            <div
+              class="main-page__header-item-title main-page__header-item-title_small"
+            >
+              Flexible learning
+            </div>
+            <div class="main-page__header-item-subtitle">
+              path and progress tracking
+            </div>
+          </div>
+        </div>
+        <img
+          class="main-page__header-carrot"
+          src="@/assets/img/icons/carrot.svg"
+          alt="carrot"
+        />
+        <img
+          class="main-page__header-two"
+          src="@/assets/img/icons/two.svg"
+          alt="two"
+        />
+        <img
+          class="main-page__header-pyramid"
+          src="@/assets/img/icons/pyramid.svg"
+          alt="pyramid"
+        />
+        <VButton class="main-page__header-buttom">Start free trial</VButton>
+        <div class="main-page__header-harachters">
+          <img
+            class="main-page__header-harachters-image"
+            src="@/assets/img/icons/harachters.svg"
+            alt="harachters"
+          />
+        </div>
+      </div>
+      <div class="main-page__header-star main-page__header-star_left">
+        <img
+          class="main-page__header-star-image"
+          src="@/assets/img/star.png"
+          alt="star"
+        />
+      </div>
+      <div class="main-page__header-star main-page__header-star_right">
+        <div>
+          <img
+            class="main-page__header-star-image"
+            src="@/assets/img/star.png"
+            alt="star"
+          />
+        </div>
+      </div>
+    </section>
     <Learning />
     <section class="main-page__love-us">
       <div class="container">
@@ -103,6 +178,111 @@ export default {
 @import "../../assets/styles/vars";
 
 .main-page {
+  &__header {
+    position: relative;
+    margin-bottom: 140px;
+    padding: 50px 0 0;
+    text-align: center;
+    .container {
+      position: relative;
+    }
+  }
+  &__header-overtitle {
+    margin-bottom: 10px;
+  }
+  &__header-title {
+    position: relative;
+    margin-bottom: 51px;
+    font-weight: 700;
+    font-size: 75px;
+    line-height: 110%;
+    color: #2a364d;
+    span {
+      display: block;
+      color: #7fcc4e;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -50px;
+      display: block;
+      flex-shrink: 0;
+      width: 422.47px;
+      height: 54.21px;
+      background-image: url("~@/assets/img/icons/line-green.svg");
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: contain;
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+  &__header-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  &__header-item {
+    margin-right: 40px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__header-item-title {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 40px;
+    color: #2a364d;
+    &_small {
+      font-size: 24px;
+    }
+  }
+  &__header-item-subtitle {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 20px;
+    color: #9da3af;
+  }
+  &__header-harachters {
+    position: relative;
+    background: #f8f8f9;
+    border-radius: 60px;
+    padding-bottom: 20.5%;
+  }
+  &__header-harachters-image {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 18px;
+    width: 92%;
+  }
+  &__header-buttom {
+    margin: 0 auto 140px;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0.05em;
+    background: #ff7529;
+    color: #ffffff;
+  }
+  &__header-carrot {
+    position: absolute;
+    top: -11px;
+    left: 78px;
+  }
+  &__header-two {
+    position: absolute;
+    left: 20%;
+    bottom: 44%;
+  }
+  &__header-pyramid {
+    position: absolute;
+    right: 12%;
+    bottom: 46%;
+  }
   &__love-us {
     padding: 150px 0 140px;
     background: #f8f8f9;
@@ -136,6 +316,19 @@ export default {
         position: relative;
       }
       color: #7fcc4e;
+    }
+  }
+  &__header-star {
+    position: absolute;
+    &_left {
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+      left: 15px;
+      bottom: -80px;
+    }
+    &_right {
+      right: 0px;
+      bottom: 50px;
     }
   }
   &__love-us-image-wrap {
@@ -236,6 +429,9 @@ export default {
     }
   }
   @media #{$lg} {
+    &__header-buttom {
+      margin-bottom: 62px;
+    }
     &__love-us {
       padding: 130px 0 100px;
     }
@@ -278,8 +474,41 @@ export default {
     }
   }
   @media #{$sm} {
+    &__header-title {
+      margin-bottom: 70px;
+      span {
+        display: inline;
+      }
+    }
+    &__header-buttom {
+      margin-bottom: 80px;
+    }
+    &__header-star {
+      display: none;
+    }
   }
   @media #{$xs} {
+    &__header-title {
+      margin-bottom: 30px;
+      font-size: 40px;
+      &::after {
+        width: 100%;
+      }
+    }
+    &__header-items {
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
+    &__header-item {
+      margin-right: 0;
+      margin-bottom: 20px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &__header-buttom {
+      margin-bottom: 40px;
+    }
     &__love-us {
       padding: 102px 0 80px;
       border-radius: 80px 80px 0px 0px;
