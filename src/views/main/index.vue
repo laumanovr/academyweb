@@ -175,7 +175,7 @@
                 />
               </div>
               <div class="main-page__why-academy-item-title">
-                No ads from third parties
+                No ads from third
               </div>
             </div>
           </div>
@@ -224,17 +224,116 @@
         </div>
       </div>
     </section>
+    <section class="main-page__faq">
+      <div class="container">
+        <h2 class="main-page__faq-title">FAQ</h2>
+        <div class="main-page__faq-items">
+          <VToggle>
+            <template #default="{ onClick, isActive }">
+              <div class="main-page__faq-item" @click="onClick">
+                <div
+                  class="main-page__collapse"
+                  :class="{ 'main-page__collapse_active': isActive }"
+                >
+                  <div class="main-page__collapse-title">No ads from third</div>
+                  <transition name="fade">
+                    <div v-show="isActive" class="main-page__collapse-content">
+                      Сложно сказать, почему реплицированные с зарубежных
+                      источников, современные исследования освещают
+                    </div>
+                  </transition>
+                </div>
+              </div>
+            </template>
+          </VToggle>
+          <VToggle>
+            <template #default="{ onClick, isActive }">
+              <div class="main-page__faq-item" @click="onClick">
+                <div
+                  class="main-page__collapse"
+                  :class="{ 'main-page__collapse_active': isActive }"
+                >
+                  <div class="main-page__collapse-title">No ads from third</div>
+                  <transition name="fade">
+                    <div v-show="isActive" class="main-page__collapse-content">
+                      Сложно сказать, почему реплицированные с зарубежных
+                      источников, современные исследования освещают
+                    </div>
+                  </transition>
+                </div>
+              </div>
+            </template>
+          </VToggle>
+          <VToggle>
+            <template #default="{ onClick, isActive }">
+              <div class="main-page__faq-item" @click="onClick">
+                <div
+                  class="main-page__collapse"
+                  :class="{ 'main-page__collapse_active': isActive }"
+                >
+                  <div class="main-page__collapse-title">No ads from third</div>
+                  <transition name="fade">
+                    <div v-show="isActive" class="main-page__collapse-content">
+                      Сложно сказать, почему реплицированные с зарубежных
+                      источников, современные исследования освещают
+                    </div>
+                  </transition>
+                </div>
+              </div>
+            </template>
+          </VToggle>
+          <VToggle>
+            <template #default="{ onClick, isActive }">
+              <div class="main-page__faq-item" @click="onClick">
+                <div
+                  class="main-page__collapse"
+                  :class="{ 'main-page__collapse_active': isActive }"
+                >
+                  <div class="main-page__collapse-title">No ads from third</div>
+                  <transition name="fade">
+                    <div v-show="isActive" class="main-page__collapse-content">
+                      Сложно сказать, почему реплицированные с зарубежных
+                      источников, современные исследования освещают
+                    </div>
+                  </transition>
+                </div>
+              </div>
+            </template>
+          </VToggle>
+          <VToggle>
+            <template #default="{ onClick, isActive }">
+              <div class="main-page__faq-item" @click="onClick">
+                <div
+                  class="main-page__collapse"
+                  :class="{ 'main-page__collapse_active': isActive }"
+                >
+                  <div class="main-page__collapse-title">No ads from third</div>
+                  <transition name="fade">
+                    <div v-show="isActive" class="main-page__collapse-content">
+                      Сложно сказать, почему реплицированные с зарубежных
+                      источников, современные исследования освещают
+                    </div>
+                  </transition>
+                </div>
+              </div>
+            </template>
+          </VToggle>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
 import Learning from "../../components/Learning";
 import VButton from "@/components/VButton.vue";
+import VToggle from "@/components/VToggle.vue";
 
 export default {
   components: {
     Learning,
     VButton,
+    VToggle,
   },
 };
 </script>
@@ -560,6 +659,56 @@ export default {
   &__why-academy-buttom {
     margin: 0 auto;
   }
+  &__faq {
+    text-align: center;
+  }
+  &__faq-title {
+    margin-bottom: 40px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 110%;
+    color: #2a364d;
+  }
+  &__faq-items {
+  }
+  &__faq-item {
+    padding: 30px 0;
+    cursor: pointer;
+    border-bottom: 1px solid #e9ebec;
+  }
+  &__collapse {
+    position: relative;
+    padding-right: 48px;
+    text-align: left;
+
+    &::after {
+      position: absolute;
+      top: 7px;
+      right: 0;
+      width: 24px;
+      height: 24px;
+      content: "";
+      background: url("~@/assets/img/icons/plus.svg") no-repeat 50%;
+    }
+    &_active {
+      &::after {
+        background: url("~@/assets/img/icons/minus.svg") no-repeat 50%;
+      }
+    }
+  }
+  &__collapse-title {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 38px;
+    color: #2a364d;
+  }
+  &__collapse-content {
+    margin-top: 27px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    color: #9da3af;
+  }
   @media screen and (max-width: 1250px) {
   }
   @media #{$xl} {
@@ -725,6 +874,20 @@ export default {
     &__why-academy-title {
       font-size: 30px;
     }
+    &__faq-title {
+      font-size: 30px;
+    }
+    &__collapse-title {
+      font-size: 25px;
+    }
   }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  opacity: 0;
 }
 </style>
