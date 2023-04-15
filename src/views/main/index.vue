@@ -159,6 +159,71 @@
         >
       </div>
     </section>
+    <section class="main-page__why-academy">
+      <div class="container">
+        <h2 class="main-page__why-academy-title">
+          Why Bimi Boo <span>Academy</span>
+        </h2>
+        <div class="main-page__why-academy-items">
+          <div class="main-page__why-academy-item-wrap">
+            <div class="main-page__why-academy-item">
+              <div class="main-page__why-academy-image-wrap">
+                <img
+                  src="@/assets/img/icons/panda.svg"
+                  alt="panda"
+                  class="main-page__why-academy-image"
+                />
+              </div>
+              <div class="main-page__why-academy-item-title">
+                No ads from third parties
+              </div>
+            </div>
+          </div>
+          <div class="main-page__why-academy-item-wrap">
+            <div class="main-page__why-academy-item">
+              <div class="main-page__why-academy-image-wrap">
+                <img
+                  src="@/assets/img/icons/lion.svg"
+                  alt="lion"
+                  class="main-page__why-academy-image"
+                />
+              </div>
+              <div class="main-page__why-academy-item-title">
+                More than 1700 activities
+              </div>
+            </div>
+          </div>
+          <div class="main-page__why-academy-item-wrap">
+            <div class="main-page__why-academy-item">
+              <div class="main-page__why-academy-image-wrap">
+                <img
+                  src="@/assets/img/icons/elephant.svg"
+                  alt="elephant"
+                  class="main-page__why-academy-image"
+                />
+              </div>
+              <div class="main-page__why-academy-item-title">
+                Parental control
+              </div>
+            </div>
+          </div>
+          <div class="main-page__why-academy-item-wrap">
+            <div class="main-page__why-academy-item">
+              <div class="main-page__why-academy-image-wrap">
+                <img
+                  src="@/assets/img/icons/monkey.svg"
+                  alt="monkey"
+                  class="main-page__why-academy-image"
+                />
+              </div>
+              <div class="main-page__why-academy-item-title">
+                100% safe content
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -423,9 +488,85 @@ export default {
   &__with-academy-buttom {
     margin: 0 auto;
   }
+  &__why-academy {
+    text-align: center;
+  }
+  &__why-academy-title {
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 110%;
+    color: #2a364d;
+    span {
+      color: #7fcc4e;
+    }
+  }
+  &__why-academy-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  &__why-academy-item-wrap {
+    position: relative;
+    padding-bottom: 100%;
+    &:nth-child(1) {
+      grid-area: 1 / 1 / 2 / 2;
+    }
+    &:nth-child(2) {
+      grid-area: 1 / 2 / 2 / 3;
+    }
+    &:nth-child(3) {
+      grid-area: 1 / 3 / 2 / 4;
+    }
+    &:nth-child(4) {
+      grid-area: 1 / 4 / 2 / 5;
+    }
+  }
+  &__why-academy-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    padding: 40px 27px 60px;
+
+    border-radius: 400px;
+
+    &:nth-child(1) {
+      background: #f7f6f9;
+    }
+    &:nth-child(2) {
+      background: #fbe8d8;
+    }
+    &:nth-child(3) {
+      background: #e4e8f1;
+    }
+    &:nth-child(4) {
+      background: #f7ece1;
+    }
+  }
+  &__why-academy-image-wrap {
+    margin-bottom: 21px;
+  }
+  &__why-academy-item-title {
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 32px;
+    text-align: center;
+    color: #2a364d;
+  }
+  &__why-academy-buttom {
+    margin: 0 auto;
+  }
+  @media screen and (max-width: 1250px) {
+  }
   @media #{$xl} {
     &__with-academy-items {
       flex-wrap: wrap;
+    }
+    &__why-academy {
     }
   }
   @media #{$lg} {
@@ -472,6 +613,33 @@ export default {
         grid-area: 2 / 4 / 3 / 5;
       }
     }
+    &__why-academy-items {
+      grid-template-columns: repeat(2, 2fr);
+    }
+    &__why-academy-item-wrap {
+      &:nth-child(1) {
+        grid-area: 1 / 1 / 2 / 2;
+      }
+      &:nth-child(2) {
+        grid-area: 1 / 2 / 2 / 3;
+      }
+      &:nth-child(3) {
+        grid-area: 2 / 1 / 3 / 2;
+      }
+      &:nth-child(4) {
+        grid-area: 2 / 2 / 3 / 3;
+      }
+    }
+    &__why-academy-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 42px 30px 63px;
+    }
+    &__why-academy-item-title {
+      max-width: 231px;
+    }
   }
   @media #{$sm} {
     &__header-title {
@@ -485,6 +653,16 @@ export default {
     }
     &__header-star {
       display: none;
+    }
+    &__why-academy-items {
+      display: flex;
+      flex-direction: column;
+      align-items: normal;
+    }
+    &__why-academy-item-title {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 32px;
     }
   }
   @media #{$xs} {
@@ -542,6 +720,9 @@ export default {
       line-height: 150%;
     }
     &__with-academy-title {
+      font-size: 30px;
+    }
+    &__why-academy-title {
       font-size: 30px;
     }
   }
