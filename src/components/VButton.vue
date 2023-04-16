@@ -54,7 +54,7 @@ export default {
   border-radius: 51px;
   background: #7fcc4e;
   &_main {
-    padding: 20px 30px;
+    padding: 20px 30px 19px;
     background: #7fcc4e;
     color: #2a364d;
     &:hover {

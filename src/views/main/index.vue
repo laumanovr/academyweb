@@ -75,7 +75,61 @@
         </div>
       </div>
     </section>
-    <Learning />
+    <section class="main-page__learning">
+      <div class="container">
+        <h2 class="main-page__learning-title">Learning path</h2>
+        <div class="main-page__learning-steps">
+          <div class="main-page__learning-step">
+            <img src="@/assets/img/kid-1.svg" />
+            <div class="main-page__learning-info">
+              <div class="main-page__learning-info-title">Preschool</div>
+              <div class="main-page__learning-info-text">Ages 3+</div>
+              <div class="main-page__learning-info-sm-text">
+                <span> Level 1:</span>
+                410 Learning activities
+              </div>
+              <div class="main-page__learning-info-sm-text">
+                <span> Level 2:</span>
+                425 Learning activities
+              </div>
+            </div>
+          </div>
+          <div class="main-page__learning-step">
+            <img src="@/assets/img/kid-2.svg" />
+            <div class="main-page__learning-info">
+              <div class="main-page__learning-info-title">Pre-K</div>
+              <div class="main-page__learning-info-text">Ages 4+</div>
+              <div class="main-page__learning-info-sm-text">
+                <span> Level 3:</span>
+                452 Learning activities
+              </div>
+              <div class="main-page__learning-info-sm-text">
+                <span> Level 4:</span>
+                535 Learning activities
+              </div>
+            </div>
+          </div>
+          <div class="main-page__learning-step">
+            <img src="@/assets/img/kid-3.svg" />
+            <div class="main-page__learning-info">
+              <div class="main-page__learning-info-title">Kindergarden</div>
+              <div class="main-page__learning-info-text">Ages 5+</div>
+              <div class="main-page__learning-info-sm-text">
+                <span> Level 5:</span>
+                655 Learning activities
+              </div>
+              <div class="main-page__learning-info-sm-text">
+                <span> Level 6:</span>
+                631 Learning activities
+              </div>
+            </div>
+          </div>
+        </div>
+        <VButton class="main-page__learning-btn-start"
+          >Start free trial</VButton
+        >
+      </div>
+    </section>
     <section class="main-page__love-us">
       <div class="container">
         <h2 class="main-page__love-us-title">Parents <span>love us</span></h2>
@@ -325,13 +379,11 @@
 </template>
 
 <script>
-import Learning from "../../components/Learning";
 import VButton from "@/components/VButton.vue";
 import VToggle from "@/components/VToggle.vue";
 
 export default {
   components: {
-    Learning,
     VButton,
     VToggle,
   },
@@ -446,6 +498,71 @@ export default {
     position: absolute;
     right: 12%;
     bottom: 46%;
+  }
+  &__learning {
+    margin-top: 140px;
+  }
+  &__learning-title {
+    font-weight: 700;
+    font-size: 40px;
+    color: $dark-blue;
+    text-align: center;
+    margin-bottom: 29px;
+  }
+
+  &__learning-steps {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-image: url("~@/assets/img/linear.svg"),
+      url("~@/assets/img/linear.svg");
+    background-position: 26% 40%, 73% 40%;
+    background-repeat: no-repeat;
+    background-size: 32%;
+  }
+
+  &__learning-step {
+    text-align: center;
+    position: relative;
+    flex: 1;
+    margin-right: 20px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__learning-info {
+    text-align: center;
+    margin-top: 7px;
+    @media #{$sm} {
+      width: 173px;
+    }
+  }
+  &__learning-info-title {
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 32px;
+    color: $dark-blue;
+    margin-bottom: 10px;
+  }
+  &__learning-info-text {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    color: $cool-gray;
+  }
+  &__learning-info-sm-text {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    color: $light-gray;
+    white-space: nowrap;
+    @media #{$sm} {
+      white-space: unset;
+    }
+  }
+  &__learning-btn-start {
+    margin: 0 auto;
   }
   &__love-us {
     padding: 150px 0 140px;
@@ -802,6 +919,29 @@ export default {
     }
     &__header-star {
       display: none;
+    }
+    &__learning-title {
+      margin-bottom: 49px;
+    }
+    &__learning-steps {
+      display: block;
+      background: none;
+    }
+    &__learning-step {
+      margin: 0;
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+    &__learning-info {
+      width: auto;
+    }
+    &__learning-info-title {
+      font-size: 24px;
+    }
+    &__learning-info-text {
+      font-size: 18px;
+      line-height: 30px;
     }
     &__why-academy-items {
       display: flex;
