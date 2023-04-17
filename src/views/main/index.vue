@@ -3,6 +3,11 @@
     <section class="main-page__header">
       <div class="container">
         <img
+          src="@/assets/img/icons/star.svg"
+          alt="star"
+          class="main-page__header-star-mobile"
+        />
+        <img
           src="@/assets/img/icons/books.svg"
           alt="books"
           class="main-page__header-overtitle"
@@ -33,22 +38,23 @@
               path and progress tracking
             </div>
           </div>
+          <img
+            class="main-page__header-two"
+            src="@/assets/img/icons/two.svg"
+            alt="two"
+          />
+          <img
+            class="main-page__header-pyramid"
+            src="@/assets/img/icons/pyramid.svg"
+            alt="pyramid"
+          />
         </div>
         <img
           class="main-page__header-carrot"
           src="@/assets/img/icons/carrot.svg"
           alt="carrot"
         />
-        <img
-          class="main-page__header-two"
-          src="@/assets/img/icons/two.svg"
-          alt="two"
-        />
-        <img
-          class="main-page__header-pyramid"
-          src="@/assets/img/icons/pyramid.svg"
-          alt="pyramid"
-        />
+
         <VButton class="main-page__header-buttom">Start free trial</VButton>
         <div class="main-page__header-harachters">
           <img
@@ -391,10 +397,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/styles/vars";
-
 .main-page {
   &__header {
+    overflow: hidden;
     position: relative;
     margin-bottom: 140px;
     padding: 50px 0 0;
@@ -402,6 +407,9 @@ export default {
     .container {
       position: relative;
     }
+  }
+  &__header-star-mobile {
+    display: none;
   }
   &__header-overtitle {
     margin-bottom: 10px;
@@ -412,10 +420,10 @@ export default {
     font-weight: 700;
     font-size: 75px;
     line-height: 110%;
-    color: #2a364d;
+    color: $dark-blue;
     span {
       display: block;
-      color: #7fcc4e;
+      color: $lime-green;
     }
     &::after {
       content: "";
@@ -436,6 +444,7 @@ export default {
     }
   }
   &__header-items {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -451,7 +460,7 @@ export default {
     font-weight: 400;
     font-size: 30px;
     line-height: 40px;
-    color: #2a364d;
+    color: $dark-blue;
     &_small {
       font-size: 24px;
     }
@@ -460,11 +469,11 @@ export default {
     font-weight: 700;
     font-size: 15px;
     line-height: 20px;
-    color: #9da3af;
+    color: $cool-gray;
   }
   &__header-harachters {
     position: relative;
-    background: #f8f8f9;
+    background: $ghost-white;
     border-radius: 60px;
     padding-bottom: 20.5%;
   }
@@ -481,23 +490,26 @@ export default {
     font-size: 20px;
     line-height: 25px;
     letter-spacing: 0.05em;
-    background: #ff7529;
-    color: #ffffff;
+    background: $pumpkin;
+    color: $white;
   }
   &__header-carrot {
     position: absolute;
     top: -11px;
     left: 78px;
+    z-index: -1;
   }
   &__header-two {
     position: absolute;
-    left: 20%;
-    bottom: 44%;
+    left: 19%;
+    bottom: -140px;
+    z-index: -1;
   }
   &__header-pyramid {
     position: absolute;
-    right: 12%;
-    bottom: 46%;
+    right: 11%;
+    bottom: -131px;
+    z-index: -1;
   }
   &__learning {
     margin-top: 140px;
@@ -566,7 +578,7 @@ export default {
   }
   &__love-us {
     padding: 150px 0 140px;
-    background: #f8f8f9;
+    background: $ghost-white;
     border-radius: 100px 100px 0px 0px;
     text-align: center;
   }
@@ -577,7 +589,7 @@ export default {
     font-weight: 700;
     font-size: 70px;
     line-height: 110%;
-    color: #2a364d;
+    color: $dark-blue;
     span {
       margin-left: -55px;
       &::before {
@@ -596,7 +608,7 @@ export default {
         z-index: -1;
         position: relative;
       }
-      color: #7fcc4e;
+      color: $lime-green;
     }
   }
   &__header-star {
@@ -627,7 +639,7 @@ export default {
     font-weight: 600;
     font-size: 28px;
     line-height: 38px;
-    color: #2a364d;
+    color: $dark-blue;
   }
   &__love-us-paragraph {
     margin: 0 auto;
@@ -635,14 +647,14 @@ export default {
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-    color: #9da3af;
+    color: $cool-gray;
   }
   &__with-academy {
     &:before {
       content: "";
       display: block;
       height: 140px;
-      background: #ffffff;
+      background: $white;
       border-radius: 140px;
     }
     margin-top: -70px;
@@ -653,10 +665,10 @@ export default {
     font-weight: 700;
     font-size: 40px;
     line-height: 110%;
-    color: #2a364d;
+    color: $dark-blue;
     span {
       display: block;
-      color: #7fcc4e;
+      color: $lime-green;
     }
   }
   &__with-academy-items {
@@ -699,7 +711,7 @@ export default {
     font-weight: 700;
     font-size: 27px;
     line-height: 32px;
-    color: #2a364d;
+    color: $dark-blue;
   }
   &__with-academy-buttom {
     margin: 0 auto;
@@ -712,9 +724,9 @@ export default {
     font-weight: 700;
     font-size: 40px;
     line-height: 110%;
-    color: #2a364d;
+    color: $dark-blue;
     span {
-      color: #7fcc4e;
+      color: $lime-green;
     }
   }
   &__why-academy-items {
@@ -760,7 +772,7 @@ export default {
       background: #e4e8f1;
     }
     &:nth-child(4) {
-      background: #f7ece1;
+      background: $champagne;
     }
   }
   &__why-academy-image-wrap {
@@ -771,7 +783,7 @@ export default {
     font-size: 27px;
     line-height: 32px;
     text-align: center;
-    color: #2a364d;
+    color: $dark-blue;
   }
   &__why-academy-buttom {
     margin: 0 auto;
@@ -784,14 +796,12 @@ export default {
     font-weight: 700;
     font-size: 40px;
     line-height: 110%;
-    color: #2a364d;
-  }
-  &__faq-items {
+    color: $dark-blue;
   }
   &__faq-item {
     padding: 30px 0;
     cursor: pointer;
-    border-bottom: 1px solid #e9ebec;
+    border-bottom: 1px solid $gray-white;
   }
   &__collapse {
     position: relative;
@@ -817,25 +827,62 @@ export default {
     font-weight: 600;
     font-size: 28px;
     line-height: 38px;
-    color: #2a364d;
+    color: $dark-blue;
   }
   &__collapse-content {
     margin-top: 27px;
     font-weight: 400;
     font-size: 20px;
     line-height: 32px;
-    color: #9da3af;
+    color: $cool-gray;
   }
-  @media screen and (max-width: 1250px) {
-  }
+
   @media #{$xl} {
+    &__header-star {
+      &_right {
+        right: -72px;
+        bottom: 50px;
+      }
+    }
     &__with-academy-items {
       flex-wrap: wrap;
     }
-    &__why-academy {
+  }
+  @media (max-width: 1250px) {
+    &__header-star {
+      &_left {
+        left: -151px;
+        bottom: -143px;
+      }
+      &_right {
+        right: -100px;
+        bottom: -80px;
+      }
     }
   }
   @media #{$lg} {
+    &__header-star-mobile {
+      display: block;
+      position: absolute;
+      top: -11px px;
+      right: 78px;
+      z-index: -1;
+    }
+    &__header-star {
+      display: none;
+    }
+    &__header-two {
+      width: 50px;
+      height: 53px;
+    }
+    &__header-pyramid {
+      width: 66.05px;
+      height: 64.15px;
+    }
+    &__header-carrot {
+      width: 74px;
+      height: 50px;
+    }
     &__header-buttom {
       margin-bottom: 62px;
     }
@@ -857,10 +904,6 @@ export default {
     }
     &__love-us-paragraph {
       max-width: 276px;
-    }
-    &__with-academy {
-    }
-    &__with-academy-items {
     }
     &__with-academy-item {
       &:nth-child(1) {

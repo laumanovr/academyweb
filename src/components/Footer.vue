@@ -32,21 +32,19 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/styles/vars";
-
 .footer {
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 40px;
-  background: #2a364d;
+  background: $dark-blue;
   border-radius: 100px 100px 0px 0px;
   &__title {
     margin-bottom: 10px;
     font-weight: 700;
     font-size: 27px;
     line-height: 32px;
-    color: #ffffff;
+    color: $white;
   }
   &__subtitle {
     margin-bottom: 40px;
@@ -54,7 +52,7 @@ export default {};
     font-size: 15px;
     line-height: 25px;
     text-align: center;
-    color: #ffffff;
+    color: $white;
     opacity: 0.7;
   }
   &__social {
@@ -65,7 +63,7 @@ export default {};
     font-weight: 400;
     font-size: 15px;
     line-height: 20px;
-    color: #ffffff;
+    color: $white;
     opacity: 0.7;
   }
   &__items {
