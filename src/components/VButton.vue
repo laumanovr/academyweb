@@ -41,6 +41,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   font-weight: 700;
   font-size: 16px;
   line-height: 25px;
@@ -52,39 +53,59 @@ export default {
   outline: none;
   border: 1px solid transparent;
   border-radius: 51px;
-  background: #7fcc4e;
+  background: $lime-green;
   &_main {
     padding: 20px 30px 19px;
-    background: #7fcc4e;
-    color: #2a364d;
+    background: $lime-green;
+    color: $dark-blue;
     &:hover {
-      background: #2a364d;
-      color: #7fcc4e;
+      background: $dark-blue;
+      color: $lime-green;
     }
   }
   &_secondary {
-    background: #2a364d;
-    color: #ffffff;
+    padding: 15px 30px;
+    background: $dark-blue;
+    color: $white;
     &:hover {
-      background: #7fcc4e;
-      color: #2a364d;
+      background: $lime-green;
+      color: $dark-blue;
     }
   }
   &_tertiary {
-    background: #2a364d;
-    color: #ffffff;
+    background: $dark-blue;
+    color: $white;
+    text-transform: none;
     &:hover {
-      background: #7fcc4e;
-      color: #2a364d;
+      background: $lime-green;
+      color: $dark-blue;
     }
   }
   &_outline {
-    border-color: #2a364d;
-    color: #2a364d;
+    padding: 4px 30px;
+    background: transparent;
+    border-color: $dark-blue;
+    color: $dark-blue;
+    text-transform: none;
     &:hover {
-      background: #7fcc4e;
+      background: $lime-green;
       border-color: transparent;
-      color: #2a364d;
+      color: $dark-blue;
+    }
+  }
+  @media #{$sm} {
+    &_secondary {
+      padding: 10px 20px;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 20px;
+    }
+    &_outline {
+      padding: 4px 20px;
+      text-transform: uppercase;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 20px;
     }
   }
 }
