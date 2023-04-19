@@ -22,10 +22,14 @@ export default {
       type: Boolean,
       default: false,
     },
+    fluid: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     getClasses() {
-      return [`button_${this.theme}`, "button"];
+      return [`button_${this.theme}`, "button", { button_fluid: this.fluid }];
     },
   },
   methods: {
@@ -54,6 +58,9 @@ export default {
   border: 1px solid transparent;
   border-radius: 51px;
   background: $lime-green;
+  &_fluid {
+    width: 100%;
+  }
   &_main {
     padding: 20px 30px 19px;
     background: $lime-green;
