@@ -294,35 +294,15 @@
           :options="swiperOption"
           slides-per-view="auto"
         >
-          <swiper-slide
+          <swiper-slide v-for="item in $options.feedback" :key="item.id"
             ><FeedbackCard
               class="main-page__feedback-item"
-              name="Birgitte Albek Henriksen"
-              character="Speech Pathologist"
-              :raiting="5"
-              text="As a speech pathologist, I’ve used Bimi Boo Coloring app with children of different ages, and it’s popular due to its numerous options for drawings and colors, providing hours of entertainment and learning. The app’s saving progress and redo features are great, although some children may be confused that they can’t paint outside the lines"
-              time="6"
-              social="Facebook"
-          /></swiper-slide>
-          <swiper-slide
-            ><FeedbackCard
-              class="main-page__feedback-item"
-              name="Sarah D."
-              character="Speech Pathologist"
-              :raiting="4"
-              text="As a parent, I know how important it is to find high-quality toys that provide a fun and educational experience for kids. That’s why I’m excited to share my love for Bimi Boo toys! These wooden toys are visually appealing and offer a unique learning experience that encourages exploration, problem-solving, and creativity."
-              time="2"
-              social="Instagram"
-          /></swiper-slide>
-          <swiper-slide
-            ><FeedbackCard
-              class="main-page__feedback-item"
-              name="Speech Pathologist"
-              character="Speech Pathologist"
-              :raiting="5"
-              text="Bimi Boo series is a wonderful kids’ show, my nephews and nieces love it. I don’t have to be looking at the TV to know they are watching it when I hear them singing along with the characters. I love how educational it is, but fun for the kids too. The background music is entertaining and fun, and there are a lot of positive messages in the songs. "
-              time="6"
-              social="Facebook"
+              :name="item.name"
+              :character="item.character"
+              :raiting="item.raiting"
+              :text="item.text"
+              :time="item.time"
+              :social="item.social"
           /></swiper-slide>
           <div
             class="main-page__swiper-pagination swiper-pagination"
@@ -439,6 +419,35 @@ import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
 
 export default {
+  feedback: [
+    {
+      id: 1,
+      name: "Birgitte Albek Henriksen",
+      character: "Speech Pathologist",
+      raiting: "5",
+      text: "As a speech pathologist, I’ve used Bimi Boo Coloring app with children of different ages, and it’s popular due to its numerous options for drawings and colors, providing hours of entertainment and learning. The app’s saving progress and redo features are great, although some children may be confused that they can’t paint outside the lines",
+      time: "6",
+      social: "Facebook",
+    },
+    {
+      id: 2,
+      name: "Sarah D.",
+      character: "Speech Pathologist",
+      raiting: "4",
+      text: "As a parent, I know how important it is to find high-quality toys that provide a fun and educational experience for kids. That’s why I’m excited to share my love for Bimi Boo toys! These wooden toys are visually appealing and offer a unique learning experience that encourages exploration, problem-solving, and creativity.",
+      time: "2",
+      social: "Instagram",
+    },
+    {
+      id: 3,
+      name: "Speech Pathologist",
+      character: "Speech Pathologist",
+      raiting: "5",
+      text: "Bimi Boo series is a wonderful kids’ show, my nephews and nieces love it. I don’t have to be looking at the TV to know they are watching it when I hear them singing along with the characters. I love how educational it is, but fun for the kids too. The background music is entertaining and fun, and there are a lot of positive messages in the songs. ",
+      time: "6",
+      social: "Facebook",
+    },
+  ],
   components: {
     VButton,
     VToggle,
@@ -454,10 +463,8 @@ export default {
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
-          // bulletClass: "main-page__swiper-pagination",
           bulletActiveClass: "main-page__swiper-pagination-item_active",
           enabled: true,
-          // dynamicMainBullets: 2,
         },
       },
     };
