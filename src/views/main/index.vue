@@ -311,6 +311,24 @@
         </swiper>
       </div>
     </section>
+    <section class="main-page__tariffs">
+      <div class="container">
+        <h2 class="main-page__tariffs-title">
+          Choose your plan and start 7-Days <span>free trial</span>
+        </h2>
+        <div class="main-page__tariffs-items">
+          <TariffCard
+            class="main-page__tariffs-item"
+            v-for="tariff in $options.tariffs"
+            :key="tariff.id"
+            :title="tariff.title"
+            :items="tariff.items"
+            :price="tariff.price"
+            :best="tariff.best"
+          />
+        </div>
+      </div>
+    </section>
     <section class="main-page__faq">
       <div class="container">
         <h2 class="main-page__faq-title">FAQ</h2>
@@ -417,6 +435,7 @@ import VToggle from "@/components/VToggle.vue";
 import FeedbackCard from "@/components/FeedbackCard.vue";
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
+import TariffCard from "@/components/TariffCard.vue";
 
 export default {
   feedback: [
@@ -424,28 +443,51 @@ export default {
       id: 1,
       name: "Birgitte Albek Henriksen",
       character: "Speech Pathologist",
-      raiting: "5",
+      raiting: 5,
       text: "As a speech pathologist, I’ve used Bimi Boo Coloring app with children of different ages, and it’s popular due to its numerous options for drawings and colors, providing hours of entertainment and learning. The app’s saving progress and redo features are great, although some children may be confused that they can’t paint outside the lines",
-      time: "6",
+      time: 6,
       social: "Facebook",
     },
     {
       id: 2,
       name: "Sarah D.",
       character: "Speech Pathologist",
-      raiting: "4",
+      raiting: 4,
       text: "As a parent, I know how important it is to find high-quality toys that provide a fun and educational experience for kids. That’s why I’m excited to share my love for Bimi Boo toys! These wooden toys are visually appealing and offer a unique learning experience that encourages exploration, problem-solving, and creativity.",
-      time: "2",
+      time: 2,
       social: "Instagram",
     },
     {
       id: 3,
       name: "Speech Pathologist",
       character: "Speech Pathologist",
-      raiting: "5",
+      raiting: 5,
       text: "Bimi Boo series is a wonderful kids’ show, my nephews and nieces love it. I don’t have to be looking at the TV to know they are watching it when I hear them singing along with the characters. I love how educational it is, but fun for the kids too. The background music is entertaining and fun, and there are a lot of positive messages in the songs. ",
-      time: "6",
+      time: 6,
       social: "Facebook",
+    },
+  ],
+  tariffs: [
+    {
+      id: 1,
+      title: "Monthly plan",
+      items: ["Unlimited access", "Cancel any time"],
+      price: {
+        main: "6.99",
+        old: "9.99",
+        time: "month",
+      },
+    },
+    {
+      id: 2,
+      title: "Annual plan",
+      items: ["Big savings", "Unlimited access", "Cancel any time"],
+      price: {
+        main: "49.99",
+        old: "69.99",
+        time: "year",
+      },
+      best: true,
     },
   ],
   components: {
@@ -454,6 +496,7 @@ export default {
     FeedbackCard,
     Swiper,
     SwiperSlide,
+    TariffCard,
   },
   data() {
     return {
@@ -900,6 +943,48 @@ export default {
       opacity: 1;
     }
   }
+  &__tariffs {
+    text-align: center;
+  }
+  &__tariffs-title {
+    position: relative;
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 110%;
+    color: $dark-blue;
+    span {
+      display: block;
+      color: $lime-green;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -29px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: block;
+      flex-shrink: 0;
+      width: 317.39px;
+      height: 40.73px;
+      background-image: url("~@/assets/img/tariff-line.svg");
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: contain;
+      display: inline-block;
+    }
+  }
+  &__tariffs-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__tariffs-item {
+    margin-right: 20px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
   &__faq {
     text-align: center;
   }
@@ -1060,6 +1145,17 @@ export default {
     }
     &__why-academy-item-title {
       max-width: 231px;
+    }
+  }
+  @media (max-width: 920px) {
+    &__tariffs-items {
+      flex-direction: column;
+    }
+    &__tariffs-item {
+      margin-bottom: 20px;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
   @media #{$sm} {
