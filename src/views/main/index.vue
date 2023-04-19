@@ -284,6 +284,53 @@
         </div>
       </div>
     </section>
+    <section class="main-page__feedback">
+      <div class="container">
+        <h2 class="main-page__feedback-title">
+          What <span>happy parents</span> are saying about us
+        </h2>
+        <swiper
+          class="swiper main-page__feedback-items"
+          :options="swiperOption"
+          slides-per-view="auto"
+        >
+          <swiper-slide
+            ><FeedbackCard
+              class="main-page__feedback-item"
+              name="Birgitte Albek Henriksen"
+              character="Speech Pathologist"
+              :raiting="5"
+              text="As a speech pathologist, I’ve used Bimi Boo Coloring app with children of different ages, and it’s popular due to its numerous options for drawings and colors, providing hours of entertainment and learning. The app’s saving progress and redo features are great, although some children may be confused that they can’t paint outside the lines"
+              time="6"
+              social="Facebook"
+          /></swiper-slide>
+          <swiper-slide
+            ><FeedbackCard
+              class="main-page__feedback-item"
+              name="Sarah D."
+              character="Speech Pathologist"
+              :raiting="4"
+              text="As a parent, I know how important it is to find high-quality toys that provide a fun and educational experience for kids. That’s why I’m excited to share my love for Bimi Boo toys! These wooden toys are visually appealing and offer a unique learning experience that encourages exploration, problem-solving, and creativity."
+              time="2"
+              social="Instagram"
+          /></swiper-slide>
+          <swiper-slide
+            ><FeedbackCard
+              class="main-page__feedback-item"
+              name="Speech Pathologist"
+              character="Speech Pathologist"
+              :raiting="5"
+              text="Bimi Boo series is a wonderful kids’ show, my nephews and nieces love it. I don’t have to be looking at the TV to know they are watching it when I hear them singing along with the characters. I love how educational it is, but fun for the kids too. The background music is entertaining and fun, and there are a lot of positive messages in the songs. "
+              time="6"
+              social="Facebook"
+          /></swiper-slide>
+          <div
+            class="main-page__swiper-pagination swiper-pagination"
+            slot="pagination"
+          ></div>
+        </swiper>
+      </div>
+    </section>
     <section class="main-page__faq">
       <div class="container">
         <h2 class="main-page__faq-title">FAQ</h2>
@@ -387,16 +434,38 @@
 <script>
 import VButton from "@/components/VButton.vue";
 import VToggle from "@/components/VToggle.vue";
+import FeedbackCard from "@/components/FeedbackCard.vue";
+import { Swiper, SwiperSlide } from "vue-awesome-swiper";
+import "swiper/css/swiper.css";
 
 export default {
   components: {
     VButton,
     VToggle,
+    FeedbackCard,
+    Swiper,
+    SwiperSlide,
+  },
+  data() {
+    return {
+      swiperOption: {
+        slidesPerView: "auto",
+        spaceBetween: 20,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          // bulletClass: "main-page__swiper-pagination",
+          bulletActiveClass: "main-page__swiper-pagination-item_active",
+          enabled: true,
+          // dynamicMainBullets: 2,
+        },
+      },
+    };
   },
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .main-page {
   &__header {
     overflow: hidden;
@@ -788,6 +857,42 @@ export default {
   &__why-academy-buttom {
     margin: 0 auto;
   }
+  &__feedback {
+    text-align: center;
+  }
+  &__feedback-title {
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 110%;
+    color: $dark-blue;
+    span {
+      color: $lime-green;
+    }
+  }
+  &__feedback-items {
+    display: flex;
+    align-items: center;
+  }
+  &__feedback-item {
+    margin-right: 20px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__swiper-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__swiper-pagination-item {
+    &_active {
+      width: 11px;
+      height: 11px;
+      background: $lime-green;
+      opacity: 1;
+    }
+  }
   &__faq {
     text-align: center;
   }
@@ -1057,6 +1162,9 @@ export default {
     &__why-academy-title {
       font-size: 30px;
     }
+    &__header-title {
+      font-size: 30px;
+    }
     &__faq-title {
       font-size: 30px;
     }
@@ -1072,5 +1180,9 @@ export default {
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
   opacity: 0;
+}
+
+.swiper-slide {
+  max-width: 386.67px !important;
 }
 </style>
