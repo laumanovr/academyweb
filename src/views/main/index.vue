@@ -284,6 +284,24 @@
         </div>
       </div>
     </section>
+    <section class="main-page__tariffs">
+      <div class="container">
+        <h2 class="main-page__tariffs-title">
+          Choose your plan and start 7-Days <span>free trial</span>
+        </h2>
+        <div class="main-page__tariffs-items">
+          <TariffCard
+            class="main-page__tariffs-item"
+            v-for="tariff in $options.tariffs"
+            :key="tariff.id"
+            :title="tariff.title"
+            :items="tariff.items"
+            :price="tariff.price"
+            :best="tariff.best"
+          />
+        </div>
+      </div>
+    </section>
     <section class="main-page__faq">
       <div class="container">
         <h2 class="main-page__faq-title">FAQ</h2>
@@ -387,11 +405,36 @@
 <script>
 import VButton from "@/components/VButton.vue";
 import VToggle from "@/components/VToggle.vue";
+import TariffCard from "@/components/TariffCard.vue";
 
 export default {
+  tariffs: [
+    {
+      id: 1,
+      title: "Monthly plan",
+      items: ["Unlimited access", "Cancel any time"],
+      price: {
+        main: "6.99",
+        old: "9.99",
+        time: "month",
+      },
+    },
+    {
+      id: 2,
+      title: "Annual plan",
+      items: ["Big savings", "Unlimited access", "Cancel any time"],
+      price: {
+        main: "49.99",
+        old: "69.99",
+        time: "year",
+      },
+      best: true,
+    },
+  ],
   components: {
     VButton,
     VToggle,
+    TariffCard,
   },
 };
 </script>
@@ -788,6 +831,48 @@ export default {
   &__why-academy-buttom {
     margin: 0 auto;
   }
+  &__tariffs {
+    text-align: center;
+  }
+  &__tariffs-title {
+    position: relative;
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 110%;
+    color: $dark-blue;
+    span {
+      display: block;
+      color: $lime-green;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -29px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: block;
+      flex-shrink: 0;
+      width: 317.39px;
+      height: 40.73px;
+      background-image: url("~@/assets/img/tariff-line.svg");
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: contain;
+      display: inline-block;
+    }
+  }
+  &__tariffs-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__tariffs-item {
+    margin-right: 20px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
   &__faq {
     text-align: center;
   }
@@ -948,6 +1033,17 @@ export default {
     }
     &__why-academy-item-title {
       max-width: 231px;
+    }
+  }
+  @media (max-width: 920px) {
+    &__tariffs-items {
+      flex-direction: column;
+    }
+    &__tariffs-item {
+      margin-bottom: 20px;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
   @media #{$sm} {
