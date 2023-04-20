@@ -1,6 +1,7 @@
 @import "../fonts/style.css";
 
-html, body {
+html,
+body {
   font-size: 15px;
 }
 
@@ -11,173 +12,73 @@ html, body {
 
 .h1 {
   font-weight: 700;
-  font-size: 2.667rem;
-  line-height: 3.333rem;
+  font-size: 75px;
+  line-height: 110%;
+  @media #{$sm} {
+    font-size: 40px;
+  }
 }
 
 .h2 {
-  font-weight: 400;
-  font-size: 2.2rem;
-  line-height: 2.667rem;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 110%;
+  @media #{$sm} {
+    font-size: 30px;
+  }
 }
 
 .h3 {
-  font-weight: 400;
-  font-size: 1.933rem;
-  line-height: 2.4rem;
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 32px;
+  @media #{$sm} {
+    font-size: 24px;
+  }
 }
 
 .h4 {
-  font-weight: 400;
-  font-size: 1.667rem;
-  line-height: 2.133rem;
-}
-
-.h5 {
   font-weight: 700;
-  font-size: 1.467rem;
-  line-height: 2rem;
-}
-
-.title-xl {
-  font-weight: 700;
-  font-size: 1.6rem;
-  line-height: 2rem;
-}
-
-.title-l {
-  font-weight: 500;
-  font-size: 1.533rem;
-  line-height: 2rem;
-}
-
-.title-m {
-  font-weight: 500;
-  font-size: 1.133rem;
-  line-height: 1.6rem;
-  letter-spacing: 0.007rem;
-}
-
-.title-s {
-  font-weight: 500;
-  font-size: 1rem;
-  line-height: 1.333rem;
-  letter-spacing: 0.007rem;
-}
-
-.title-xs {
-  font-weight: 700;
-  font-size: 0.867rem;
-  line-height: 1.2rem;
-}
-
-.label-l {
-  font-weight: 500;
-  font-size: 1rem;
-  line-height: 1.333rem;
-}
-
-.label-xl {
-  font-weight: 700;
-  font-size: 1rem;
-  line-height: 1.333rem;
-}
-
-.label-m {
-  font-weight: 500;
-  font-size: 0.867rem;
-  line-height: 1.333rem;
-  letter-spacing: 0.033rem;
-}
-
-.label-xm {
-  font-weight: 700;
-  font-size: 0.867rem;
-  line-height: 1.333rem;
-}
-
-.label-s {
-  font-weight: 500;
-  font-size: 0.8rem;
-  line-height: 1.333rem;
-  letter-spacing: 0.033rem;
-}
-
-.label-xs {
-  font-weight: 700;
-  font-size: 0.8rem;
-  line-height: 1.333rem;
-}
-
-.label-micro {
-  font-weight: 500;
-  font-size: 0.733rem;
-  line-height: 1.333rem;
-}
-
-.label-xmicro {
-  font-weight: 700;
-  font-size: 0.733rem;
-  line-height: 1.333rem;
-}
-
-.body-xl {
-  font-weight: 700;
-  font-size: 1.133rem;
-  line-height: 1.6rem;
-}
-
-.body-l {
-  font-weight: 400;
-  font-size: 1.133rem;
-  line-height: 1.6rem;
-  letter-spacing: 0.033rem;
-}
-
-.body-m {
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.333rem;
-  letter-spacing: 0.033rem;
-}
-
-.body-s {
-  font-weight: 400;
-  font-size: 0.867rem;
-  line-height: 1.067rem;
-  letter-spacing: 0.033rem;
-}
-
-.body-xs {
-  font-weight: 700;
-  font-size: 0.733rem;
-  line-height: 1.067rem;
+  font-size: 20px;
+  line-height: 25px;
+  @media #{$sm} {
+    font-size: 16px;
+  }
 }
 
 .numbers-l {
-  font-family: "Oswald", sans-serif;
-  font-weight: 400;
-  font-size: 1.4rem;
-  line-height: 2.133rem;
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 110%;
+  @media #{$sm} {
+    font-size: 35px;
+  }
 }
 
 .numbers-m {
-  font-family: "Oswald", sans-serif;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.6rem;
+  font-size: 30px;
+  line-height: 40px;
+  @media #{$sm} {
+    font-size: 25px;
+  }
 }
 
 .numbers-s {
-  font-family: "Oswald", sans-serif;
   font-weight: 400;
-  font-size: 0.867rem;
-  line-height: 1.333rem;
+  font-size: 24px;
+  line-height: 40px;
+  @media #{$sm} {
+    font-size: 22px;
+  }
 }
 
-.numbers-micro {
-  font-family: "Oswald", sans-serif;
-  font-weight: 400;
-  font-size: 0.733rem;
-  line-height: 1.067rem;
+.text-l {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 38px;
+  @media #{$sm} {
+    font-size: 25px;
+    line-height: 34px;
+  }
 }

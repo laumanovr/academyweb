@@ -1,6 +1,6 @@
 <template>
   <div class="main-page">
-    <section class="main-page__header">
+    <section class="main-page__header main-page__seaction">
       <div class="container">
         <img
           src="@/assets/img/icons/star.svg"
@@ -12,26 +12,24 @@
           alt="books"
           class="main-page__header-overtitle"
         />
-        <h1 class="main-page__header-title">
+        <h1 class="main-page__header-title h1">
           Fun educational program <span>for your toddlers</span>
         </h1>
         <div class="main-page__header-items">
           <div class="main-page__header-item">
-            <div class="main-page__header-item-title">100%</div>
+            <div class="main-page__header-item-title numbers-m">100%</div>
             <div class="main-page__header-item-subtitle">
               safe content without ads
             </div>
           </div>
           <div class="main-page__header-item">
-            <div class="main-page__header-item-title">1 700</div>
+            <div class="main-page__header-item-title numbers-m">1 700</div>
             <div class="main-page__header-item-subtitle">
               games, video, songs, and books
             </div>
           </div>
           <div class="main-page__header-item">
-            <div
-              class="main-page__header-item-title main-page__header-item-title_small"
-            >
+            <div class="main-page__header-item-title numbers-s">
               Flexible learning
             </div>
             <div class="main-page__header-item-subtitle">
@@ -81,14 +79,14 @@
         </div>
       </div>
     </section>
-    <section class="main-page__learning">
+    <section class="main-page__learning main-page__seaction">
       <div class="container">
-        <h2 class="main-page__learning-title">Learning path</h2>
+        <h2 class="main-page__learning-title h2">Learning path</h2>
         <div class="main-page__learning-steps">
           <div class="main-page__learning-step">
             <img src="@/assets/img/kid-1.svg" />
             <div class="main-page__learning-info">
-              <div class="main-page__learning-info-title">Preschool</div>
+              <h3 class="main-page__learning-info-title h3">Preschool</h3>
               <div class="main-page__learning-info-text">Ages 3+</div>
               <div class="main-page__learning-info-sm-text">
                 <span> Level 1:</span>
@@ -103,7 +101,7 @@
           <div class="main-page__learning-step">
             <img src="@/assets/img/kid-2.svg" />
             <div class="main-page__learning-info">
-              <div class="main-page__learning-info-title">Pre-K</div>
+              <h3 class="main-page__learning-info-title h3">Pre-K</h3>
               <div class="main-page__learning-info-text">Ages 4+</div>
               <div class="main-page__learning-info-sm-text">
                 <span> Level 3:</span>
@@ -118,7 +116,7 @@
           <div class="main-page__learning-step">
             <img src="@/assets/img/kid-3.svg" />
             <div class="main-page__learning-info">
-              <div class="main-page__learning-info-title">Kindergarden</div>
+              <h3 class="main-page__learning-info-title h3">Kindergarden</h3>
               <div class="main-page__learning-info-text">Ages 5+</div>
               <div class="main-page__learning-info-sm-text">
                 <span> Level 5:</span>
@@ -136,9 +134,11 @@
         >
       </div>
     </section>
-    <section class="main-page__love-us">
+    <div class="main-page__love-us">
       <div class="container">
-        <h2 class="main-page__love-us-title">Parents <span>love us</span></h2>
+        <h2 class="main-page__love-us-title numbers-l">
+          Parents <span>love us</span>
+        </h2>
         <div class="main-page__love-us-image-wrap">
           <img
             src="@/assets/img/awards.png"
@@ -146,7 +146,7 @@
             class="main-page__love-us-image"
           />
         </div>
-        <div class="main-page__love-us-subtitle">
+        <div class="main-page__love-us-subtitle text-l">
           Parents from all over the world choose our preschool app for kids
         </div>
         <p class="main-page__love-us-paragraph">
@@ -154,10 +154,10 @@
           children's games.
         </p>
       </div>
-    </section>
-    <section class="main-page__with-academy">
+    </div>
+    <section class="main-page__with-academy main-page__seaction">
       <div class="container">
-        <h2 class="main-page__with-academy-title">
+        <h2 class="main-page__with-academy-title h2">
           With Bimi Boo Academy <span>your child will learn</span>
         </h2>
         <div class="main-page__with-academy-items">
@@ -169,7 +169,7 @@
                 class="main-page__with-academy-image"
               />
             </div>
-            <div class="main-page__with-academy-item-title">Reading</div>
+            <h3 class="main-page__with-academy-item-title h3">Reading</h3>
           </div>
           <div class="main-page__with-academy-item">
             <div class="main-page__with-academy-image-wrap">
@@ -179,7 +179,7 @@
                 class="main-page__with-academy-image"
               />
             </div>
-            <div class="main-page__with-academy-item-title">Basic Math</div>
+            <h3 class="main-page__with-academy-item-title h3">Basic Math</h3>
           </div>
           <div class="main-page__with-academy-item">
             <div class="main-page__with-academy-image-wrap">
@@ -189,9 +189,9 @@
                 class="main-page__with-academy-image"
               />
             </div>
-            <div class="main-page__with-academy-item-title">
+            <h3 class="main-page__with-academy-item-title h3">
               Shapes & colors
-            </div>
+            </h3>
           </div>
           <div class="main-page__with-academy-item">
             <div class="main-page__with-academy-image-wrap">
@@ -201,7 +201,7 @@
                 class="main-page__with-academy-image"
               />
             </div>
-            <div class="main-page__with-academy-item-title">Creativity</div>
+            <h3 class="main-page__with-academy-item-title h3">Creativity</h3>
           </div>
           <div class="main-page__with-academy-item">
             <div class="main-page__with-academy-image-wrap">
@@ -211,7 +211,7 @@
                 class="main-page__with-academy-image"
               />
             </div>
-            <div class="main-page__with-academy-item-title">Social skills</div>
+            <h3 class="main-page__with-academy-item-title h3">Social skills</h3>
           </div>
         </div>
         <VButton class="main-page__with-academy-buttom"
@@ -219,9 +219,9 @@
         >
       </div>
     </section>
-    <section class="main-page__why-academy">
+    <section class="main-page__why-academy main-page__seaction">
       <div class="container">
-        <h2 class="main-page__why-academy-title">
+        <h2 class="main-page__why-academy-title h2">
           Why Bimi Boo <span>Academy</span>
         </h2>
         <div class="main-page__why-academy-items">
@@ -234,9 +234,9 @@
                   class="main-page__why-academy-image"
                 />
               </div>
-              <div class="main-page__why-academy-item-title">
+              <h3 class="main-page__why-academy-item-title h3">
                 No ads from third
-              </div>
+              </h3>
             </div>
           </div>
           <div class="main-page__why-academy-item-wrap">
@@ -248,9 +248,9 @@
                   class="main-page__why-academy-image"
                 />
               </div>
-              <div class="main-page__why-academy-item-title">
+              <h3 class="main-page__why-academy-item-title h3">
                 More than 1700 activities
-              </div>
+              </h3>
             </div>
           </div>
           <div class="main-page__why-academy-item-wrap">
@@ -262,9 +262,9 @@
                   class="main-page__why-academy-image"
                 />
               </div>
-              <div class="main-page__why-academy-item-title">
+              <h3 class="main-page__why-academy-item-title h3">
                 Parental control
-              </div>
+              </h3>
             </div>
           </div>
           <div class="main-page__why-academy-item-wrap">
@@ -276,17 +276,17 @@
                   class="main-page__why-academy-image"
                 />
               </div>
-              <div class="main-page__why-academy-item-title">
+              <h3 class="main-page__why-academy-item-title h3">
                 100% safe content
-              </div>
+              </h3>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="main-page__feedback">
+    <section class="main-page__feedback main-page__seaction">
       <div class="container">
-        <h2 class="main-page__feedback-title">
+        <h2 class="main-page__feedback-title h2">
           What <span>happy parents</span> are saying about us
         </h2>
         <swiper
@@ -311,9 +311,9 @@
         </swiper>
       </div>
     </section>
-    <section class="main-page__tariffs">
+    <section class="main-page__tariffs main-page__seaction">
       <div class="container">
-        <h2 class="main-page__tariffs-title">
+        <h2 class="main-page__tariffs-title h2">
           Choose your plan and start 7-Days <span>free trial</span>
         </h2>
         <div class="main-page__tariffs-items">
@@ -329,9 +329,9 @@
         </div>
       </div>
     </section>
-    <section class="main-page__faq">
+    <section class="main-page__faq main-page__seaction">
       <div class="container">
-        <h2 class="main-page__faq-title">FAQ</h2>
+        <h2 class="main-page__faq-title h2">FAQ</h2>
         <div class="main-page__faq-items">
           <VToggle>
             <template #default="{ onClick, isActive }">
@@ -426,6 +426,62 @@
         </div>
       </div>
     </section>
+    <section class="main-page__amazing">
+      <div class="container">
+        <div class="main-page__amazing-koala">
+          <img
+            src="@/assets/img/koala.svg"
+            alt=""
+            class="main-page__amazing-koala-icon"
+          />
+        </div>
+        <div class="main-page__amazing-title">
+          Start an <span>amazing</span> <br />
+          preschool adventure
+        </div>
+        <div class="main-page__amazing-subtitle text-l">
+          with Bimi Boo and his friends
+        </div>
+        <VButton class="main-page__amazing-buttom">Start free trial</VButton>
+      </div>
+      <div class="main-page__amazing-heroes">
+        <div class="main-page__amazing-hero main-page__amazing-hero_1">
+          <img
+            src="@/assets/img/heroes/mustache.svg"
+            alt="mustache hero"
+            class="main-page__amazing-hero-image"
+          />
+        </div>
+        <div class="main-page__amazing-hero main-page__amazing-hero_2">
+          <img
+            src="@/assets/img/heroes/choes.svg"
+            alt="choes hero"
+            class="main-page__amazing-hero-image"
+          />
+        </div>
+        <div class="main-page__amazing-hero main-page__amazing-hero_3">
+          <img
+            src="@/assets/img/heroes/bimi.svg"
+            alt="bimi hero"
+            class="main-page__amazing-hero-image"
+          />
+        </div>
+        <div class="main-page__amazing-hero main-page__amazing-hero_4">
+          <img
+            src="@/assets/img/heroes/hair.svg"
+            alt="hair hero"
+            class="main-page__amazing-hero-image"
+          />
+        </div>
+        <div class="main-page__amazing-hero main-page__amazing-hero_5">
+          <img
+            src="@/assets/img/heroes/star.svg"
+            alt="star hero"
+            class="main-page__amazing-hero-image"
+          />
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -517,10 +573,12 @@ export default {
 
 <style lang="scss">
 .main-page {
+  &__seaction {
+    margin-bottom: 140px;
+  }
   &__header {
     overflow: hidden;
     position: relative;
-    margin-bottom: 140px;
     padding: 50px 0 0;
     text-align: center;
     .container {
@@ -536,9 +594,6 @@ export default {
   &__header-title {
     position: relative;
     margin-bottom: 51px;
-    font-weight: 700;
-    font-size: 75px;
-    line-height: 110%;
     color: $dark-blue;
     span {
       display: block;
@@ -576,13 +631,7 @@ export default {
     }
   }
   &__header-item-title {
-    font-weight: 400;
-    font-size: 30px;
-    line-height: 40px;
     color: $dark-blue;
-    &_small {
-      font-size: 24px;
-    }
   }
   &__header-item-subtitle {
     font-weight: 700;
@@ -634,8 +683,6 @@ export default {
     margin-top: 140px;
   }
   &__learning-title {
-    font-weight: 700;
-    font-size: 40px;
     color: $dark-blue;
     text-align: center;
     margin-bottom: 29px;
@@ -670,9 +717,6 @@ export default {
     }
   }
   &__learning-info-title {
-    font-weight: 700;
-    font-size: 27px;
-    line-height: 32px;
     color: $dark-blue;
     margin-bottom: 10px;
   }
@@ -705,9 +749,6 @@ export default {
     position: relative;
     z-index: 1;
     margin-bottom: 50px;
-    font-weight: 700;
-    font-size: 70px;
-    line-height: 110%;
     color: $dark-blue;
     span {
       margin-left: -55px;
@@ -755,9 +796,6 @@ export default {
   &__love-us-subtitle {
     margin: 0 auto 30px;
     max-width: 504px;
-    font-weight: 600;
-    font-size: 28px;
-    line-height: 38px;
     color: $dark-blue;
   }
   &__love-us-paragraph {
@@ -781,9 +819,6 @@ export default {
   }
   &__with-academy-title {
     margin-bottom: 50px;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 110%;
     color: $dark-blue;
     span {
       display: block;
@@ -827,9 +862,6 @@ export default {
     border-radius: 60px;
   }
   &__with-academy-item-title {
-    font-weight: 700;
-    font-size: 27px;
-    line-height: 32px;
     color: $dark-blue;
   }
   &__with-academy-buttom {
@@ -840,9 +872,6 @@ export default {
   }
   &__why-academy-title {
     margin-bottom: 50px;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 110%;
     color: $dark-blue;
     span {
       color: $lime-green;
@@ -898,9 +927,6 @@ export default {
     margin-bottom: 21px;
   }
   &__why-academy-item-title {
-    font-weight: 700;
-    font-size: 27px;
-    line-height: 32px;
     text-align: center;
     color: $dark-blue;
   }
@@ -912,9 +938,6 @@ export default {
   }
   &__feedback-title {
     margin-bottom: 50px;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 110%;
     color: $dark-blue;
     span {
       color: $lime-green;
@@ -949,9 +972,6 @@ export default {
   &__tariffs-title {
     position: relative;
     margin-bottom: 50px;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 110%;
     color: $dark-blue;
     span {
       display: block;
@@ -986,13 +1006,11 @@ export default {
     }
   }
   &__faq {
+    margin-bottom: 126px;
     text-align: center;
   }
   &__faq-title {
     margin-bottom: 40px;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 110%;
     color: $dark-blue;
   }
   &__faq-item {
@@ -1057,7 +1075,96 @@ export default {
       }
     }
   }
+  &__amazing {
+    margin-bottom: -100px;
+    padding: 58px 0 52px;
+    overflow: hidden;
+    background: #f7ece1;
+    border-radius: 100px 100px 0px 0px;
+    text-align: center;
+  }
+  &__amazing-koala {
+    position: relative;
+    margin-bottom: 47px;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -29px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: block;
+      flex-shrink: 0;
+      width: 329.51px;
+      height: 42.28px;
+      background-image: url("~@/assets/img/green-line.svg");
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: contain;
+      display: inline-block;
+    }
+  }
+  &__amazing-title {
+    margin-bottom: 40px;
+    font-weight: 700;
+    font-size: 75px;
+    line-height: 110%;
+    color: #2a364d;
+    span {
+      color: #7fcc4e;
+    }
+  }
+  &__amazing-subtitle {
+    margin-bottom: 40px;
+  }
+  &__amazing-buttom {
+    margin: 0 auto;
+  }
+  &__amazing-heroes {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+  }
+  &__amazing-hero {
+    &_1 {
+      grid-area: 1 / 1 / 2 / 2;
+      img {
+        width: 183.53px;
+        transform: translate(-70px, 50px) rotate(28deg);
+      }
+    }
+    &_2 {
+      grid-area: 1 / 2 / 2 / 3;
+      img {
+        width: 169px;
+        transform: translateY(104px);
+      }
+    }
+    &_3 {
+      grid-area: 1 / 3 / 2 / 4;
+      img {
+        width: 157px;
+        transform: translateY(80px);
+      }
+    }
+    &_4 {
+      grid-area: 1 / 4 / 2 / 5;
+      img {
+        width: 148px;
+        transform: translateY(69px);
+      }
+    }
+    &_5 {
+      grid-area: 1 / 5 / 2 / 6;
+      img {
+        width: 232.3px;
+        transform: translate(62px, 29px) rotate(330deg);
+      }
+    }
+  }
   @media #{$lg} {
+    &__seaction {
+      margin-bottom: 120px;
+    }
     &__header-star-mobile {
       display: block;
       position: absolute;
@@ -1088,8 +1195,6 @@ export default {
     }
     &__love-us-title {
       margin-bottom: 61px;
-      font-size: 60px;
-      line-height: 110%;
     }
     &__love-us-image-wrap {
       margin-bottom: 50px;
@@ -1146,7 +1251,44 @@ export default {
     &__why-academy-item-title {
       max-width: 231px;
     }
+    &__amazing {
+      padding-bottom: 124px;
+    }
+    &__amazing-hero {
+      &_1 {
+        img {
+          width: 132.5px;
+          transform: translate(-45px, 69px) rotate(28deg);
+        }
+      }
+      &_2 {
+        img {
+          width: 124px;
+          transform: translateY(111px);
+        }
+      }
+      &_3 {
+        img {
+          width: 112px;
+          transform: translateY(109px);
+        }
+      }
+      &_4 {
+        img {
+          width: 103px;
+          transform: translateY(89px);
+        }
+      }
+      &_5 {
+        grid-area: 1 / 5 / 2 / 6;
+        img {
+          width: 160.43px;
+          transform: translate(37px, 66px) rotate(330deg);
+        }
+      }
+    }
   }
+
   @media (max-width: 920px) {
     &__tariffs-items {
       flex-direction: column;
@@ -1157,8 +1299,41 @@ export default {
         margin-bottom: 0;
       }
     }
+    &__amazing {
+      margin-bottom: -90px;
+    }
+    &__amazing-heroes {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    &__amazing-hero {
+      &_1,
+      &_5 {
+        display: none;
+      }
+      &_2 {
+        grid-area: 1 / 1 / 2 / 2;
+        img {
+          transform: translateY(90px);
+        }
+      }
+      &_3 {
+        grid-area: 1 / 2 / 2 / 3;
+        img {
+          transform: translateY(84px);
+        }
+      }
+      &_4 {
+        grid-area: 1 / 3 / 2 / 4;
+        img {
+          transform: translateY(80px);
+        }
+      }
+    }
   }
   @media #{$sm} {
+    &__seaction {
+      margin-bottom: 100px;
+    }
     &__header-title {
       margin-bottom: 70px;
       span {
@@ -1187,9 +1362,6 @@ export default {
     &__learning-info {
       width: auto;
     }
-    &__learning-info-title {
-      font-size: 24px;
-    }
     &__learning-info-text {
       font-size: 18px;
       line-height: 30px;
@@ -1204,11 +1376,16 @@ export default {
       font-size: 24px;
       line-height: 32px;
     }
+    &__amazing-title {
+      font-size: 60px;
+    }
   }
   @media #{$xs} {
+    &__seaction {
+      margin-bottom: 80px;
+    }
     &__header-title {
       margin-bottom: 30px;
-      font-size: 40px;
       &::after {
         width: 100%;
       }
@@ -1233,7 +1410,6 @@ export default {
     }
     &__love-us-title {
       margin-bottom: 45px;
-      font-size: 35px;
       span {
         margin-left: -35px;
         &:before {
@@ -1251,28 +1427,27 @@ export default {
     }
     &__love-us-subtitle {
       width: 100%;
-      font-size: 25px;
-      line-height: 34px;
     }
     &__love-us-paragraph {
       width: 100%;
       font-size: 15px;
       line-height: 150%;
     }
-    &__with-academy-title {
-      font-size: 30px;
-    }
-    &__why-academy-title {
-      font-size: 30px;
-    }
-    &__header-title {
-      font-size: 30px;
-    }
-    &__faq-title {
-      font-size: 30px;
-    }
     &__collapse-title {
       font-size: 25px;
+    }
+    &__amazing {
+      padding-top: 80px;
+    }
+    &__amazing-title {
+      margin-bottom: 30px;
+      font-size: 35px;
+    }
+    &__amazing-subtitle {
+      margin-bottom: 30px;
+    }
+    &__amazing-heroes {
+      display: none;
     }
   }
 }
