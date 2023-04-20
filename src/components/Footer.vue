@@ -33,6 +33,8 @@ export default {};
 
 <style lang="scss" scoped>
 .footer {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   flex-direction: column;
