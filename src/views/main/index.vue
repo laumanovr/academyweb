@@ -3,12 +3,12 @@
     <section class="main-page__header main-page__seaction">
       <div class="container">
         <img
-          src="@/assets/img/icons/star.svg"
+          src="@/assets/img/star.svg"
           alt="star"
           class="main-page__header-star-mobile"
         />
         <img
-          src="@/assets/img/icons/books.svg"
+          src="@/assets/img/books.svg"
           alt="books"
           class="main-page__header-overtitle"
         />
@@ -36,30 +36,63 @@
               path and progress tracking
             </div>
           </div>
-          <img
-            class="main-page__header-two"
-            src="@/assets/img/icons/two.svg"
-            alt="two"
-          />
-          <img
-            class="main-page__header-pyramid"
-            src="@/assets/img/icons/pyramid.svg"
-            alt="pyramid"
-          />
         </div>
         <img
+          class="main-page__header-two"
+          src="@/assets/img/two.svg"
+          alt="two"
+        />
+        <img
+          class="main-page__header-pyramid"
+          src="@/assets/img/pyramid.svg"
+          alt="pyramid"
+        />
+        <img
           class="main-page__header-carrot"
-          src="@/assets/img/icons/carrot.svg"
+          src="@/assets/img/carrot.svg"
           alt="carrot"
         />
 
-        <VButton class="main-page__header-buttom">Start free trial</VButton>
-        <div class="main-page__header-harachters">
-          <img
-            class="main-page__header-harachters-image"
-            src="@/assets/img/icons/harachters.svg"
-            alt="harachters"
-          />
+        <VButton class="main-page__header-button">Start free trial</VButton>
+        <div class="main-page__header-heroes-wrapper">
+          <div class="main-page__header-heroes">
+            <div class="main-page__header-hero main-page__header-hero_1">
+              <img
+                src="@/assets/img/heroes/choes.svg"
+                alt="choes hero"
+                class="main-page__header-hero-image"
+              />
+            </div>
+            <div class="main-page__header-hero main-page__header-hero_2">
+              <img
+                src="@/assets/img/heroes/hair.svg"
+                alt="hair hero"
+                class="main-page__header-hero-image"
+              />
+            </div>
+            <div class="main-page__header-hero main-page__header-hero_3">
+              <img
+                src="@/assets/img/heroes/bimi.svg"
+                alt="bimi hero"
+                class="main-page__header-hero-image"
+              />
+            </div>
+
+            <div class="main-page__header-hero main-page__header-hero_4">
+              <img
+                src="@/assets/img/heroes/mustache.svg"
+                alt="mustache hero"
+                class="main-page__header-hero-image"
+              />
+            </div>
+            <div class="main-page__header-hero main-page__header-hero_5">
+              <img
+                src="@/assets/img/heroes/star.svg"
+                alt="star hero"
+                class="main-page__header-hero-image"
+              />
+            </div>
+          </div>
         </div>
       </div>
       <div class="main-page__header-star main-page__header-star_left">
@@ -70,13 +103,11 @@
         />
       </div>
       <div class="main-page__header-star main-page__header-star_right">
-        <div>
-          <img
-            class="main-page__header-star-image"
-            src="@/assets/img/star.png"
-            alt="star"
-          />
-        </div>
+        <img
+          class="main-page__header-star-image"
+          src="@/assets/img/star.png"
+          alt="star"
+        />
       </div>
     </section>
     <section class="main-page__learning main-page__seaction">
@@ -219,71 +250,6 @@
         >
       </div>
     </section>
-    <section class="main-page__why-academy main-page__seaction">
-      <div class="container">
-        <h2 class="main-page__why-academy-title h2">
-          Why Bimi Boo <span>Academy</span>
-        </h2>
-        <div class="main-page__why-academy-items">
-          <div class="main-page__why-academy-item-wrap">
-            <div class="main-page__why-academy-item">
-              <div class="main-page__why-academy-image-wrap">
-                <img
-                  src="@/assets/img/icons/panda.svg"
-                  alt="panda"
-                  class="main-page__why-academy-image"
-                />
-              </div>
-              <h3 class="main-page__why-academy-item-title h3">
-                No ads from third
-              </h3>
-            </div>
-          </div>
-          <div class="main-page__why-academy-item-wrap">
-            <div class="main-page__why-academy-item">
-              <div class="main-page__why-academy-image-wrap">
-                <img
-                  src="@/assets/img/icons/lion.svg"
-                  alt="lion"
-                  class="main-page__why-academy-image"
-                />
-              </div>
-              <h3 class="main-page__why-academy-item-title h3">
-                More than 1700 activities
-              </h3>
-            </div>
-          </div>
-          <div class="main-page__why-academy-item-wrap">
-            <div class="main-page__why-academy-item">
-              <div class="main-page__why-academy-image-wrap">
-                <img
-                  src="@/assets/img/icons/elephant.svg"
-                  alt="elephant"
-                  class="main-page__why-academy-image"
-                />
-              </div>
-              <h3 class="main-page__why-academy-item-title h3">
-                Parental control
-              </h3>
-            </div>
-          </div>
-          <div class="main-page__why-academy-item-wrap">
-            <div class="main-page__why-academy-item">
-              <div class="main-page__why-academy-image-wrap">
-                <img
-                  src="@/assets/img/icons/monkey.svg"
-                  alt="monkey"
-                  class="main-page__why-academy-image"
-                />
-              </div>
-              <h3 class="main-page__why-academy-item-title h3">
-                100% safe content
-              </h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <section class="main-page__feedback main-page__seaction">
       <div class="container">
         <h2 class="main-page__feedback-title h2">
@@ -311,6 +277,71 @@
         </swiper>
       </div>
     </section>
+    <section class="main-page__why-academy main-page__seaction">
+      <div class="container">
+        <h2 class="main-page__why-academy-title h2">
+          Why Bimi Boo <span>Academy</span>
+        </h2>
+        <div class="main-page__why-academy-items">
+          <div class="main-page__why-academy-item-wrap">
+            <div class="main-page__why-academy-item">
+              <div class="main-page__why-academy-image-wrap">
+                <img
+                  src="@/assets/img/icons/panda.svg"
+                  alt="panda"
+                  class="main-page__why-academy-image"
+                />
+              </div>
+              <h3 class="main-page__why-academy-item-title h3">
+                No ads from third parties
+              </h3>
+            </div>
+          </div>
+          <div class="main-page__why-academy-item-wrap">
+            <div class="main-page__why-academy-item">
+              <div class="main-page__why-academy-image-wrap">
+                <img
+                  src="@/assets/img/lion.svg"
+                  alt="lion"
+                  class="main-page__why-academy-image"
+                />
+              </div>
+              <h3 class="main-page__why-academy-item-title h3">
+                More than 1700 activities
+              </h3>
+            </div>
+          </div>
+          <div class="main-page__why-academy-item-wrap">
+            <div class="main-page__why-academy-item">
+              <div class="main-page__why-academy-image-wrap">
+                <img
+                  src="@/assets/img/icons/elephant.svg"
+                  alt="elephant"
+                  class="main-page__why-academy-image"
+                />
+              </div>
+              <h3 class="main-page__why-academy-item-title h3">
+                Parental control
+              </h3>
+            </div>
+          </div>
+          <div class="main-page__why-academy-item-wrap">
+            <div class="main-page__why-academy-item">
+              <div class="main-page__why-academy-image-wrap">
+                <img
+                  src="@/assets/img/monkey.svg"
+                  alt="monkey"
+                  class="main-page__why-academy-image"
+                />
+              </div>
+              <h3 class="main-page__why-academy-item-title h3">
+                100% safe content
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="main-page__tariffs main-page__seaction">
       <div class="container">
         <h2 class="main-page__tariffs-title h2">
@@ -329,6 +360,7 @@
         </div>
       </div>
     </section>
+
     <section class="main-page__faq main-page__seaction">
       <div class="container">
         <h2 class="main-page__faq-title h2">FAQ</h2>
@@ -340,7 +372,9 @@
                   class="main-page__collapse"
                   :class="{ 'main-page__collapse_active': isActive }"
                 >
-                  <div class="main-page__collapse-title">No ads from third</div>
+                  <div class="main-page__collapse-title">
+                    No ads from third parties
+                  </div>
                   <transition name="fade">
                     <div v-show="isActive" class="main-page__collapse-content">
                       Сложно сказать, почему реплицированные с зарубежных
@@ -358,7 +392,9 @@
                   class="main-page__collapse"
                   :class="{ 'main-page__collapse_active': isActive }"
                 >
-                  <div class="main-page__collapse-title">No ads from third</div>
+                  <div class="main-page__collapse-title">
+                    No ads from third parties
+                  </div>
                   <transition name="fade">
                     <div v-show="isActive" class="main-page__collapse-content">
                       Сложно сказать, почему реплицированные с зарубежных
@@ -376,7 +412,9 @@
                   class="main-page__collapse"
                   :class="{ 'main-page__collapse_active': isActive }"
                 >
-                  <div class="main-page__collapse-title">No ads from third</div>
+                  <div class="main-page__collapse-title">
+                    No ads from third parties
+                  </div>
                   <transition name="fade">
                     <div v-show="isActive" class="main-page__collapse-content">
                       Сложно сказать, почему реплицированные с зарубежных
@@ -394,7 +432,9 @@
                   class="main-page__collapse"
                   :class="{ 'main-page__collapse_active': isActive }"
                 >
-                  <div class="main-page__collapse-title">No ads from third</div>
+                  <div class="main-page__collapse-title">
+                    No ads from third parties
+                  </div>
                   <transition name="fade">
                     <div v-show="isActive" class="main-page__collapse-content">
                       Сложно сказать, почему реплицированные с зарубежных
@@ -412,7 +452,9 @@
                   class="main-page__collapse"
                   :class="{ 'main-page__collapse_active': isActive }"
                 >
-                  <div class="main-page__collapse-title">No ads from third</div>
+                  <div class="main-page__collapse-title">
+                    No ads from third parties
+                  </div>
                   <transition name="fade">
                     <div v-show="isActive" class="main-page__collapse-content">
                       Сложно сказать, почему реплицированные с зарубежных
@@ -444,12 +486,33 @@
         </div>
         <VButton class="main-page__amazing-buttom">Start free trial</VButton>
       </div>
+
       <div class="main-page__amazing-heroes">
         <div class="main-page__amazing-hero main-page__amazing-hero_1">
           <img
             src="@/assets/img/heroes/mustache.svg"
             alt="mustache hero"
             class="main-page__amazing-hero-image"
+          />
+          <img
+            class="main-page__amazing-pyramid"
+            src="@/assets/img/pyramid.svg"
+            alt="pyramid"
+          />
+          <img
+            class="main-page__amazing-flower"
+            src="@/assets/img/flower.svg"
+            alt="flower"
+          />
+          <img
+            class="main-page__amazing-carrot"
+            src="@/assets/img/carrot.svg"
+            alt="carrot"
+          />
+          <img
+            class="main-page__amazing-elephant"
+            src="@/assets/img/elephant.svg"
+            alt="elephant"
           />
         </div>
         <div class="main-page__amazing-hero main-page__amazing-hero_2">
@@ -458,12 +521,32 @@
             alt="choes hero"
             class="main-page__amazing-hero-image"
           />
+          <img
+            class="main-page__amazing-two"
+            src="@/assets/img/two.svg"
+            alt="two"
+          />
+          <img
+            class="main-page__amazing-tassel"
+            src="@/assets/img/tassel.svg"
+            alt="tassel"
+          />
         </div>
         <div class="main-page__amazing-hero main-page__amazing-hero_3">
           <img
             src="@/assets/img/heroes/bimi.svg"
             alt="bimi hero"
             class="main-page__amazing-hero-image"
+          />
+          <img
+            class="main-page__amazing-pencil"
+            src="@/assets/img/pencil.svg"
+            alt="pencil"
+          />
+          <img
+            class="main-page__amazing-drum"
+            src="@/assets/img/drum.svg"
+            alt="drum"
           />
         </div>
         <div class="main-page__amazing-hero main-page__amazing-hero_4">
@@ -472,12 +555,37 @@
             alt="hair hero"
             class="main-page__amazing-hero-image"
           />
+          <img
+            class="main-page__amazing-apple"
+            src="@/assets/img/apple.svg"
+            alt="apple"
+          />
+          <img
+            class="main-page__amazing-ball"
+            src="@/assets/img/ball.svg"
+            alt="ball"
+          />
         </div>
         <div class="main-page__amazing-hero main-page__amazing-hero_5">
           <img
             src="@/assets/img/heroes/star.svg"
             alt="star hero"
             class="main-page__amazing-hero-image"
+          />
+          <img
+            class="main-page__amazing-panda"
+            src="@/assets/img/panda.svg"
+            alt="panda"
+          />
+          <img
+            class="main-page__amazing-cloud"
+            src="@/assets/img/cloud.svg"
+            alt="cloud"
+          />
+          <img
+            class="main-page__amazing-star"
+            src="@/assets/img/star.svg"
+            alt="star"
           />
         </div>
       </div>
@@ -614,13 +722,12 @@ export default {
       background-position: 50%;
       background-size: contain;
       display: inline-block;
-      vertical-align: top;
     }
   }
   &__header-items {
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     margin-bottom: 40px;
   }
@@ -639,12 +746,6 @@ export default {
     line-height: 20px;
     color: $cool-gray;
   }
-  &__header-harachters {
-    position: relative;
-    background: $ghost-white;
-    border-radius: 60px;
-    padding-bottom: 20.5%;
-  }
   &__header-harachters-image {
     position: absolute;
     left: 50%;
@@ -652,7 +753,7 @@ export default {
     bottom: 18px;
     width: 92%;
   }
-  &__header-buttom {
+  &__header-button {
     margin: 0 auto 140px;
     font-weight: 900;
     font-size: 20px;
@@ -666,21 +767,70 @@ export default {
     top: -11px;
     left: 78px;
     z-index: -1;
+    width: 92.1px;
   }
   &__header-two {
     position: absolute;
-    left: 19%;
-    bottom: -140px;
+    top: 49.5%;
+    left: 20%;
     z-index: -1;
+    width: 50px;
+    height: 53px;
   }
   &__header-pyramid {
     position: absolute;
-    right: 11%;
-    bottom: -131px;
+    right: 12.5%;
+    top: 44%;
     z-index: -1;
+    transform: rotate(291deg);
+    width: 87px;
   }
-  &__learning {
-    margin-top: 140px;
+  &__header-heroes-wrapper {
+    position: relative;
+    padding-bottom: 20.55%;
+    background: $ghost-white;
+    border-radius: 60px;
+  }
+  &__header-heroes {
+    position: absolute;
+    bottom: 8%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    align-items: flex-end;
+  }
+  &__header-hero {
+    &_1 {
+      grid-area: 1 / 1 / 2 / 2;
+      img {
+        width: 169px;
+      }
+    }
+    &_2 {
+      grid-area: 1 / 2 / 2 / 3;
+      img {
+        width: 150px;
+      }
+    }
+    &_3 {
+      grid-area: 1 / 3 / 2 / 4;
+      img {
+        width: 157px;
+      }
+    }
+    &_4 {
+      grid-area: 1 / 4 / 2 / 5;
+      img {
+        width: 153px;
+      }
+    }
+    &_5 {
+      grid-area: 1 / 5 / 2 / 6;
+      img {
+        width: 181px;
+      }
+    }
   }
   &__learning-title {
     color: $dark-blue;
@@ -740,7 +890,7 @@ export default {
     margin: 0 auto;
   }
   &__love-us {
-    padding: 150px 0 140px;
+    padding: 150px 0 210px;
     background: $ghost-white;
     border-radius: 100px 100px 0px 0px;
     text-align: center;
@@ -757,7 +907,7 @@ export default {
         flex-shrink: 0;
         width: 158px;
         height: 120px;
-        background-image: url("~@/assets/img/icons/heart.svg");
+        background-image: url("~@/assets/img/heart.svg");
         background-repeat: no-repeat;
         background-position: 50%;
         background-size: contain;
@@ -776,12 +926,12 @@ export default {
     &_left {
       -webkit-transform: scaleX(-1);
       transform: scaleX(-1);
-      left: 15px;
+      left: 5px;
       bottom: -80px;
     }
     &_right {
-      right: 0px;
-      bottom: 50px;
+      right: -9px;
+      bottom: 48px;
     }
   }
   &__love-us-image-wrap {
@@ -890,15 +1040,31 @@ export default {
     padding-bottom: 100%;
     &:nth-child(1) {
       grid-area: 1 / 1 / 2 / 2;
+      .main-page__why-academy-item {
+        background: #f7f6f9;
+        .main-page__why-academy-image {
+          -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+        }
+      }
     }
     &:nth-child(2) {
       grid-area: 1 / 2 / 2 / 3;
+      .main-page__why-academy-item {
+        background: #fbe8d8;
+      }
     }
     &:nth-child(3) {
       grid-area: 1 / 3 / 2 / 4;
+      .main-page__why-academy-item {
+        background: #e4e8f1;
+      }
     }
     &:nth-child(4) {
       grid-area: 1 / 4 / 2 / 5;
+      .main-page__why-academy-item {
+        background: $champagne;
+      }
     }
   }
   &__why-academy-item {
@@ -909,22 +1075,9 @@ export default {
     padding: 40px 27px 60px;
 
     border-radius: 400px;
-
-    &:nth-child(1) {
-      background: #f7f6f9;
-    }
-    &:nth-child(2) {
-      background: #fbe8d8;
-    }
-    &:nth-child(3) {
-      background: #e4e8f1;
-    }
-    &:nth-child(4) {
-      background: $champagne;
-    }
   }
   &__why-academy-image-wrap {
-    margin-bottom: 21px;
+    margin-bottom: 17px;
   }
   &__why-academy-item-title {
     text-align: center;
@@ -937,7 +1090,8 @@ export default {
     text-align: center;
   }
   &__feedback-title {
-    margin-bottom: 50px;
+    max-width: 454px;
+    margin: 0 auto 50px;
     color: $dark-blue;
     span {
       color: $lime-green;
@@ -946,6 +1100,8 @@ export default {
   &__feedback-items {
     display: flex;
     align-items: center;
+    overflow: unset;
+    overflow-x: clip;
   }
   &__feedback-item {
     margin-right: 20px;
@@ -957,11 +1113,10 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    bottom: -23px !important;
   }
   &__swiper-pagination-item {
     &_active {
-      width: 11px;
-      height: 11px;
       background: $lime-green;
       opacity: 1;
     }
@@ -1013,6 +1168,10 @@ export default {
     margin-bottom: 40px;
     color: $dark-blue;
   }
+  &__faq-items {
+    max-width: 793px;
+    margin: 0 auto;
+  }
   &__faq-item {
     padding: 30px 0;
     cursor: pointer;
@@ -1043,6 +1202,8 @@ export default {
     font-size: 28px;
     line-height: 38px;
     color: $dark-blue;
+    white-space: nowrap;
+    overflow: hidden;
   }
   &__collapse-content {
     margin-top: 27px;
@@ -1051,35 +1212,11 @@ export default {
     line-height: 32px;
     color: $cool-gray;
   }
-
-  @media #{$xl} {
-    &__header-star {
-      &_right {
-        right: -72px;
-        bottom: 50px;
-      }
-    }
-    &__with-academy-items {
-      flex-wrap: wrap;
-    }
-  }
-  @media (max-width: 1250px) {
-    &__header-star {
-      &_left {
-        left: -151px;
-        bottom: -143px;
-      }
-      &_right {
-        right: -100px;
-        bottom: -80px;
-      }
-    }
-  }
   &__amazing {
     margin-bottom: -100px;
     padding: 58px 0 52px;
     overflow: hidden;
-    background: #f7ece1;
+    background: $champagne;
     border-radius: 100px 100px 0px 0px;
     text-align: center;
   }
@@ -1108,16 +1245,81 @@ export default {
     font-weight: 700;
     font-size: 75px;
     line-height: 110%;
-    color: #2a364d;
+    color: $dark-blue;
     span {
-      color: #7fcc4e;
+      color: $lime-green;
     }
   }
   &__amazing-subtitle {
     margin-bottom: 40px;
   }
+  &__amazing-carrot {
+    position: absolute;
+    left: 86px;
+    top: -70%;
+  }
+  &__amazing-elephant {
+    position: absolute;
+    left: 52%;
+    top: -130%;
+  }
   &__amazing-buttom {
     margin: 0 auto;
+    padding: 20px 47px 19px;
+  }
+  &__amazing-pyramid {
+    position: absolute;
+    bottom: 22%;
+    right: -30px;
+  }
+  &__amazing-flower {
+    position: absolute;
+    left: 78px;
+    top: -21%;
+  }
+  &__amazing-two {
+    position: absolute;
+    left: 15px;
+    top: -40px;
+  }
+  &__amazing-drum {
+    position: absolute;
+    bottom: 16%;
+  }
+  &__amazing-pencil {
+    position: absolute;
+    right: -38px;
+    top: 14%;
+  }
+  &__amazing-ball {
+    position: absolute;
+    bottom: 22%;
+    right: -40px;
+  }
+  &__amazing-apple {
+    position: absolute;
+    right: -43px;
+    top: 6%;
+  }
+  &__amazing-tassel {
+    position: absolute;
+    bottom: 41%;
+    right: -21px;
+  }
+  &__amazing-panda {
+    position: absolute;
+    bottom: 123%;
+    right: 105px;
+  }
+  &__amazing-cloud {
+    position: absolute;
+    top: -111%;
+    right: 29%;
+  }
+  &__amazing-star {
+    position: absolute;
+    top: -142%;
+    right: 74%;
   }
   &__amazing-heroes {
     display: grid;
@@ -1125,39 +1327,63 @@ export default {
     grid-template-rows: 1fr;
   }
   &__amazing-hero {
+    position: relative;
     &_1 {
       grid-area: 1 / 1 / 2 / 2;
-      img {
+      .main-page__amazing-hero-image {
         width: 183.53px;
         transform: translate(-70px, 50px) rotate(28deg);
       }
     }
     &_2 {
       grid-area: 1 / 2 / 2 / 3;
-      img {
+      .main-page__amazing-hero-image {
         width: 169px;
         transform: translateY(104px);
       }
     }
     &_3 {
       grid-area: 1 / 3 / 2 / 4;
-      img {
+      .main-page__amazing-hero-image {
         width: 157px;
         transform: translateY(80px);
       }
     }
     &_4 {
       grid-area: 1 / 4 / 2 / 5;
-      img {
+      .main-page__amazing-hero-image {
         width: 148px;
         transform: translateY(69px);
       }
     }
     &_5 {
       grid-area: 1 / 5 / 2 / 6;
-      img {
+      .main-page__amazing-hero-image {
         width: 232.3px;
         transform: translate(62px, 29px) rotate(330deg);
+      }
+    }
+  }
+  @media #{$xl} {
+    &__header-star {
+      &_right {
+        right: -72px;
+        bottom: 50px;
+      }
+    }
+    &__with-academy-items {
+      flex-wrap: wrap;
+    }
+  }
+  @media (max-width: 1250px) {
+    &__header-star {
+      &_left {
+        left: -151px;
+        bottom: -143px;
+      }
+      &_right {
+        right: -100px;
+        bottom: -80px;
       }
     }
   }
@@ -1165,36 +1391,69 @@ export default {
     &__seaction {
       margin-bottom: 120px;
     }
-    &__header-star-mobile {
-      display: block;
-      position: absolute;
-      top: -11px px;
-      right: 78px;
-      z-index: -1;
-    }
     &__header-star {
-      display: none;
+      &_left {
+        left: -160px;
+        bottom: -250px;
+      }
+      &_right {
+        right: -178px;
+        bottom: -170px;
+      }
     }
     &__header-two {
+      top: 56%;
+      left: 16%;
       width: 50px;
       height: 53px;
     }
-    &__header-pyramid {
-      width: 66.05px;
-      height: 64.15px;
-    }
     &__header-carrot {
+      top: -38px;
+      left: 0;
       width: 74px;
       height: 50px;
     }
-    &__header-buttom {
+    &__header-pyramid {
+      right: 9%;
+      top: 48.5%;
+      width: 87px;
+    }
+    &__header-button {
       margin-bottom: 62px;
     }
+    &__header-hero {
+      &_1 {
+        img {
+          width: 126.53px;
+        }
+      }
+      &_2 {
+        img {
+          width: 112.3px;
+        }
+      }
+      &_3 {
+        img {
+          width: 117.54px;
+        }
+      }
+      &_4 {
+        img {
+          width: 114.55px;
+        }
+      }
+      &_5 {
+        img {
+          width: 135.51px;
+        }
+      }
+    }
     &__love-us {
-      padding: 130px 0 100px;
+      padding: 130px 0 125px;
     }
     &__love-us-title {
       margin-bottom: 61px;
+      font-size: 60px !important;
     }
     &__love-us-image-wrap {
       margin-bottom: 50px;
@@ -1256,40 +1515,130 @@ export default {
     }
     &__amazing-hero {
       &_1 {
-        img {
+        .main-page__amazing-hero-image {
           width: 132.5px;
           transform: translate(-45px, 69px) rotate(28deg);
         }
       }
       &_2 {
-        img {
+        .main-page__amazing-hero-image {
           width: 124px;
           transform: translateY(111px);
         }
       }
       &_3 {
-        img {
+        .main-page__amazing-hero-image {
           width: 112px;
           transform: translateY(109px);
         }
       }
       &_4 {
-        img {
+        .main-page__amazing-hero-image {
           width: 103px;
           transform: translateY(89px);
         }
       }
       &_5 {
         grid-area: 1 / 5 / 2 / 6;
-        img {
+        .main-page__amazing-hero-image {
           width: 160.43px;
           transform: translate(37px, 66px) rotate(330deg);
         }
       }
     }
+    &__amazing-star,
+    &__amazing-cloud,
+    &__amazing-elephant,
+    &__amazing-apple {
+      display: none;
+    }
+    &__amazing-carrot {
+      left: 56px;
+      top: -185%;
+      width: 83.8px;
+    }
+    &__amazing-flower {
+      left: 25px;
+      top: -97%;
+    }
+    &__amazing-two {
+      top: -20px;
+    }
+    &__amazing-panda {
+      bottom: 97%;
+      right: 86px;
+    }
+    &__amazing-pyramid {
+      bottom: -10%;
+      right: -5px;
+      width: 60px;
+    }
+    &__amazing-tassel {
+      bottom: 26%;
+      right: -21px;
+      width: 40px;
+    }
+    &__amazing-drum {
+      bottom: -4%;
+      width: 77px;
+      right: -42px;
+    }
+    &__amazing-pencil {
+      right: -20px;
+      top: 26%;
+      width: 34px;
+    }
+    &__amazing-ball {
+      bottom: -5%;
+      right: -62px;
+    }
   }
 
   @media (max-width: 920px) {
+    &__header-star-mobile {
+      display: block;
+      position: absolute;
+      width: 72px;
+      top: -48px;
+      right: 31px;
+      z-index: -1;
+    }
+    &__header-carrot {
+      top: -41px;
+      left: 37px;
+      width: 64px;
+      height: 50px;
+    }
+    &__header-star {
+      display: none;
+    }
+    &__header-hero {
+      &_1 {
+        img {
+          width: 89.26px;
+        }
+      }
+      &_2 {
+        img {
+          width: 79.22px;
+        }
+      }
+      &_3 {
+        img {
+          width: 82.92px;
+        }
+      }
+      &_4 {
+        img {
+          width: 80.81px;
+        }
+      }
+      &_5 {
+        img {
+          width: 95.6px;
+        }
+      }
+    }
     &__tariffs-items {
       flex-direction: column;
     }
@@ -1329,6 +1678,12 @@ export default {
         }
       }
     }
+    &__amazing-pencil,
+    &__amazing-two,
+    &__amazing-tassel,
+    &__amazing-drum {
+      display: none;
+    }
   }
   @media #{$sm} {
     &__seaction {
@@ -1340,11 +1695,27 @@ export default {
         display: inline;
       }
     }
-    &__header-buttom {
+    &__header-item {
+      &:last-child {
+        min-width: 180px;
+      }
+    }
+    &__header-button {
       margin-bottom: 80px;
     }
     &__header-star {
       display: none;
+    }
+    &__header-pyramid {
+      right: 7%;
+      top: 30.5%;
+      width: 61px;
+    }
+    &__header-two {
+      top: 33%;
+      left: 3%;
+      width: 41px;
+      height: auto;
     }
     &__learning-title {
       margin-bottom: 49px;
@@ -1366,6 +1737,9 @@ export default {
       font-size: 18px;
       line-height: 30px;
     }
+    &__with-academy-image-wrap {
+      margin-bottom: 10px;
+    }
     &__why-academy-items {
       display: flex;
       flex-direction: column;
@@ -1379,10 +1753,83 @@ export default {
     &__amazing-title {
       font-size: 60px;
     }
+    &__amazing-hero {
+      .main-page__amazing-hero-image {
+        transform: translateY(80px);
+      }
+    }
+  }
+  @media (max-width: 540px) {
+    &__header-items {
+      align-items: center;
+      flex-direction: column;
+    }
+    &__header-item {
+      flex: 1;
+      margin: 0 0 20px 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &__header-pyramid,
+    &__header-two {
+    }
+    &__header-button {
+      margin-bottom: 40px;
+    }
+    &__header-heroes-wrapper {
+      height: 150px;
+      padding-bottom: 0;
+    }
+    &__header-heroes {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    &__header-hero {
+      &_1,
+      &_5 {
+        display: none;
+      }
+      &_2 {
+        grid-area: 1 / 1 / 2 / 2;
+      }
+      &_3 {
+        grid-area: 1 / 2 / 2 / 3;
+      }
+      &_4 {
+        grid-area: 1 / 3 / 2 / 4;
+      }
+    }
+    &__love-us-image-wrap {
+      margin-bottom: 40px;
+    }
+    &__amazing {
+      border-radius: 80px 80px 0px 0px;
+    }
   }
   @media #{$xs} {
     &__seaction {
       margin-bottom: 80px;
+    }
+    &__header {
+      padding-top: 20px;
+    }
+    &__header-star-mobile {
+      width: 43.41px;
+      top: -14px;
+      right: 13px;
+    }
+    &__header-carrot {
+      width: 44.17px;
+      height: auto;
+      top: -12px;
+      left: 13px;
+    }
+    &__header-pyramid {
+      top: 27.5%;
+    }
+    &__header-two {
+      width: 33px;
+      top: 30.5%;
     }
     &__header-title {
       margin-bottom: 30px;
@@ -1391,18 +1838,12 @@ export default {
       }
     }
     &__header-items {
-      flex-direction: column;
       margin-bottom: 30px;
     }
-    &__header-item {
-      margin-right: 0;
-      margin-bottom: 20px;
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-    &__header-buttom {
-      margin-bottom: 40px;
+    &__header-button {
+      width: 100%;
+      font-size: 17px;
+      line-height: 25px;
     }
     &__love-us {
       padding: 102px 0 80px;
@@ -1437,7 +1878,7 @@ export default {
       font-size: 25px;
     }
     &__amazing {
-      padding-top: 80px;
+      padding: 80px 0 190px;
     }
     &__amazing-title {
       margin-bottom: 30px;
@@ -1448,6 +1889,9 @@ export default {
     }
     &__amazing-heroes {
       display: none;
+    }
+    &__amazing-buttom {
+      width: 100%;
     }
   }
 }

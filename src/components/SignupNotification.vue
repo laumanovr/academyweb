@@ -2,7 +2,10 @@
   <div class="signup-notification">
     <div class="container">
       <div class="signup-notification__wrapper">
-        <img src="@/assets/img/panda.svg" class="signup-notification__icon" />
+        <img
+          src="@/assets/img/panda-small.svg"
+          class="signup-notification__icon"
+        />
         <div class="signup-notification__text">
           <b>Sign up</b> to avail <b>10% OFF</b> on all subscription plans
         </div>

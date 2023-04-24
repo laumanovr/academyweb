@@ -78,6 +78,9 @@ export default {};
       margin-right: 0;
     }
   }
+  @media (max-width: 540px) {
+    border-radius: 80px 80px 0px 0px;
+  }
   @media #{$xs} {
     &__title {
       font-size: 24px;

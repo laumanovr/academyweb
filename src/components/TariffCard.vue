@@ -2,7 +2,7 @@
   <div class="tariff-card">
     <img
       v-if="best"
-      src="@/assets/img/icons/best-offer.svg"
+      src="@/assets/img/best-offer.svg"
       alt="Best"
       class="tariff-card__best-icon"
     />
@@ -78,7 +78,7 @@ export default {
     height: 160px;
     list-style: disc;
     text-align: left;
-    margin-left: 32px;
+    padding-left: 21px;
   }
   &__item {
     font-weight: 400;
