@@ -468,128 +468,7 @@
         </div>
       </div>
     </section>
-    <section class="main-page__amazing">
-      <div class="container">
-        <div class="main-page__amazing-koala">
-          <img
-            src="@/assets/img/koala.svg"
-            alt=""
-            class="main-page__amazing-koala-icon"
-          />
-        </div>
-        <div class="main-page__amazing-title">
-          Start an <span>amazing</span> <br />
-          preschool adventure
-        </div>
-        <div class="main-page__amazing-subtitle text-l">
-          with Bimi Boo and his friends
-        </div>
-        <VButton class="main-page__amazing-buttom">Start free trial</VButton>
-      </div>
-
-      <div class="main-page__amazing-heroes">
-        <div class="main-page__amazing-hero main-page__amazing-hero_1">
-          <img
-            src="@/assets/img/heroes/mustache.svg"
-            alt="mustache hero"
-            class="main-page__amazing-hero-image"
-          />
-          <img
-            class="main-page__amazing-pyramid"
-            src="@/assets/img/pyramid.svg"
-            alt="pyramid"
-          />
-          <img
-            class="main-page__amazing-flower"
-            src="@/assets/img/flower.svg"
-            alt="flower"
-          />
-          <img
-            class="main-page__amazing-carrot"
-            src="@/assets/img/carrot.svg"
-            alt="carrot"
-          />
-          <img
-            class="main-page__amazing-elephant"
-            src="@/assets/img/elephant.svg"
-            alt="elephant"
-          />
-        </div>
-        <div class="main-page__amazing-hero main-page__amazing-hero_2">
-          <img
-            src="@/assets/img/heroes/choes.svg"
-            alt="choes hero"
-            class="main-page__amazing-hero-image"
-          />
-          <img
-            class="main-page__amazing-two"
-            src="@/assets/img/two.svg"
-            alt="two"
-          />
-          <img
-            class="main-page__amazing-tassel"
-            src="@/assets/img/tassel.svg"
-            alt="tassel"
-          />
-        </div>
-        <div class="main-page__amazing-hero main-page__amazing-hero_3">
-          <img
-            src="@/assets/img/heroes/bimi.svg"
-            alt="bimi hero"
-            class="main-page__amazing-hero-image"
-          />
-          <img
-            class="main-page__amazing-pencil"
-            src="@/assets/img/pencil.svg"
-            alt="pencil"
-          />
-          <img
-            class="main-page__amazing-drum"
-            src="@/assets/img/drum.svg"
-            alt="drum"
-          />
-        </div>
-        <div class="main-page__amazing-hero main-page__amazing-hero_4">
-          <img
-            src="@/assets/img/heroes/hair.svg"
-            alt="hair hero"
-            class="main-page__amazing-hero-image"
-          />
-          <img
-            class="main-page__amazing-apple"
-            src="@/assets/img/apple.svg"
-            alt="apple"
-          />
-          <img
-            class="main-page__amazing-ball"
-            src="@/assets/img/ball.svg"
-            alt="ball"
-          />
-        </div>
-        <div class="main-page__amazing-hero main-page__amazing-hero_5">
-          <img
-            src="@/assets/img/heroes/star.svg"
-            alt="star hero"
-            class="main-page__amazing-hero-image"
-          />
-          <img
-            class="main-page__amazing-panda"
-            src="@/assets/img/panda.svg"
-            alt="panda"
-          />
-          <img
-            class="main-page__amazing-cloud"
-            src="@/assets/img/cloud.svg"
-            alt="cloud"
-          />
-          <img
-            class="main-page__amazing-star"
-            src="@/assets/img/star.svg"
-            alt="star"
-          />
-        </div>
-      </div>
-    </section>
+    <AmazingSection />
   </div>
 </template>
 
@@ -600,6 +479,7 @@ import FeedbackCard from "@/components/FeedbackCard.vue";
 import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
 import TariffCard from "@/components/TariffCard.vue";
+import AmazingSection from '@/components/AmazingSection'
 
 export default {
   feedback: [
@@ -661,6 +541,7 @@ export default {
     Swiper,
     SwiperSlide,
     TariffCard,
+    AmazingSection
   },
   data() {
     return {
@@ -1252,6 +1133,7 @@ export default {
   }
   &__amazing-subtitle {
     margin-bottom: 40px;
+    color: $dark-blue;
   }
   &__amazing-carrot {
     position: absolute;
