@@ -127,10 +127,10 @@
 import VButton from '@/components/VButton.vue';
 
 export default {
-  components: {
-    VButton
-  }
-}
+	components: {
+		VButton
+	}
+};
 </script>
 
 <style lang="scss">

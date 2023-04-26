@@ -63,7 +63,7 @@ export default {
 	components: {
 		VButton,
 		Breadcrumbs,
-    AmazingSection
+		AmazingSection
 	},
 	data () {
 		return {

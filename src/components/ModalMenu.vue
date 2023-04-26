@@ -21,12 +21,12 @@
 
 <script>
 export default {
-  props: {
-    visible: {
-      type: Boolean,
-      default: false,
-    },
-  },
+	props: {
+		visible: {
+			type: Boolean,
+			default: false,
+		},
+	},
 };
 </script>
 
