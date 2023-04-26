@@ -71,7 +71,7 @@ export default {
     }
   }
   &_secondary {
-    padding: 15px 30px;
+    padding: 14px 30px;
     background: $dark-blue;
     color: $white;
     &:hover {
@@ -102,7 +102,7 @@ export default {
   }
   @media #{$sm} {
     &_secondary {
-      padding: 10px 20px;
+      padding: 9px 20px;
       font-weight: 400;
       font-size: 13px;
       line-height: 20px;
