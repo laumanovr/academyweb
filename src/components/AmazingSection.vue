@@ -1,120 +1,120 @@
 <template>
-  <section class="main-page__amazing">
+  <section class="amazing-section__amazing">
     <div class="container">
-      <div class="main-page__amazing-koala">
+      <div class="amazing-section__amazing-koala">
         <img
           src="@/assets/img/koala.svg"
           alt=""
-          class="main-page__amazing-koala-icon"
+          class="amazing-section__amazing-koala-icon"
         />
       </div>
-      <div class="main-page__amazing-title">
+      <div class="amazing-section__amazing-title">
         Start an <span>amazing</span> <br/>
         preschool adventure
       </div>
-      <div class="main-page__amazing-subtitle text-l">
+      <div class="amazing-section__amazing-subtitle text-l">
         with Bimi Boo and his friends
       </div>
-      <VButton class="main-page__amazing-buttom">Start free trial</VButton>
+      <VButton class="amazing-section__amazing-buttom">Start free trial</VButton>
     </div>
 
-    <div class="main-page__amazing-heroes">
-      <div class="main-page__amazing-hero main-page__amazing-hero_1">
+    <div class="amazing-section__amazing-heroes">
+      <div class="amazing-section__amazing-hero amazing-section__amazing-hero_1">
         <img
           src="@/assets/img/heroes/mustache.svg"
           alt="mustache hero"
-          class="main-page__amazing-hero-image"
+          class="amazing-section__amazing-hero-image"
         />
         <img
-          class="main-page__amazing-pyramid"
+          class="amazing-section__amazing-pyramid"
           src="@/assets/img/pyramid.svg"
           alt="pyramid"
         />
         <img
-          class="main-page__amazing-flower"
+          class="amazing-section__amazing-flower"
           src="@/assets/img/flower.svg"
           alt="flower"
         />
         <img
-          class="main-page__amazing-carrot"
+          class="amazing-section__amazing-carrot"
           src="@/assets/img/carrot.svg"
           alt="carrot"
         />
         <img
-          class="main-page__amazing-elephant"
+          class="amazing-section__amazing-elephant"
           src="@/assets/img/elephant.svg"
           alt="elephant"
         />
       </div>
-      <div class="main-page__amazing-hero main-page__amazing-hero_2">
+      <div class="amazing-section__amazing-hero amazing-section__amazing-hero_2">
         <img
           src="@/assets/img/heroes/choes.svg"
           alt="choes hero"
-          class="main-page__amazing-hero-image"
+          class="amazing-section__amazing-hero-image"
         />
         <img
-          class="main-page__amazing-two"
+          class="amazing-section__amazing-two"
           src="@/assets/img/two.svg"
           alt="two"
         />
         <img
-          class="main-page__amazing-tassel"
+          class="amazing-section__amazing-tassel"
           src="@/assets/img/tassel.svg"
           alt="tassel"
         />
       </div>
-      <div class="main-page__amazing-hero main-page__amazing-hero_3">
+      <div class="amazing-section__amazing-hero amazing-section__amazing-hero_3">
         <img
           src="@/assets/img/heroes/bimi.svg"
           alt="bimi hero"
-          class="main-page__amazing-hero-image"
+          class="amazing-section__amazing-hero-image"
         />
         <img
-          class="main-page__amazing-pencil"
+          class="amazing-section__amazing-pencil"
           src="@/assets/img/pencil.svg"
           alt="pencil"
         />
         <img
-          class="main-page__amazing-drum"
+          class="amazing-section__amazing-drum"
           src="@/assets/img/drum.svg"
           alt="drum"
         />
       </div>
-      <div class="main-page__amazing-hero main-page__amazing-hero_4">
+      <div class="amazing-section__amazing-hero amazing-section__amazing-hero_4">
         <img
           src="@/assets/img/heroes/hair.svg"
           alt="hair hero"
-          class="main-page__amazing-hero-image"
+          class="amazing-section__amazing-hero-image"
         />
         <img
-          class="main-page__amazing-apple"
+          class="amazing-section__amazing-apple"
           src="@/assets/img/apple.svg"
           alt="apple"
         />
         <img
-          class="main-page__amazing-ball"
+          class="amazing-section__amazing-ball"
           src="@/assets/img/ball.svg"
           alt="ball"
         />
       </div>
-      <div class="main-page__amazing-hero main-page__amazing-hero_5">
+      <div class="amazing-section__amazing-hero amazing-section__amazing-hero_5">
         <img
           src="@/assets/img/heroes/star.svg"
           alt="star hero"
-          class="main-page__amazing-hero-image"
+          class="amazing-section__amazing-hero-image"
         />
         <img
-          class="main-page__amazing-panda"
+          class="amazing-section__amazing-panda"
           src="@/assets/img/panda.svg"
           alt="panda"
         />
         <img
-          class="main-page__amazing-cloud"
+          class="amazing-section__amazing-cloud"
           src="@/assets/img/cloud.svg"
           alt="cloud"
         />
         <img
-          class="main-page__amazing-star"
+          class="amazing-section__amazing-star"
           src="@/assets/img/star.svg"
           alt="star"
         />
@@ -134,7 +134,7 @@ export default {
 </script>
 
 <style lang="scss">
-.main-page {
+.amazing-section {
   &__amazing {
     margin-bottom: -100px;
     padding: 58px 0 52px;
@@ -277,7 +277,7 @@ export default {
     &_1 {
       grid-area: 1 / 1 / 2 / 2;
 
-      .main-page__amazing-hero-image {
+      .amazing-section__amazing-hero-image {
         width: 183.53px;
         transform: translate(-70px, 50px) rotate(28deg);
       }
@@ -286,7 +286,7 @@ export default {
     &_2 {
       grid-area: 1 / 2 / 2 / 3;
 
-      .main-page__amazing-hero-image {
+      .amazing-section__amazing-hero-image {
         width: 169px;
         transform: translateY(104px);
       }
@@ -295,7 +295,7 @@ export default {
     &_3 {
       grid-area: 1 / 3 / 2 / 4;
 
-      .main-page__amazing-hero-image {
+      .amazing-section__amazing-hero-image {
         width: 157px;
         transform: translateY(80px);
       }
@@ -304,7 +304,7 @@ export default {
     &_4 {
       grid-area: 1 / 4 / 2 / 5;
 
-      .main-page__amazing-hero-image {
+      .amazing-section__amazing-hero-image {
         width: 148px;
         transform: translateY(69px);
       }
@@ -313,7 +313,7 @@ export default {
     &_5 {
       grid-area: 1 / 5 / 2 / 6;
 
-      .main-page__amazing-hero-image {
+      .amazing-section__amazing-hero-image {
         width: 232.3px;
         transform: translate(62px, 29px) rotate(330deg);
       }
@@ -484,28 +484,28 @@ export default {
     }
     &__amazing-hero {
       &_1 {
-        .main-page__amazing-hero-image {
+        .amazing-section__amazing-hero-image {
           width: 132.5px;
           transform: translate(-45px, 69px) rotate(28deg);
         }
       }
 
       &_2 {
-        .main-page__amazing-hero-image {
+        .amazing-section__amazing-hero-image {
           width: 124px;
           transform: translateY(111px);
         }
       }
 
       &_3 {
-        .main-page__amazing-hero-image {
+        .amazing-section__amazing-hero-image {
           width: 112px;
           transform: translateY(109px);
         }
       }
 
       &_4 {
-        .main-page__amazing-hero-image {
+        .amazing-section__amazing-hero-image {
           width: 103px;
           transform: translateY(89px);
         }
@@ -514,7 +514,7 @@ export default {
       &_5 {
         grid-area: 1 / 5 / 2 / 6;
 
-        .main-page__amazing-hero-image {
+        .amazing-section__amazing-hero-image {
           width: 160.43px;
           transform: translate(37px, 66px) rotate(330deg);
         }
@@ -741,7 +741,7 @@ export default {
       font-size: 60px;
     }
     &__amazing-hero {
-      .main-page__amazing-hero-image {
+      .amazing-section__amazing-hero-image {
         transform: translateY(80px);
       }
     }
