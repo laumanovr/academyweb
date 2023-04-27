@@ -468,128 +468,7 @@
         </div>
       </div>
     </section>
-    <section class="main-page__amazing">
-      <div class="container">
-        <div class="main-page__amazing-koala">
-          <img
-            src="@/assets/img/koala.svg"
-            alt=""
-            class="main-page__amazing-koala-icon"
-          />
-        </div>
-        <div class="main-page__amazing-title">
-          Start an <span>amazing</span> <br />
-          preschool adventure
-        </div>
-        <div class="main-page__amazing-subtitle text-l">
-          with Bimi Boo and his friends
-        </div>
-        <VButton class="main-page__amazing-buttom">Start free trial</VButton>
-      </div>
-
-      <div class="main-page__amazing-heroes">
-        <div class="main-page__amazing-hero main-page__amazing-hero_1">
-          <img
-            src="@/assets/img/heroes/mustache.svg"
-            alt="mustache hero"
-            class="main-page__amazing-hero-image"
-          />
-          <img
-            class="main-page__amazing-pyramid"
-            src="@/assets/img/pyramid.svg"
-            alt="pyramid"
-          />
-          <img
-            class="main-page__amazing-flower"
-            src="@/assets/img/flower.svg"
-            alt="flower"
-          />
-          <img
-            class="main-page__amazing-carrot"
-            src="@/assets/img/carrot.svg"
-            alt="carrot"
-          />
-          <img
-            class="main-page__amazing-elephant"
-            src="@/assets/img/elephant.svg"
-            alt="elephant"
-          />
-        </div>
-        <div class="main-page__amazing-hero main-page__amazing-hero_2">
-          <img
-            src="@/assets/img/heroes/choes.svg"
-            alt="choes hero"
-            class="main-page__amazing-hero-image"
-          />
-          <img
-            class="main-page__amazing-two"
-            src="@/assets/img/two.svg"
-            alt="two"
-          />
-          <img
-            class="main-page__amazing-tassel"
-            src="@/assets/img/tassel.svg"
-            alt="tassel"
-          />
-        </div>
-        <div class="main-page__amazing-hero main-page__amazing-hero_3">
-          <img
-            src="@/assets/img/heroes/bimi.svg"
-            alt="bimi hero"
-            class="main-page__amazing-hero-image"
-          />
-          <img
-            class="main-page__amazing-pencil"
-            src="@/assets/img/pencil.svg"
-            alt="pencil"
-          />
-          <img
-            class="main-page__amazing-drum"
-            src="@/assets/img/drum.svg"
-            alt="drum"
-          />
-        </div>
-        <div class="main-page__amazing-hero main-page__amazing-hero_4">
-          <img
-            src="@/assets/img/heroes/hair.svg"
-            alt="hair hero"
-            class="main-page__amazing-hero-image"
-          />
-          <img
-            class="main-page__amazing-apple"
-            src="@/assets/img/apple.svg"
-            alt="apple"
-          />
-          <img
-            class="main-page__amazing-ball"
-            src="@/assets/img/ball.svg"
-            alt="ball"
-          />
-        </div>
-        <div class="main-page__amazing-hero main-page__amazing-hero_5">
-          <img
-            src="@/assets/img/heroes/star.svg"
-            alt="star hero"
-            class="main-page__amazing-hero-image"
-          />
-          <img
-            class="main-page__amazing-panda"
-            src="@/assets/img/panda.svg"
-            alt="panda"
-          />
-          <img
-            class="main-page__amazing-cloud"
-            src="@/assets/img/cloud.svg"
-            alt="cloud"
-          />
-          <img
-            class="main-page__amazing-star"
-            src="@/assets/img/star.svg"
-            alt="star"
-          />
-        </div>
-      </div>
-    </section>
+    <AmazingSection />
   </div>
 </template>
 
@@ -597,85 +476,87 @@
 import VButton from "@/components/VButton.vue";
 import VToggle from "@/components/VToggle.vue";
 import FeedbackCard from "@/components/FeedbackCard.vue";
-import { Swiper, SwiperSlide } from "vue-awesome-swiper";
+import {Swiper, SwiperSlide} from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
 import TariffCard from "@/components/TariffCard.vue";
+import AmazingSection from '@/components/AmazingSection';
 
 export default {
-  feedback: [
-    {
-      id: 1,
-      name: "Birgitte Albek Henriksen",
-      character: "Speech Pathologist",
-      raiting: 5,
-      text: "As a speech pathologist, I’ve used Bimi Boo Coloring app with children of different ages, and it’s popular due to its numerous options for drawings and colors, providing hours of entertainment and learning. The app’s saving progress and redo features are great, although some children may be confused that they can’t paint outside the lines",
-      time: 6,
-      social: "Facebook",
-    },
-    {
-      id: 2,
-      name: "Sarah D.",
-      character: "Speech Pathologist",
-      raiting: 4,
-      text: "As a parent, I know how important it is to find high-quality toys that provide a fun and educational experience for kids. That’s why I’m excited to share my love for Bimi Boo toys! These wooden toys are visually appealing and offer a unique learning experience that encourages exploration, problem-solving, and creativity.",
-      time: 2,
-      social: "Instagram",
-    },
-    {
-      id: 3,
-      name: "Speech Pathologist",
-      character: "Speech Pathologist",
-      raiting: 5,
-      text: "Bimi Boo series is a wonderful kids’ show, my nephews and nieces love it. I don’t have to be looking at the TV to know they are watching it when I hear them singing along with the characters. I love how educational it is, but fun for the kids too. The background music is entertaining and fun, and there are a lot of positive messages in the songs. ",
-      time: 6,
-      social: "Facebook",
-    },
-  ],
-  tariffs: [
-    {
-      id: 1,
-      title: "Monthly plan",
-      items: ["Unlimited access", "Cancel any time"],
-      price: {
-        main: "6.99",
-        old: "9.99",
-        time: "month",
-      },
-    },
-    {
-      id: 2,
-      title: "Annual plan",
-      items: ["Big savings", "Unlimited access", "Cancel any time"],
-      price: {
-        main: "49.99",
-        old: "69.99",
-        time: "year",
-      },
-      best: true,
-    },
-  ],
-  components: {
-    VButton,
-    VToggle,
-    FeedbackCard,
-    Swiper,
-    SwiperSlide,
-    TariffCard,
-  },
-  data() {
-    return {
-      swiperOption: {
-        slidesPerView: "auto",
-        spaceBetween: 20,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-          bulletActiveClass: "main-page__swiper-pagination-item_active",
-          enabled: true,
-        },
-      },
-    };
-  },
+	feedback: [
+		{
+			id: 1,
+			name: "Birgitte Albek Henriksen",
+			character: "Speech Pathologist",
+			raiting: 5,
+			text: "As a speech pathologist, I’ve used Bimi Boo Coloring app with children of different ages, and it’s popular due to its numerous options for drawings and colors, providing hours of entertainment and learning. The app’s saving progress and redo features are great, although some children may be confused that they can’t paint outside the lines",
+			time: 6,
+			social: "Facebook",
+		},
+		{
+			id: 2,
+			name: "Sarah D.",
+			character: "Speech Pathologist",
+			raiting: 4,
+			text: "As a parent, I know how important it is to find high-quality toys that provide a fun and educational experience for kids. That’s why I’m excited to share my love for Bimi Boo toys! These wooden toys are visually appealing and offer a unique learning experience that encourages exploration, problem-solving, and creativity.",
+			time: 2,
+			social: "Instagram",
+		},
+		{
+			id: 3,
+			name: "Speech Pathologist",
+			character: "Speech Pathologist",
+			raiting: 5,
+			text: "Bimi Boo series is a wonderful kids’ show, my nephews and nieces love it. I don’t have to be looking at the TV to know they are watching it when I hear them singing along with the characters. I love how educational it is, but fun for the kids too. The background music is entertaining and fun, and there are a lot of positive messages in the songs. ",
+			time: 6,
+			social: "Facebook",
+		},
+	],
+	tariffs: [
+		{
+			id: 1,
+			title: "Monthly plan",
+			items: ["Unlimited access", "Cancel any time"],
+			price: {
+				main: "6.99",
+				old: "9.99",
+				time: "month",
+			},
+		},
+		{
+			id: 2,
+			title: "Annual plan",
+			items: ["Big savings", "Unlimited access", "Cancel any time"],
+			price: {
+				main: "49.99",
+				old: "69.99",
+				time: "year",
+			},
+			best: true,
+		},
+	],
+	components: {
+		VButton,
+		VToggle,
+		FeedbackCard,
+		Swiper,
+		SwiperSlide,
+		TariffCard,
+		AmazingSection
+	},
+	data() {
+		return {
+			swiperOption: {
+				slidesPerView: "auto",
+				spaceBetween: 20,
+				pagination: {
+					el: ".swiper-pagination",
+					clickable: true,
+					bulletActiveClass: "main-page__swiper-pagination-item_active",
+					enabled: true,
+				},
+			},
+		};
+	},
 };
 </script>
 
@@ -1252,6 +1133,7 @@ export default {
   }
   &__amazing-subtitle {
     margin-bottom: 40px;
+    color: $dark-blue;
   }
   &__amazing-carrot {
     position: absolute;

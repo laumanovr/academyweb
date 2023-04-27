@@ -22,36 +22,36 @@
 import ProductRating from "@/components/ProductRating.vue";
 
 export default {
-  name: "FeedbackCard",
-  components: {
-    ProductRating,
-  },
-  props: {
-    name: {
-      type: String,
-      required: true,
-    },
-    character: {
-      type: String,
-      required: true,
-    },
-    raiting: {
-      type: Number,
-      default: 0,
-    },
-    text: {
-      type: String,
-      required: true,
-    },
-    social: {
-      type: String,
-      required: true,
-    },
-    time: {
-      type: [String, Number],
-      required: true,
-    },
-  },
+	name: "FeedbackCard",
+	components: {
+		ProductRating,
+	},
+	props: {
+		name: {
+			type: String,
+			required: true,
+		},
+		character: {
+			type: String,
+			required: true,
+		},
+		raiting: {
+			type: Number,
+			default: 0,
+		},
+		text: {
+			type: String,
+			required: true,
+		},
+		social: {
+			type: String,
+			required: true,
+		},
+		time: {
+			type: [String, Number],
+			required: true,
+		},
+	},
 };
 </script>
 

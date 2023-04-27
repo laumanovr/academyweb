@@ -1,6 +1,5 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Main from '../views/main/index.vue';
 
 Vue.use(VueRouter);
 
@@ -8,8 +7,13 @@ const routes = [
 	{
 		path: "/",
 		name: "main",
-		component: Main,
+		component: () => import('@/views/main/index.vue'),
 	},
+	{
+		path: "/about",
+		name: "about",
+		component: () => import('@/views/about/index.vue')
+	}
 ];
 
 const router = new VueRouter({
