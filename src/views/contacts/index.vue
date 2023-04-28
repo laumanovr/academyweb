@@ -42,16 +42,19 @@
         </form>
       </div>
     </div>
+    <JoinClub />
   </div>
 </template>
 
 <script>
 import Breadcrumbs from '@/components/Breadcrumbs.vue';
 import VButton from '@/components/VButton.vue';
+import JoinClub from '@/components/JoinClub';
 export default {
 	components: {
 		Breadcrumbs,
-    VButton
+    VButton,
+    JoinClub
 	},
 	data() {
 		return {
@@ -138,6 +141,7 @@ export default {
     background: #fff;
     position: relative;
     top: -80px;
+    margin-bottom: 10px;
     @media #{$lg} {
       padding: 130px 40px 0;
     }
