@@ -53,8 +53,8 @@ import JoinClub from '@/components/JoinClub';
 export default {
 	components: {
 		Breadcrumbs,
-    VButton,
-    JoinClub
+		VButton,
+		JoinClub
 	},
 	data() {
 		return {
