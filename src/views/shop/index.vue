@@ -24,7 +24,7 @@ export default {
 <style lang="scss">
 .shop-page {
   padding-top: 100px;
-  background: #f8f8f9;
+  background: $ghost-white;
   &__choose-plan {
     margin-bottom: 130px;
   }
