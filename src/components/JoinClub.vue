@@ -1,5 +1,5 @@
 <template>
-  <div class="join-club__container">
+  <div class="join-club">
     <h2 class="join-club__title h2">Join the <span>Club!</span></h2>
     <div class="join-club__form-block">
       <img src="@/assets/img/union-heart.svg" class="join-club__image" />
@@ -26,27 +26,23 @@ export default {
 
 <style lang="scss">
 .join-club {
-  &__container {
-    height: 490px;
-    border-radius: 80px 80px 0 0;
-    padding: 80px 120px 0;
-    background: $champagne;
-    display: flex;
-    align-items: flex-start;
-    color: $dark-blue;
-    margin-bottom: -100px;
-    @media #{$lg} {
-      padding: 80px 40px 0;
-      justify-content: space-between;
-      height: 550px;
-    }
-    @media #{$sm} {
-      padding: 80px 23px 180px;
-      flex-wrap: wrap;
-      justify-content: center;
-      height: auto;
-    }
+  border-radius: 80px 80px 0 0;
+  padding: 80px 120px 180px;
+  background: $champagne;
+  display: flex;
+  align-items: flex-start;
+  color: $dark-blue;
+  margin-bottom: -100px;
+  @media #{$lg} {
+    padding: 80px 40px 200px;
+    justify-content: space-between;
   }
+  @media #{$sm} {
+    padding: 80px 23px 180px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   &__title {
     white-space: nowrap;
     margin-right: 160px;
