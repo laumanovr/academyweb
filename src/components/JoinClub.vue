@@ -32,7 +32,6 @@ export default {
   display: flex;
   align-items: flex-start;
   color: $dark-blue;
-  margin-bottom: -100px;
   @media #{$lg} {
     padding: 80px 40px 200px;
     justify-content: space-between;

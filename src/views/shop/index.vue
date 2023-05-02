@@ -3,7 +3,9 @@
     <section class="shop-page__choose-plan">
       <ChoosePlan />
     </section>
-    <JoinClub />
+    <section class="shop-page__join-club">
+      <JoinClub />
+    </section>
   </div>
 </template>
 
@@ -26,8 +28,13 @@ export default {
   &__choose-plan {
     margin-bottom: 130px;
   }
+  &__join-club {
+    margin-bottom: -100px;
+  }
   @media #{$sm} {
-    margin-bottom: 100px;
+    &__choose-plan {
+      margin-bottom: 100px;
+    }
   }
   @media #{$xs} {
     padding-top: 80px;
