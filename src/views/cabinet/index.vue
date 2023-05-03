@@ -1,5 +1,5 @@
 <template>
-  <div class="cabinet">
+  <div class="cabinet" :class="{'has-sub': hasSub}">
     <div class="cabinet__container space-container">
       <Breadcrumbs :items="links"/>
       <h3 class="cabinet__title h3">My account</h3>
@@ -17,8 +17,9 @@
             </div>
             <div class="cabinet__label-block">
               <div class="cabinet__label">Mobile</div>
-              <!--<div class="cabinet__label-value">+1 23 45 77</div>-->
-              <div class="cabinet__label-link"><span>Add mobile</span><img src="@/assets/img/icons/add-circle-blue.svg">
+              <div class="cabinet__label-link">
+                <span>Add mobile</span>
+                <img src="@/assets/img/icons/add-circle-blue.svg">
               </div>
             </div>
             <div class="cabinet__label-block">
@@ -29,15 +30,39 @@
         </div>
         <div class="cabinet__profile-wrapper">
           <h4 class="cabinet__acc-info">Subscription Details</h4>
-          <div class="cabinet__no-sub">
+          <div class="cabinet__profile-info-block" v-if="hasSub">
+            <div class="cabinet__label-block">
+              <div class="cabinet__label">Plan</div>
+              <div class="cabinet__label-value">Annual plan</div>
+            </div>
+            <div class="cabinet__label-block">
+              <div class="cabinet__label">Price</div>
+              <div class="cabinet__label-value">59.99 $</div>
+            </div>
+            <div class="cabinet__label-block">
+              <div class="cabinet__label">Payment date</div>
+              <div class="cabinet__label-value">October 24</div>
+            </div>
+            <div class="cabinet__label-block">
+              <VButton class="cabinet__details-btn" theme="tertiary">Details</VButton>
+            </div>
+          </div>
+          <div class="cabinet__no-sub" v-else>
             <div class="cabinet__no-sub-text">No subscription found</div>
             <VButton class="cabinet__no-sub-btn" theme="tertiary">Start Free Trial</VButton>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="cabinet__plan">
+    <div class="cabinet__apps" v-if="hasSub">
+      <h3 class="cabinet__apps-title h3"><span>Academy</span> in the AppStore Google Play and Amazon appstore</h3>
+      <div class="cabinet__apps-links">
+        <a href="#" class="cabinet__apps-icon"><img src="@/assets/img/store/app-store.svg"></a>
+        <a href="#" class="cabinet__apps-icon"><img src="@/assets/img/store/google-play.svg"></a>
+        <a href="#" class="cabinet__apps-icon"><img src="@/assets/img/store/amazon.svg"></a>
+      </div>
+    </div>
+    <div class="cabinet__plan" v-else>
       <div class="cabinet__plan-image-wrapper">
         <img src="@/assets/img/heroes/bimi.svg" class="cabinet__plan-image-hero">
         <img src="@/assets/img/earth.svg" class="cabinet__plan-image-earth">
@@ -50,7 +75,6 @@
         <img src="@/assets/img/union-heart.svg" class="cabinet__plan-heart-icon">
       </div>
     </div>
-
   </div>
 </template>
 
@@ -65,6 +89,7 @@ export default {
 	},
 	data () {
 		return {
+			hasSub: true,
 			links: [
 				{
 					name: 'Home',
@@ -84,6 +109,17 @@ export default {
 .cabinet {
   background: $ghost-white;
   margin-bottom: -100px;
+
+  &.has-sub {
+    padding-bottom: 240px;
+    @media #{$sm} {
+      padding-bottom: 200px;
+    }
+    @media #{$xs} {
+      padding-bottom: 180px;
+    }
+  }
+
   @media #{$sm} {
     padding-top: 20px;
   }
@@ -186,6 +222,19 @@ export default {
 
     img {
       margin-left: 10px;
+    }
+  }
+
+  &__details-btn {
+    width: 115px;
+    height: 35px;
+    font-weight: 400;
+    font-size: 15px;
+    @media #{$lg} {
+      width: 128px;
+    }
+    @media #{$xs} {
+      width: 100%;
     }
   }
 
@@ -322,6 +371,66 @@ export default {
       right: auto;
       left: 50%;
       transform: translateX(-50%);
+    }
+  }
+
+  &__apps {
+    border-radius: 80px;
+    border: 1px solid $gray-white;
+    padding: 60px;
+    width: 793px;
+    height: 320px;
+    margin: 40px auto 0;
+    display: flex;
+    justify-content: space-between;
+    color: $dark-blue;
+    background: $light-green url("~@/assets/img/activities.svg") no-repeat -45% 153% / 70%;
+    @media #{$sm} {
+      width: calc(100% - 40px);
+      background: $light-green url("~@/assets/img/activities.svg") no-repeat -43% 115% / 70%;
+    }
+    @media #{$xs} {
+      display: block;
+      margin: 30px auto 0;
+      border-radius: 50px;
+      height: auto;
+      padding: 60px 40px;
+      background: $light-green url("~@/assets/img/activities.svg") no-repeat -10px 105% / 100%;
+    }
+  }
+
+  &__apps-title {
+    max-width: 325px;
+    @media #{$sm} {
+      font-size: 20px;
+      line-height: 25px;
+    }
+    @media #{$xs} {
+      text-align: center;
+      max-width: 210px;
+      margin: 0 auto 50px;
+    }
+
+    span {
+      color: $lime-green;
+    }
+  }
+
+  &__apps-links {
+    text-align: right;
+    @media #{$xs} {
+      text-align: center;
+    }
+  }
+
+  &__apps-icon {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+      @media #{$xs} {
+        margin-bottom: 18px;
+      }
     }
   }
 }
