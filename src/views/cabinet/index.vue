@@ -44,7 +44,7 @@
               <div class="cabinet__label-value">October 24</div>
             </div>
             <div class="cabinet__label-block">
-              <VButton class="cabinet__details-btn" theme="tertiary">Details</VButton>
+              <VButton class="cabinet__details-btn" theme="tertiary" @click="openPaymentModal">Details</VButton>
             </div>
           </div>
           <div class="cabinet__no-sub" v-else>
@@ -75,17 +75,20 @@
         <img src="@/assets/img/union-heart.svg" class="cabinet__plan-heart-icon">
       </div>
     </div>
+    <PaymentModal ref="paymentDetail"/>
   </div>
 </template>
 
 <script>
 import VButton from '@/components/VButton';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import PaymentModal from '@/components/PaymentModal';
 
 export default {
 	components: {
 		VButton,
-		Breadcrumbs
+		Breadcrumbs,
+		PaymentModal
 	},
 	data () {
 		return {
@@ -101,6 +104,11 @@ export default {
 				}
 			]
 		};
+	},
+	methods: {
+		openPaymentModal() {
+			this.$refs.paymentDetail.togglePaymentModal();
+		}
 	}
 };
 </script>
@@ -384,10 +392,12 @@ export default {
     display: flex;
     justify-content: space-between;
     color: $dark-blue;
-    background: $light-green url("~@/assets/img/activities.svg") no-repeat -45% 153% / 70%;
+    background: $light-green url("~@/assets/img/activities.svg") no-repeat;
+    background-position: -45% 153%;
+    background-size: 70%;
     @media #{$sm} {
       width: calc(100% - 40px);
-      background: $light-green url("~@/assets/img/activities.svg") no-repeat -43% 115% / 70%;
+      background-position: -43% 115%;
     }
     @media #{$xs} {
       display: block;
@@ -395,7 +405,8 @@ export default {
       border-radius: 50px;
       height: auto;
       padding: 60px 40px;
-      background: $light-green url("~@/assets/img/activities.svg") no-repeat -10px 105% / 100%;
+      background-position: -10px 105%;
+      background-size: 100%;
     }
   }
 
