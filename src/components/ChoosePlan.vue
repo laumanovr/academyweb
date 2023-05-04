@@ -21,32 +21,32 @@
 import TariffCard from "@/components/TariffCard.vue";
 
 export default {
-  tariffs: [
-    {
-      id: 1,
-      title: "Monthly plan",
-      items: ["Unlimited access", "Cancel any time"],
-      price: {
-        main: "6.99",
-        old: "9.99",
-        time: "month",
-      },
-    },
-    {
-      id: 2,
-      title: "Annual plan",
-      items: ["Big savings", "Unlimited access", "Cancel any time"],
-      price: {
-        main: "49.99",
-        old: "69.99",
-        time: "year",
-      },
-      best: true,
-    },
-  ],
-  components: {
-    TariffCard,
-  },
+	tariffs: [
+		{
+			id: 1,
+			title: "Monthly plan",
+			items: ["Unlimited access", "Cancel any time"],
+			price: {
+				main: "6.99",
+				old: "9.99",
+				time: "month",
+			},
+		},
+		{
+			id: 2,
+			title: "Annual plan",
+			items: ["Big savings", "Unlimited access", "Cancel any time"],
+			price: {
+				main: "49.99",
+				old: "69.99",
+				time: "year",
+			},
+			best: true,
+		},
+	],
+	components: {
+		TariffCard,
+	},
 };
 </script>
 

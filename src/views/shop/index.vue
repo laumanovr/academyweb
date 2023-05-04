@@ -14,10 +14,10 @@ import JoinClub from "@/components/JoinClub";
 import ChoosePlan from "@/components/ChoosePlan.vue";
 
 export default {
-  components: {
-    JoinClub,
-    ChoosePlan,
-  },
+	components: {
+		JoinClub,
+		ChoosePlan,
+	},
 };
 </script>
 
