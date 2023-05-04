@@ -2,12 +2,13 @@
   <div class="join-club">
     <h2 class="join-club__title h2">Join the <span>Club!</span></h2>
     <div class="join-club__form-block">
-      <img src="@/assets/img/union-heart.svg" class="join-club__image">
+      <img src="@/assets/img/union-heart.svg" class="join-club__image" />
       <div class="join-club__text">
-        We already have 7000 subscribers, don't miss the best offers, fresh episodes and new products from Bimi Boo.
+        We already have 7000 subscribers, don't miss the best offers, fresh
+        episodes and new products from Bimi Boo.
       </div>
       <div class="join-club__input-block">
-        <input type="text" class="join-club__input" placeholder="Your email">
+        <input type="text" class="join-club__input" placeholder="Your email" />
         <VButton class="join-club__btn">Join now!</VButton>
       </div>
     </div>
@@ -15,32 +16,31 @@
 </template>
 
 <script>
-import VButton from '@/components/VButton';
+import VButton from "@/components/VButton";
 export default {
-	components: {
-		VButton
-	}
+  components: {
+    VButton,
+  },
 };
 </script>
 
 <style lang="scss">
 .join-club {
-    border-radius: 80px 80px 0 0;
-    padding: 80px 120px 180px;
-    background: $champagne;
-    display: flex;
-    align-items: flex-start;
-    color: $dark-blue;
-    margin-bottom: -100px;
-    @media #{$lg} {
-      padding: 80px 40px 200px;
-      justify-content: space-between;
-    }
-    @media #{$sm} {
-      padding: 80px 23px 180px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+  border-radius: 80px 80px 0 0;
+  padding: 80px 120px 180px;
+  background: $champagne;
+  display: flex;
+  align-items: flex-start;
+  color: $dark-blue;
+  @media #{$lg} {
+    padding: 80px 40px 200px;
+    justify-content: space-between;
+  }
+  @media #{$sm} {
+    padding: 80px 23px 180px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
   &__title {
     white-space: nowrap;
