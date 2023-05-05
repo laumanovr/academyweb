@@ -60,7 +60,9 @@ export default {
     };
   },
   methods: {
-    onSumbit() {},
+    onSumbit() {
+      this.$store.dispatch("signUp", this.field);
+    },
   },
 };
 </script>
