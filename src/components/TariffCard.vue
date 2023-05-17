@@ -27,28 +27,28 @@
 import VButton from "@/components/VButton.vue";
 
 export default {
-  name: "FeedbackCard",
-  components: {
-    VButton,
-  },
-  props: {
-    title: {
-      type: String,
-      required: true,
-    },
-    items: {
-      type: Array,
-      default: () => [],
-    },
-    price: {
-      type: Object,
-      default: () => ({}),
-    },
-    best: {
-      type: Boolean,
-      default: false,
-    },
-  },
+	name: "FeedbackCard",
+	components: {
+		VButton,
+	},
+	props: {
+		title: {
+			type: String,
+			required: true,
+		},
+		items: {
+			type: Array,
+			default: () => [],
+		},
+		price: {
+			type: Object,
+			default: () => ({}),
+		},
+		best: {
+			type: Boolean,
+			default: false,
+		},
+	},
 };
 </script>
 

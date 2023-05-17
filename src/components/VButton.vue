@@ -7,36 +7,36 @@
 
 <script>
 export default {
-  name: "VButton",
-  props: {
-    theme: {
-      default: "main",
-      type: String,
-      validator: function (value) {
-        return (
-          ["main", "secondary", "tertiary", "outline"].indexOf(value) !== -1
-        );
-      },
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    fluid: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  computed: {
-    getClasses() {
-      return [`button_${this.theme}`, "button", { button_fluid: this.fluid }];
-    },
-  },
-  methods: {
-    onButtonClick(e) {
-      this.$emit("click", e);
-    },
-  },
+	name: "VButton",
+	props: {
+		theme: {
+			default: "main",
+			type: String,
+			validator: function (value) {
+				return (
+					["main", "secondary", "tertiary", "outline"].indexOf(value) !== -1
+				);
+			},
+		},
+		disabled: {
+			type: Boolean,
+			default: false,
+		},
+		fluid: {
+			type: Boolean,
+			default: false,
+		},
+	},
+	computed: {
+		getClasses() {
+			return [`button_${this.theme}`, "button", {button_fluid: this.fluid}];
+		},
+	},
+	methods: {
+		onButtonClick(e) {
+			this.$emit("click", e);
+		},
+	},
 };
 </script>
 

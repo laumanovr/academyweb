@@ -1,58 +1,58 @@
 <template>
   <Default>
-    <div class="main-page">
-      <section class="main-page__header main-page__seaction">
-        <div class="container">
-          <img
-            src="@/assets/img/star.svg"
-            alt="star"
-            class="main-page__header-star-mobile"
-          />
-          <img
-            src="@/assets/img/books.svg"
-            alt="books"
-            class="main-page__header-overtitle"
-          />
-          <h1 class="main-page__header-title h1">
-            Fun educational program <span>for your toddlers</span>
-          </h1>
-          <div class="main-page__header-items">
-            <div class="main-page__header-item">
-              <div class="main-page__header-item-title numbers-m">100%</div>
-              <div class="main-page__header-item-subtitle">
-                safe content without ads
-              </div>
-            </div>
-            <div class="main-page__header-item">
-              <div class="main-page__header-item-title numbers-m">1 700</div>
-              <div class="main-page__header-item-subtitle">
-                games, video, songs, and books
-              </div>
-            </div>
-            <div class="main-page__header-item">
-              <div class="main-page__header-item-title numbers-s">
-                Flexible learning
-              </div>
-              <div class="main-page__header-item-subtitle">
-                path and progress tracking
-              </div>
+  <div class="main-page">
+    <section class="main-page__header main-page__seaction">
+      <div class="container">
+        <img
+          src="@/assets/img/star.svg"
+          alt="star"
+          class="main-page__header-star-mobile"
+        />
+        <img
+          src="@/assets/img/books.svg"
+          alt="books"
+          class="main-page__header-overtitle"
+        />
+        <h1 class="main-page__header-title h1">
+          Fun educational program <span>for your toddlers</span>
+        </h1>
+        <div class="main-page__header-items">
+          <div class="main-page__header-item">
+            <div class="main-page__header-item-title numbers-m">100%</div>
+            <div class="main-page__header-item-subtitle">
+              safe content without ads
             </div>
           </div>
-          <img
-            class="main-page__header-two"
-            src="@/assets/img/two.svg"
-            alt="two"
-          />
-          <img
-            class="main-page__header-pyramid"
-            src="@/assets/img/pyramid.svg"
-            alt="pyramid"
-          />
-          <img
-            class="main-page__header-carrot"
-            src="@/assets/img/carrot.svg"
-            alt="carrot"
-          />
+          <div class="main-page__header-item">
+            <div class="main-page__header-item-title numbers-m">1 700</div>
+            <div class="main-page__header-item-subtitle">
+              games, video, songs, and books
+            </div>
+          </div>
+          <div class="main-page__header-item">
+            <div class="main-page__header-item-title numbers-s">
+              Flexible learning
+            </div>
+            <div class="main-page__header-item-subtitle">
+              path and progress tracking
+            </div>
+          </div>
+        </div>
+        <img
+          class="main-page__header-two"
+          src="@/assets/img/two.svg"
+          alt="two"
+        />
+        <img
+          class="main-page__header-pyramid"
+          src="@/assets/img/pyramid.svg"
+          alt="pyramid"
+        />
+        <img
+          class="main-page__header-carrot"
+          src="@/assets/img/carrot.svg"
+          alt="carrot"
+        />
 
           <VButton class="main-page__header-button">Start free trial</VButton>
           <div class="main-page__header-heroes-wrapper">
@@ -79,536 +79,383 @@
                 />
               </div>
 
-              <div class="main-page__header-hero main-page__header-hero_4">
-                <img
-                  src="@/assets/img/heroes/mustache.svg"
-                  alt="mustache hero"
-                  class="main-page__header-hero-image"
-                />
-              </div>
-              <div class="main-page__header-hero main-page__header-hero_5">
-                <img
-                  src="@/assets/img/heroes/star.svg"
-                  alt="star hero"
-                  class="main-page__header-hero-image"
-                />
-              </div>
+            <div class="main-page__header-hero main-page__header-hero_4">
+              <img
+                src="@/assets/img/heroes/mustache.svg"
+                alt="mustache hero"
+                class="main-page__header-hero-image"
+              />
+            </div>
+            <div class="main-page__header-hero main-page__header-hero_5">
+              <img
+                src="@/assets/img/heroes/star.svg"
+                alt="star hero"
+                class="main-page__header-hero-image"
+              />
             </div>
           </div>
-        </div>
-        <div class="main-page__header-star main-page__header-star_left">
-          <img
-            class="main-page__header-star-image"
-            src="@/assets/img/star.png"
-            alt="star"
-          />
-        </div>
-        <div class="main-page__header-star main-page__header-star_right">
-          <img
-            class="main-page__header-star-image"
-            src="@/assets/img/star.png"
-            alt="star"
-          />
-        </div>
-      </section>
-      <section class="main-page__learning main-page__seaction">
-        <div class="container">
-          <h2 class="main-page__learning-title h2">Learning path</h2>
-          <div class="main-page__learning-steps">
-            <div class="main-page__learning-step">
-              <img src="@/assets/img/kid-1.svg" />
-              <div class="main-page__learning-info">
-                <h3 class="main-page__learning-info-title h3">Preschool</h3>
-                <div class="main-page__learning-info-text">Ages 3+</div>
-                <div class="main-page__learning-info-sm-text">
-                  <span> Level 1:</span>
-                  410 Learning activities
-                </div>
-                <div class="main-page__learning-info-sm-text">
-                  <span> Level 2:</span>
-                  425 Learning activities
-                </div>
-              </div>
-            </div>
-            <div class="main-page__learning-step">
-              <img src="@/assets/img/kid-2.svg" />
-              <div class="main-page__learning-info">
-                <h3 class="main-page__learning-info-title h3">Pre-K</h3>
-                <div class="main-page__learning-info-text">Ages 4+</div>
-                <div class="main-page__learning-info-sm-text">
-                  <span> Level 3:</span>
-                  452 Learning activities
-                </div>
-                <div class="main-page__learning-info-sm-text">
-                  <span> Level 4:</span>
-                  535 Learning activities
-                </div>
-              </div>
-            </div>
-            <div class="main-page__learning-step">
-              <img src="@/assets/img/kid-3.svg" />
-              <div class="main-page__learning-info">
-                <h3 class="main-page__learning-info-title h3">Kindergarden</h3>
-                <div class="main-page__learning-info-text">Ages 5+</div>
-                <div class="main-page__learning-info-sm-text">
-                  <span> Level 5:</span>
-                  655 Learning activities
-                </div>
-                <div class="main-page__learning-info-sm-text">
-                  <span> Level 6:</span>
-                  631 Learning activities
-                </div>
-              </div>
-            </div>
-          </div>
-          <VButton class="main-page__learning-btn-start"
-            >Start free trial</VButton
-          >
-        </div>
-      </section>
-      <div class="main-page__love-us">
-        <div class="container">
-          <h2 class="main-page__love-us-title numbers-l">
-            Parents <span>love us</span>
-          </h2>
-          <div class="main-page__love-us-image-wrap">
-            <img
-              src="@/assets/img/awards.png"
-              alt="awards"
-              class="main-page__love-us-image"
-            />
-          </div>
-          <div class="main-page__love-us-subtitle text-l">
-            Parents from all over the world choose our preschool app for kids
-          </div>
-          <p class="main-page__love-us-paragraph">
-            Our application received #1 place a gold medal in the nomination of
-            children's games.
-          </p>
         </div>
       </div>
-      <section class="main-page__with-academy main-page__seaction">
-        <div class="container">
-          <h2 class="main-page__with-academy-title h2">
-            With Bimi Boo Academy <span>your child will learn</span>
-          </h2>
-          <div class="main-page__with-academy-items">
-            <div class="main-page__with-academy-item">
-              <div class="main-page__with-academy-image-wrap">
-                <img
-                  src="@/assets/img/reading.jpg"
-                  alt="Reading"
-                  class="main-page__with-academy-image"
-                />
+      <div class="main-page__header-star main-page__header-star_left">
+        <img
+          class="main-page__header-star-image"
+          src="@/assets/img/star.png"
+          alt="star"
+        />
+      </div>
+      <div class="main-page__header-star main-page__header-star_right">
+        <img
+          class="main-page__header-star-image"
+          src="@/assets/img/star.png"
+          alt="star"
+        />
+      </div>
+    </section>
+    <section class="main-page__learning main-page__seaction">
+      <div class="container">
+        <h2 class="main-page__learning-title h2">Learning path</h2>
+        <div class="main-page__learning-steps">
+          <div class="main-page__learning-step">
+            <img src="@/assets/img/kid-1.svg" />
+            <div class="main-page__learning-info">
+              <h3 class="main-page__learning-info-title h3">Preschool</h3>
+              <div class="main-page__learning-info-text">Ages 3+</div>
+              <div class="main-page__learning-info-sm-text">
+                <span> Level 1:</span>
+                410 Learning activities
               </div>
-              <h3 class="main-page__with-academy-item-title h3">Reading</h3>
-            </div>
-            <div class="main-page__with-academy-item">
-              <div class="main-page__with-academy-image-wrap">
-                <img
-                  src="@/assets/img/math.jpg"
-                  alt="Basic Math"
-                  class="main-page__with-academy-image"
-                />
+              <div class="main-page__learning-info-sm-text">
+                <span> Level 2:</span>
+                425 Learning activities
               </div>
-              <h3 class="main-page__with-academy-item-title h3">Basic Math</h3>
-            </div>
-            <div class="main-page__with-academy-item">
-              <div class="main-page__with-academy-image-wrap">
-                <img
-                  src="@/assets/img/colors.jpg"
-                  alt="Shapes & colors"
-                  class="main-page__with-academy-image"
-                />
-              </div>
-              <h3 class="main-page__with-academy-item-title h3">
-                Shapes & colors
-              </h3>
-            </div>
-            <div class="main-page__with-academy-item">
-              <div class="main-page__with-academy-image-wrap">
-                <img
-                  src="@/assets/img/creativity.jpg"
-                  alt="Creativity"
-                  class="main-page__with-academy-image"
-                />
-              </div>
-              <h3 class="main-page__with-academy-item-title h3">Creativity</h3>
-            </div>
-            <div class="main-page__with-academy-item">
-              <div class="main-page__with-academy-image-wrap">
-                <img
-                  src="@/assets/img/social.jpg"
-                  alt="Social skills"
-                  class="main-page__with-academy-image"
-                />
-              </div>
-              <h3 class="main-page__with-academy-item-title h3">
-                Social skills
-              </h3>
             </div>
           </div>
-          <VButton class="main-page__with-academy-buttom"
-            >Start free trial</VButton
-          >
-        </div>
-      </section>
-      <section class="main-page__feedback main-page__seaction">
-        <div class="container">
-          <h2 class="main-page__feedback-title h2">
-            What <span>happy parents</span> are saying about us
-          </h2>
-          <swiper
-            class="swiper main-page__feedback-items"
-            :options="swiperOption"
-            slides-per-view="auto"
-          >
-            <swiper-slide v-for="item in $options.feedback" :key="item.id"
-              ><FeedbackCard
-                class="main-page__feedback-item"
-                :name="item.name"
-                :character="item.character"
-                :raiting="item.raiting"
-                :text="item.text"
-                :time="item.time"
-                :social="item.social"
-            /></swiper-slide>
-            <div
-              class="main-page__swiper-pagination swiper-pagination"
-              slot="pagination"
-            ></div>
-          </swiper>
-        </div>
-      </section>
-      <section class="main-page__why-academy main-page__seaction">
-        <div class="container">
-          <h2 class="main-page__why-academy-title h2">
-            Why Bimi Boo <span>Academy</span>
-          </h2>
-          <div class="main-page__why-academy-items">
-            <div class="main-page__why-academy-item-wrap">
-              <div class="main-page__why-academy-item">
-                <div class="main-page__why-academy-image-wrap">
-                  <img
-                    src="@/assets/img/icons/panda.svg"
-                    alt="panda"
-                    class="main-page__why-academy-image"
-                  />
-                </div>
-                <h3 class="main-page__why-academy-item-title h3">
-                  No ads from third parties
-                </h3>
+          <div class="main-page__learning-step">
+            <img src="@/assets/img/kid-2.svg" />
+            <div class="main-page__learning-info">
+              <h3 class="main-page__learning-info-title h3">Pre-K</h3>
+              <div class="main-page__learning-info-text">Ages 4+</div>
+              <div class="main-page__learning-info-sm-text">
+                <span> Level 3:</span>
+                452 Learning activities
+              </div>
+              <div class="main-page__learning-info-sm-text">
+                <span> Level 4:</span>
+                535 Learning activities
               </div>
             </div>
-            <div class="main-page__why-academy-item-wrap">
-              <div class="main-page__why-academy-item">
-                <div class="main-page__why-academy-image-wrap">
-                  <img
-                    src="@/assets/img/lion.svg"
-                    alt="lion"
-                    class="main-page__why-academy-image"
-                  />
-                </div>
-                <h3 class="main-page__why-academy-item-title h3">
-                  More than 1700 activities
-                </h3>
+          </div>
+          <div class="main-page__learning-step">
+            <img src="@/assets/img/kid-3.svg" />
+            <div class="main-page__learning-info">
+              <h3 class="main-page__learning-info-title h3">Kindergarden</h3>
+              <div class="main-page__learning-info-text">Ages 5+</div>
+              <div class="main-page__learning-info-sm-text">
+                <span> Level 5:</span>
+                655 Learning activities
               </div>
-            </div>
-            <div class="main-page__why-academy-item-wrap">
-              <div class="main-page__why-academy-item">
-                <div class="main-page__why-academy-image-wrap">
-                  <img
-                    src="@/assets/img/icons/elephant.svg"
-                    alt="elephant"
-                    class="main-page__why-academy-image"
-                  />
-                </div>
-                <h3 class="main-page__why-academy-item-title h3">
-                  Parental control
-                </h3>
-              </div>
-            </div>
-            <div class="main-page__why-academy-item-wrap">
-              <div class="main-page__why-academy-item">
-                <div class="main-page__why-academy-image-wrap">
-                  <img
-                    src="@/assets/img/monkey.svg"
-                    alt="monkey"
-                    class="main-page__why-academy-image"
-                  />
-                </div>
-                <h3 class="main-page__why-academy-item-title h3">
-                  100% safe content
-                </h3>
+              <div class="main-page__learning-info-sm-text">
+                <span> Level 6:</span>
+                631 Learning activities
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <section class="main-page__tariffs main-page__seaction">
-        <div class="container">
-          <h2 class="main-page__tariffs-title h2">
-            Choose your plan and start 7-Days <span>free trial</span>
-          </h2>
-          <div class="main-page__tariffs-items">
-            <TariffCard
-              class="main-page__tariffs-item"
-              v-for="tariff in $options.tariffs"
-              :key="tariff.id"
-              :title="tariff.title"
-              :items="tariff.items"
-              :price="tariff.price"
-              :best="tariff.best"
-            />
-          </div>
+        <VButton class="main-page__learning-btn-start"
+          >Start free trial</VButton
+        >
+      </div>
+    </section>
+    <div class="main-page__love-us">
+      <div class="container">
+        <h2 class="main-page__love-us-title numbers-l">
+          Parents <span>love us</span>
+        </h2>
+        <div class="main-page__love-us-image-wrap">
+          <img
+            src="@/assets/img/awards.png"
+            alt="awards"
+            class="main-page__love-us-image"
+          />
         </div>
-      </section>
-
-      <section class="main-page__faq main-page__seaction">
-        <div class="container">
-          <h2 class="main-page__faq-title h2">FAQ</h2>
-          <div class="main-page__faq-items">
-            <VToggle>
-              <template #default="{ onClick, isActive }">
-                <div class="main-page__faq-item" @click="onClick">
-                  <div
-                    class="main-page__collapse"
-                    :class="{ 'main-page__collapse_active': isActive }"
-                  >
-                    <div class="main-page__collapse-title">
-                      No ads from third parties
-                    </div>
-                    <transition name="fade">
-                      <div
-                        v-show="isActive"
-                        class="main-page__collapse-content"
-                      >
-                        Сложно сказать, почему реплицированные с зарубежных
-                        источников, современные исследования освещают
-                      </div>
-                    </transition>
-                  </div>
-                </div>
-              </template>
-            </VToggle>
-            <VToggle>
-              <template #default="{ onClick, isActive }">
-                <div class="main-page__faq-item" @click="onClick">
-                  <div
-                    class="main-page__collapse"
-                    :class="{ 'main-page__collapse_active': isActive }"
-                  >
-                    <div class="main-page__collapse-title">
-                      No ads from third parties
-                    </div>
-                    <transition name="fade">
-                      <div
-                        v-show="isActive"
-                        class="main-page__collapse-content"
-                      >
-                        Сложно сказать, почему реплицированные с зарубежных
-                        источников, современные исследования освещают
-                      </div>
-                    </transition>
-                  </div>
-                </div>
-              </template>
-            </VToggle>
-            <VToggle>
-              <template #default="{ onClick, isActive }">
-                <div class="main-page__faq-item" @click="onClick">
-                  <div
-                    class="main-page__collapse"
-                    :class="{ 'main-page__collapse_active': isActive }"
-                  >
-                    <div class="main-page__collapse-title">
-                      No ads from third parties
-                    </div>
-                    <transition name="fade">
-                      <div
-                        v-show="isActive"
-                        class="main-page__collapse-content"
-                      >
-                        Сложно сказать, почему реплицированные с зарубежных
-                        источников, современные исследования освещают
-                      </div>
-                    </transition>
-                  </div>
-                </div>
-              </template>
-            </VToggle>
-            <VToggle>
-              <template #default="{ onClick, isActive }">
-                <div class="main-page__faq-item" @click="onClick">
-                  <div
-                    class="main-page__collapse"
-                    :class="{ 'main-page__collapse_active': isActive }"
-                  >
-                    <div class="main-page__collapse-title">
-                      No ads from third parties
-                    </div>
-                    <transition name="fade">
-                      <div
-                        v-show="isActive"
-                        class="main-page__collapse-content"
-                      >
-                        Сложно сказать, почему реплицированные с зарубежных
-                        источников, современные исследования освещают
-                      </div>
-                    </transition>
-                  </div>
-                </div>
-              </template>
-            </VToggle>
-            <VToggle>
-              <template #default="{ onClick, isActive }">
-                <div class="main-page__faq-item" @click="onClick">
-                  <div
-                    class="main-page__collapse"
-                    :class="{ 'main-page__collapse_active': isActive }"
-                  >
-                    <div class="main-page__collapse-title">
-                      No ads from third parties
-                    </div>
-                    <transition name="fade">
-                      <div
-                        v-show="isActive"
-                        class="main-page__collapse-content"
-                      >
-                        Сложно сказать, почему реплицированные с зарубежных
-                        источников, современные исследования освещают
-                      </div>
-                    </transition>
-                  </div>
-                </div>
-              </template>
-            </VToggle>
-          </div>
+        <div class="main-page__love-us-subtitle text-l">
+          Parents from all over the world choose our preschool app for kids
         </div>
-      </section>
-      <section class="main-page__amazing">
-        <div class="container">
-          <div class="main-page__amazing-koala">
-            <img
-              src="@/assets/img/koala.svg"
-              alt=""
-              class="main-page__amazing-koala-icon"
-            />
-          </div>
-          <div class="main-page__amazing-title">
-            Start an <span>amazing</span> <br />
-            preschool adventure
-          </div>
-          <div class="main-page__amazing-subtitle text-l">
-            with Bimi Boo and his friends
-          </div>
-          <VButton class="main-page__amazing-buttom">Start free trial</VButton>
-        </div>
-
-        <div class="main-page__amazing-heroes">
-          <div class="main-page__amazing-hero main-page__amazing-hero_1">
-            <img
-              src="@/assets/img/heroes/mustache.svg"
-              alt="mustache hero"
-              class="main-page__amazing-hero-image"
-            />
-            <img
-              class="main-page__amazing-pyramid"
-              src="@/assets/img/pyramid.svg"
-              alt="pyramid"
-            />
-            <img
-              class="main-page__amazing-flower"
-              src="@/assets/img/flower.svg"
-              alt="flower"
-            />
-            <img
-              class="main-page__amazing-carrot"
-              src="@/assets/img/carrot.svg"
-              alt="carrot"
-            />
-            <img
-              class="main-page__amazing-elephant"
-              src="@/assets/img/elephant.svg"
-              alt="elephant"
-            />
-          </div>
-          <div class="main-page__amazing-hero main-page__amazing-hero_2">
-            <img
-              src="@/assets/img/heroes/choes.svg"
-              alt="choes hero"
-              class="main-page__amazing-hero-image"
-            />
-            <img
-              class="main-page__amazing-two"
-              src="@/assets/img/two.svg"
-              alt="two"
-            />
-            <img
-              class="main-page__amazing-tassel"
-              src="@/assets/img/tassel.svg"
-              alt="tassel"
-            />
-          </div>
-          <div class="main-page__amazing-hero main-page__amazing-hero_3">
-            <img
-              src="@/assets/img/heroes/bimi.svg"
-              alt="bimi hero"
-              class="main-page__amazing-hero-image"
-            />
-            <img
-              class="main-page__amazing-pencil"
-              src="@/assets/img/pencil.svg"
-              alt="pencil"
-            />
-            <img
-              class="main-page__amazing-drum"
-              src="@/assets/img/drum.svg"
-              alt="drum"
-            />
-          </div>
-          <div class="main-page__amazing-hero main-page__amazing-hero_4">
-            <img
-              src="@/assets/img/heroes/hair.svg"
-              alt="hair hero"
-              class="main-page__amazing-hero-image"
-            />
-            <img
-              class="main-page__amazing-apple"
-              src="@/assets/img/apple.svg"
-              alt="apple"
-            />
-            <img
-              class="main-page__amazing-ball"
-              src="@/assets/img/ball.svg"
-              alt="ball"
-            />
-          </div>
-          <div class="main-page__amazing-hero main-page__amazing-hero_5">
-            <img
-              src="@/assets/img/heroes/star.svg"
-              alt="star hero"
-              class="main-page__amazing-hero-image"
-            />
-            <img
-              class="main-page__amazing-panda"
-              src="@/assets/img/panda.svg"
-              alt="panda"
-            />
-            <img
-              class="main-page__amazing-cloud"
-              src="@/assets/img/cloud.svg"
-              alt="cloud"
-            />
-            <img
-              class="main-page__amazing-star"
-              src="@/assets/img/star.svg"
-              alt="star"
-            />
-          </div>
-        </div>
-      </section>
+        <p class="main-page__love-us-paragraph">
+          Our application received #1 place a gold medal in the nomination of
+          children's games.
+        </p>
+      </div>
     </div>
+    <section class="main-page__with-academy main-page__seaction">
+      <div class="container">
+        <h2 class="main-page__with-academy-title h2">
+          With Bimi Boo Academy <span>your child will learn</span>
+        </h2>
+        <div class="main-page__with-academy-items">
+          <div class="main-page__with-academy-item">
+            <div class="main-page__with-academy-image-wrap">
+              <img
+                src="@/assets/img/reading.jpg"
+                alt="Reading"
+                class="main-page__with-academy-image"
+              />
+            </div>
+            <h3 class="main-page__with-academy-item-title h3">Reading</h3>
+          </div>
+          <div class="main-page__with-academy-item">
+            <div class="main-page__with-academy-image-wrap">
+              <img
+                src="@/assets/img/math.jpg"
+                alt="Basic Math"
+                class="main-page__with-academy-image"
+              />
+            </div>
+            <h3 class="main-page__with-academy-item-title h3">Basic Math</h3>
+          </div>
+          <div class="main-page__with-academy-item">
+            <div class="main-page__with-academy-image-wrap">
+              <img
+                src="@/assets/img/colors.jpg"
+                alt="Shapes & colors"
+                class="main-page__with-academy-image"
+              />
+            </div>
+            <h3 class="main-page__with-academy-item-title h3">
+              Shapes & colors
+            </h3>
+          </div>
+          <div class="main-page__with-academy-item">
+            <div class="main-page__with-academy-image-wrap">
+              <img
+                src="@/assets/img/creativity.jpg"
+                alt="Creativity"
+                class="main-page__with-academy-image"
+              />
+            </div>
+            <h3 class="main-page__with-academy-item-title h3">Creativity</h3>
+          </div>
+          <div class="main-page__with-academy-item">
+            <div class="main-page__with-academy-image-wrap">
+              <img
+                src="@/assets/img/social.jpg"
+                alt="Social skills"
+                class="main-page__with-academy-image"
+              />
+            </div>
+            <h3 class="main-page__with-academy-item-title h3">Social skills</h3>
+          </div>
+        </div>
+        <VButton class="main-page__with-academy-buttom"
+          >Start free trial</VButton
+        >
+      </div>
+    </section>
+    <section class="main-page__feedback main-page__seaction">
+      <div class="container">
+        <h2 class="main-page__feedback-title h2">
+          What <span>happy parents</span> are saying about us
+        </h2>
+        <swiper
+          class="swiper main-page__feedback-items"
+          :options="swiperOption"
+          slides-per-view="auto"
+        >
+          <swiper-slide v-for="item in $options.feedback" :key="item.id"
+            ><FeedbackCard
+              class="main-page__feedback-item"
+              :name="item.name"
+              :character="item.character"
+              :raiting="item.raiting"
+              :text="item.text"
+              :time="item.time"
+              :social="item.social"
+          /></swiper-slide>
+          <div
+            class="main-page__swiper-pagination swiper-pagination"
+            slot="pagination"
+          ></div>
+        </swiper>
+      </div>
+    </section>
+    <section class="main-page__why-academy main-page__seaction">
+      <div class="container">
+        <h2 class="main-page__why-academy-title h2">
+          Why Bimi Boo <span>Academy</span>
+        </h2>
+        <div class="main-page__why-academy-items">
+          <div class="main-page__why-academy-item-wrap">
+            <div class="main-page__why-academy-item">
+              <div class="main-page__why-academy-image-wrap">
+                <img
+                  src="@/assets/img/icons/panda.svg"
+                  alt="panda"
+                  class="main-page__why-academy-image"
+                />
+              </div>
+              <h3 class="main-page__why-academy-item-title h3">
+                No ads from third parties
+              </h3>
+            </div>
+          </div>
+          <div class="main-page__why-academy-item-wrap">
+            <div class="main-page__why-academy-item">
+              <div class="main-page__why-academy-image-wrap">
+                <img
+                  src="@/assets/img/lion.svg"
+                  alt="lion"
+                  class="main-page__why-academy-image"
+                />
+              </div>
+              <h3 class="main-page__why-academy-item-title h3">
+                More than 1700 activities
+              </h3>
+            </div>
+          </div>
+          <div class="main-page__why-academy-item-wrap">
+            <div class="main-page__why-academy-item">
+              <div class="main-page__why-academy-image-wrap">
+                <img
+                  src="@/assets/img/icons/elephant.svg"
+                  alt="elephant"
+                  class="main-page__why-academy-image"
+                />
+              </div>
+              <h3 class="main-page__why-academy-item-title h3">
+                Parental control
+              </h3>
+            </div>
+          </div>
+          <div class="main-page__why-academy-item-wrap">
+            <div class="main-page__why-academy-item">
+              <div class="main-page__why-academy-image-wrap">
+                <img
+                  src="@/assets/img/monkey.svg"
+                  alt="monkey"
+                  class="main-page__why-academy-image"
+                />
+              </div>
+              <h3 class="main-page__why-academy-item-title h3">
+                100% safe content
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="main-page__tariffs main-page__seaction">
+      <ChoosePlan />
+    </section>
+
+    <section class="main-page__faq main-page__seaction">
+      <div class="container">
+        <h2 class="main-page__faq-title h2">FAQ</h2>
+        <div class="main-page__faq-items">
+          <VToggle>
+            <template #default="{ onClick, isActive }">
+              <div class="main-page__faq-item" @click="onClick">
+                <div
+                  class="main-page__collapse"
+                  :class="{ 'main-page__collapse_active': isActive }"
+                >
+                  <div class="main-page__collapse-title">
+                    No ads from third parties
+                  </div>
+                  <transition name="fade">
+                    <div v-show="isActive" class="main-page__collapse-content">
+                      Сложно сказать, почему реплицированные с зарубежных
+                      источников, современные исследования освещают
+                    </div>
+                  </transition>
+                </div>
+              </div>
+            </template>
+          </VToggle>
+          <VToggle>
+            <template #default="{ onClick, isActive }">
+              <div class="main-page__faq-item" @click="onClick">
+                <div
+                  class="main-page__collapse"
+                  :class="{ 'main-page__collapse_active': isActive }"
+                >
+                  <div class="main-page__collapse-title">
+                    No ads from third parties
+                  </div>
+                  <transition name="fade">
+                    <div v-show="isActive" class="main-page__collapse-content">
+                      Сложно сказать, почему реплицированные с зарубежных
+                      источников, современные исследования освещают
+                    </div>
+                  </transition>
+                </div>
+              </div>
+            </template>
+          </VToggle>
+          <VToggle>
+            <template #default="{ onClick, isActive }">
+              <div class="main-page__faq-item" @click="onClick">
+                <div
+                  class="main-page__collapse"
+                  :class="{ 'main-page__collapse_active': isActive }"
+                >
+                  <div class="main-page__collapse-title">
+                    No ads from third parties
+                  </div>
+                  <transition name="fade">
+                    <div v-show="isActive" class="main-page__collapse-content">
+                      Сложно сказать, почему реплицированные с зарубежных
+                      источников, современные исследования освещают
+                    </div>
+                  </transition>
+                </div>
+              </div>
+            </template>
+          </VToggle>
+          <VToggle>
+            <template #default="{ onClick, isActive }">
+              <div class="main-page__faq-item" @click="onClick">
+                <div
+                  class="main-page__collapse"
+                  :class="{ 'main-page__collapse_active': isActive }"
+                >
+                  <div class="main-page__collapse-title">
+                    No ads from third parties
+                  </div>
+                  <transition name="fade">
+                    <div v-show="isActive" class="main-page__collapse-content">
+                      Сложно сказать, почему реплицированные с зарубежных
+                      источников, современные исследования освещают
+                    </div>
+                  </transition>
+                </div>
+              </div>
+            </template>
+          </VToggle>
+          <VToggle>
+            <template #default="{ onClick, isActive }">
+              <div class="main-page__faq-item" @click="onClick">
+                <div
+                  class="main-page__collapse"
+                  :class="{ 'main-page__collapse_active': isActive }"
+                >
+                  <div class="main-page__collapse-title">
+                    No ads from third parties
+                  </div>
+                  <transition name="fade">
+                    <div v-show="isActive" class="main-page__collapse-content">
+                      Сложно сказать, почему реплицированные с зарубежных
+                      источников, современные исследования освещают
+                    </div>
+                  </transition>
+                </div>
+              </div>
+            </template>
+          </VToggle>
+        </div>
+      </div>
+    </section>
+    <AmazingSection />
+  </div>
   </Default>
 </template>
 
@@ -616,87 +463,89 @@
 import VButton from "@/components/VButton.vue";
 import VToggle from "@/components/VToggle.vue";
 import FeedbackCard from "@/components/FeedbackCard.vue";
-import { Swiper, SwiperSlide } from "vue-awesome-swiper";
+import {Swiper, SwiperSlide} from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
-import TariffCard from "@/components/TariffCard.vue";
+import AmazingSection from "@/components/AmazingSection";
+import ChoosePlan from "@/components/ChoosePlan.vue";
 import Default from "@/layouts/default.vue";
 
 export default {
-  feedback: [
-    {
-      id: 1,
-      name: "Birgitte Albek Henriksen",
-      character: "Speech Pathologist",
-      raiting: 5,
-      text: "As a speech pathologist, I’ve used Bimi Boo Coloring app with children of different ages, and it’s popular due to its numerous options for drawings and colors, providing hours of entertainment and learning. The app’s saving progress and redo features are great, although some children may be confused that they can’t paint outside the lines",
-      time: 6,
-      social: "Facebook",
-    },
-    {
-      id: 2,
-      name: "Sarah D.",
-      character: "Speech Pathologist",
-      raiting: 4,
-      text: "As a parent, I know how important it is to find high-quality toys that provide a fun and educational experience for kids. That’s why I’m excited to share my love for Bimi Boo toys! These wooden toys are visually appealing and offer a unique learning experience that encourages exploration, problem-solving, and creativity.",
-      time: 2,
-      social: "Instagram",
-    },
-    {
-      id: 3,
-      name: "Speech Pathologist",
-      character: "Speech Pathologist",
-      raiting: 5,
-      text: "Bimi Boo series is a wonderful kids’ show, my nephews and nieces love it. I don’t have to be looking at the TV to know they are watching it when I hear them singing along with the characters. I love how educational it is, but fun for the kids too. The background music is entertaining and fun, and there are a lot of positive messages in the songs. ",
-      time: 6,
-      social: "Facebook",
-    },
-  ],
-  tariffs: [
-    {
-      id: 1,
-      title: "Monthly plan",
-      items: ["Unlimited access", "Cancel any time"],
-      price: {
-        main: "6.99",
-        old: "9.99",
-        time: "month",
-      },
-    },
-    {
-      id: 2,
-      title: "Annual plan",
-      items: ["Big savings", "Unlimited access", "Cancel any time"],
-      price: {
-        main: "49.99",
-        old: "69.99",
-        time: "year",
-      },
-      best: true,
-    },
-  ],
-  components: {
-    VButton,
-    VToggle,
-    FeedbackCard,
-    Swiper,
-    SwiperSlide,
-    TariffCard,
-    Default,
-  },
-  data() {
-    return {
-      swiperOption: {
-        slidesPerView: "auto",
-        spaceBetween: 20,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-          bulletActiveClass: "main-page__swiper-pagination-item_active",
-          enabled: true,
-        },
-      },
-    };
-  },
+	feedback: [
+		{
+			id: 1,
+			name: "Birgitte Albek Henriksen",
+			character: "Speech Pathologist",
+			raiting: 5,
+			text: "As a speech pathologist, I’ve used Bimi Boo Coloring app with children of different ages, and it’s popular due to its numerous options for drawings and colors, providing hours of entertainment and learning. The app’s saving progress and redo features are great, although some children may be confused that they can’t paint outside the lines",
+			time: 6,
+			social: "Facebook",
+		},
+		{
+			id: 2,
+			name: "Sarah D.",
+			character: "Speech Pathologist",
+			raiting: 4,
+			text: "As a parent, I know how important it is to find high-quality toys that provide a fun and educational experience for kids. That’s why I’m excited to share my love for Bimi Boo toys! These wooden toys are visually appealing and offer a unique learning experience that encourages exploration, problem-solving, and creativity.",
+			time: 2,
+			social: "Instagram",
+		},
+		{
+			id: 3,
+			name: "Speech Pathologist",
+			character: "Speech Pathologist",
+			raiting: 5,
+			text: "Bimi Boo series is a wonderful kids’ show, my nephews and nieces love it. I don’t have to be looking at the TV to know they are watching it when I hear them singing along with the characters. I love how educational it is, but fun for the kids too. The background music is entertaining and fun, and there are a lot of positive messages in the songs. ",
+			time: 6,
+			social: "Facebook",
+		},
+	],
+	tariffs: [
+		{
+			id: 1,
+			title: "Monthly plan",
+			items: ["Unlimited access", "Cancel any time"],
+			price: {
+				main: "6.99",
+				old: "9.99",
+				time: "month",
+			},
+		},
+		{
+			id: 2,
+			title: "Annual plan",
+			items: ["Big savings", "Unlimited access", "Cancel any time"],
+			price: {
+				main: "49.99",
+				old: "69.99",
+				time: "year",
+			},
+			best: true,
+		},
+	],
+	components: {
+		VButton,
+		VToggle,
+		FeedbackCard,
+		Swiper,
+		SwiperSlide,
+		AmazingSection,
+		ChoosePlan,
+    Default
+	},
+	data() {
+		return {
+			swiperOption: {
+				slidesPerView: "auto",
+				spaceBetween: 20,
+				pagination: {
+					el: ".swiper-pagination",
+					clickable: true,
+					bulletActiveClass: "main-page__swiper-pagination-item_active",
+					enabled: true,
+				},
+			},
+		};
+	},
 };
 </script>
 
@@ -1273,6 +1122,7 @@ export default {
   }
   &__amazing-subtitle {
     margin-bottom: 40px;
+    color: $dark-blue;
   }
   &__amazing-carrot {
     position: absolute;
