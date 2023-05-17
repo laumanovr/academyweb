@@ -1,5 +1,6 @@
 <template>
   <div class="cabinet" :class="{'has-sub': hasSub}">
+    <Loader v-if="isLoading"/>
     <div class="cabinet__container space-container">
       <Breadcrumbs :items="links"/>
       <h3 class="cabinet__title h3">My account</h3>
@@ -8,23 +9,75 @@
           <h4 class="cabinet__acc-info">Account Information</h4>
           <div class="cabinet__profile-info-block">
             <div class="cabinet__label-block">
-              <div class="cabinet__label">Name</div>
-              <div class="cabinet__label-value">Alice</div>
+              <div class="cabinet__label">First Name</div>
+              <div class="cabinet__label-value" v-if="currentUser?.first_name && !isEditName">
+                {{currentUser?.first_name}}
+                <img src="@/assets/img/pencil-edit.svg" alt="edit" @click="onEditField('isEditName','first_name','firstName')">
+              </div>
+              <div class="cabinet__label-link" @click="onInputFocus('isEditName')" v-else>
+                <input
+                  ref="isEditName"
+                  type="text"
+                  class="cabinet__label-input"
+                  v-model="currentUser.firstName"
+                  @blur="updateProfile('isEditName')"
+                  v-if="isEditName"
+                >
+                <template v-else>
+                  <span>Add Name</span>
+                  <img src="@/assets/img/icons/add-circle-blue.svg">
+                </template>
+              </div>
+            </div>
+            <div class="cabinet__label-block">
+              <div class="cabinet__label">Last Name</div>
+              <div class="cabinet__label-value" v-if="currentUser?.last_name && !isEditLastName">
+                {{currentUser?.last_name}}
+                <img src="@/assets/img/pencil-edit.svg" alt="edit" @click="onEditField('isEditLastName','last_name','lastName')">
+              </div>
+              <div class="cabinet__label-link" @click="onInputFocus('isEditLastName')" v-else>
+                <input
+                  ref="isEditLastName"
+                  type="text"
+                  class="cabinet__label-input"
+                  v-model="currentUser.lastName"
+                  @blur="updateProfile('isEditLastName')"
+                  v-if="isEditLastName"
+                >
+                <template v-else>
+                  <span>Add Last Name</span>
+                  <img src="@/assets/img/icons/add-circle-blue.svg">
+                </template>
+              </div>
             </div>
             <div class="cabinet__label-block">
               <div class="cabinet__label">Email</div>
-              <div class="cabinet__label-value">alice@bimiboo.com</div>
+              <div class="cabinet__label-value">{{currentUser?.email}}</div>
             </div>
             <div class="cabinet__label-block">
               <div class="cabinet__label">Mobile</div>
-              <div class="cabinet__label-link">
-                <span>Add mobile</span>
-                <img src="@/assets/img/icons/add-circle-blue.svg">
+              <div class="cabinet__label-value" v-if="currentUser?.phone && !isEditPhone">
+                {{currentUser?.phone}}
+                <img src="@/assets/img/pencil-edit.svg" alt="edit" @click="onEditField('isEditPhone','phone','phone')">
+              </div>
+              <div class="cabinet__label-link" @click="onInputFocus('isEditPhone')" v-else>
+                <input
+                  ref="isEditPhone"
+                  type="text"
+                  class="cabinet__label-input"
+                  v-model="currentUser.phone"
+                  @blur="updateProfile('isEditPhone')"
+                  v-if="isEditPhone"
+                >
+                <template v-else>
+                  <span>Add Mobile</span>
+                  <img src="@/assets/img/icons/add-circle-blue.svg">
+                </template>
               </div>
             </div>
             <div class="cabinet__label-block">
               <div class="cabinet__label">Linked</div>
-              <div class="cabinet__label-value">999</div>
+              <div class="cabinet__label-value"></div>
             </div>
           </div>
         </div>
@@ -49,7 +102,7 @@
           </div>
           <div class="cabinet__no-sub" v-else>
             <div class="cabinet__no-sub-text">No subscription found</div>
-            <VButton class="cabinet__no-sub-btn" theme="tertiary">Start Free Trial</VButton>
+            <VButton class="cabinet__no-sub-btn" theme="tertiary" @click="goToShop">Start Free Trial</VButton>
           </div>
         </div>
       </div>
@@ -83,16 +136,18 @@
 import VButton from '@/components/VButton';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import PaymentModal from '@/components/PaymentModal';
+import Loader from '@/components/Loader';
+import CabinetApi from '@/api/cabinet.api';
 
 export default {
 	components: {
 		VButton,
 		Breadcrumbs,
-		PaymentModal
+		PaymentModal,
+		Loader
 	},
 	data () {
 		return {
-			hasSub: true,
 			links: [
 				{
 					name: 'Home',
@@ -102,13 +157,72 @@ export default {
 					name: 'My account',
 					route: '/cabinet'
 				}
-			]
+			],
+      currentUser: {},
+      subscriptions: [],
+      isLoading: false,
+			hasSub: false,
+			isEditName: false,
+			isEditLastName: false,
+			isEditPhone: false,
 		};
+	},
+	async mounted() {
+	  await this.getCurrentUser();
+	  await this.getSubscriptions();
 	},
 	methods: {
 		openPaymentModal() {
 			this.$refs.paymentDetail.togglePaymentModal();
-		}
+		},
+		async getCurrentUser () {
+			try {
+				this.isLoading = true;
+				this.currentUser = await CabinetApi.fetchCurrentUser();
+				this.isLoading = false;
+			} catch (err) {
+				alert(err);
+				this.isLoading = false;
+			}
+		},
+    async getSubscriptions() {
+		  try {
+		    this.isLoading = true;
+		    this.subscriptions = await CabinetApi.fetchSubscriptions();
+		    this.hasSub = this.subscriptions.some((sub) => sub.state === 'active');
+        console.log('subs-',this.subscriptions)
+        this.isLoading = false;
+      } catch (err) {
+        alert(err);
+        this.isLoading = false;
+      }
+    },
+		async updateProfile(isEditMode) {
+		  try {
+				this.isLoading = true;
+				await CabinetApi.updateCurrentUser(this.currentUser);
+				await this.getCurrentUser();
+				this[isEditMode] = false;
+				this.isLoading = false;
+			} catch (err) {
+        alert(err);
+				this.isLoading = false;
+			}
+		},
+		onEditField(isEdit, value, input) {
+		  this[isEdit] = true;
+		  this.currentUser[input] = this.currentUser[value];
+		  this.onInputFocus(isEdit);
+		},
+		onInputFocus(inputField) {
+			this[inputField] = true;
+		  this.$nextTick(() => {
+				this.$refs[inputField].focus();
+			});
+		},
+    goToShop() {
+		  this.$router.push('/shop')
+    }
 	}
 };
 </script>
@@ -218,19 +332,38 @@ export default {
   &__label-value {
     font-size: 16px;
     font-weight: 400;
+    display: flex;
+    align-items: center;
+    height: 20px;
+    img {
+      margin-left: 10px;
+      cursor: pointer;
+    }
   }
 
   &__label-link {
-    font-size: 15px;
+    font-size: 14px;
     color: $blue-link;
     font-weight: 400;
     cursor: pointer;
     display: flex;
     align-items: center;
+    height: 20px;
 
     img {
       margin-left: 10px;
     }
+  }
+
+  &__label-input {
+    max-width: 110px;
+    border: none;
+    border-bottom: 1px solid $cool-gray;
+    outline: none;
+    color: $dark-blue;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: -1px;
   }
 
   &__details-btn {
