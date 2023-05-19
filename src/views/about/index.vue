@@ -1,69 +1,74 @@
 <template>
-  <div class="about">
-    <div class="about__banner">
-      <Breadcrumbs :items="breadcrumbLinks"/>
-      <div class="about__banner-hero">
-        <img src="@/assets/img/heroes/bimi.svg" alt="bimi">
-        <img src="@/assets/img/tariff-line.svg" alt="line">
-      </div>
-      <div class="about__banner-info">
-        <div class="about__banner-title">We are Bimi Boo!</div>
-        <div class="about__banner-description">A team of professionals creating safe educational products for children
-          under 7 years old.
+  <Default>
+    <div class="about">
+      <div class="about__banner">
+        <Breadcrumbs :items="breadcrumbLinks"/>
+        <div class="about__banner-hero">
+          <img src="@/assets/img/heroes/bimi.svg" alt="bimi">
+          <img src="@/assets/img/tariff-line.svg" alt="line">
         </div>
-        <VButton class="about__banner-btn">Our products</VButton>
-      </div>
-      <img src="@/assets/img/activities.svg" class="about__banner-activity" alt="icon">
-    </div>
-    <div class="about__info-container">
-      <div class="about__info-block">
-        <div class="about__info-text-block about__info-text-block--flex">
-          <h2 class="about__info-title h2">Our mission</h2>
-          <div class="about__info-desc">is to help kids discover that learning is fun and inspire them to keep learning
-            throughout their lives. We hope that Bimi Boo will become a daily part of your child's education.
+        <div class="about__banner-info">
+          <div class="about__banner-title">We are Bimi Boo!</div>
+          <div class="about__banner-description">A team of professionals creating safe educational products for children
+            under 7 years old.
           </div>
+          <VButton class="about__banner-btn">Our products</VButton>
         </div>
-        <img src="@/assets/img/mission.svg" alt="img" class="about__info-mission-img">
+        <img src="@/assets/img/activities.svg" class="about__banner-activity" alt="icon">
       </div>
-      <div class="about__info-block about__info-block--flex believe">
-        <div class="about__info-text-block">
-          <h2 class="about__info-title h2">We believe</h2>
-          <div class="about__info-desc-block">
-            <div class="about__info-desc believe">in the power of the children's sense of wonder and curiosity. We
-              believe that having fun is the best way to learn new things.
-            </div>
-            <div class="about__info-desc-sm">That's why we strive to create high-quality
-              cartoons and toys that are both fun and
-              educational.
+      <div class="about__info-container">
+        <div class="about__info-block">
+          <div class="about__info-text-block about__info-text-block--flex">
+            <h2 class="about__info-title h2">Our mission</h2>
+            <div class="about__info-desc">is to help kids discover that learning is fun and inspire them to keep
+              learning
+              throughout their lives. We hope that Bimi Boo will become a daily part of your child's education.
             </div>
           </div>
+          <img src="@/assets/img/mission.svg" alt="img" class="about__info-mission-img">
         </div>
-        <img src="@/assets/img/believe.svg" alt="img" class="about__info-believe-img">
-      </div>
-      <div class="about__info-block about__info-block--flex">
-        <h2 class="about__info-title h2">We are ready</h2>
-        <div class="about__info-text-block">
-          <div class="about__info-desc">to offer parents and their children safe application for the development of
-            children. And create better solution for every child in the world.
+        <div class="about__info-block about__info-block--flex believe">
+          <div class="about__info-text-block">
+            <h2 class="about__info-title h2">We believe</h2>
+            <div class="about__info-desc-block">
+              <div class="about__info-desc believe">in the power of the children's sense of wonder and curiosity. We
+                believe that having fun is the best way to learn new things.
+              </div>
+              <div class="about__info-desc-sm">That's why we strive to create high-quality
+                cartoons and toys that are both fun and
+                educational.
+              </div>
+            </div>
           </div>
-          <img src="@/assets/img/ready.svg" alt="img" class="about__info-ready-img">
+          <img src="@/assets/img/believe.svg" alt="img" class="about__info-believe-img">
+        </div>
+        <div class="about__info-block about__info-block--flex">
+          <h2 class="about__info-title h2">We are ready</h2>
+          <div class="about__info-text-block">
+            <div class="about__info-desc">to offer parents and their children safe application for the development of
+              children. And create better solution for every child in the world.
+            </div>
+            <img src="@/assets/img/ready.svg" alt="img" class="about__info-ready-img">
+          </div>
         </div>
       </div>
+      <AmazingSection/>
     </div>
-    <AmazingSection />
-  </div>
+  </Default>
 </template>
 
 <script>
 import VButton from '@/components/VButton.vue';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import AmazingSection from '@/components/AmazingSection';
+import Default from '@/layouts/default.vue';
 
 export default {
 	components: {
 		VButton,
 		Breadcrumbs,
-		AmazingSection
+		AmazingSection,
+		Default
 	},
 	data () {
 		return {

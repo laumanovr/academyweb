@@ -530,7 +530,7 @@ export default {
 		SwiperSlide,
 		AmazingSection,
 		ChoosePlan,
-    Default
+		Default
 	},
 	data() {
 		return {
