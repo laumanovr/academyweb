@@ -1,6 +1,5 @@
 <template>
   <div id="app" class="main-container">
-    <Header />
     <router-view />
     <Loader v-if="isLoading"/>
   </div>
