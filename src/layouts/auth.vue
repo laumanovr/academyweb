@@ -7,6 +7,9 @@
       <div class="auth-layout__rocket-wrapper">
         <img src="@/assets/img/rocket.svg" class="auth-layout__rocket" />
       </div>
+      <div class="auth-layout__earth-wrapper">
+        <img src="@/assets/img/earth-auth.svg" class="auth-layout__earth">
+      </div>
     </div>
     <div class="auth-layout__content-wrapper">
       <div class="auth-layout__close" @click="onClose">
@@ -21,12 +24,12 @@
 
 <script>
 export default {
-  name: "AuthLayout",
-  methods: {
-    onClose() {
-      this.$router.push("/");
-    },
-  },
+	name: "AuthLayout",
+	methods: {
+		onClose() {
+			this.$router.push("/");
+		},
+	},
 };
 </script>
 
@@ -36,16 +39,15 @@ export default {
   justify-content: space-between;
   min-height: 100vh;
   background-color: #f7f6f9;
-  background-image: url("~@/assets/img/earth-auth.svg");
-  background-repeat: no-repeat;
-  background-position: 0 100%;
+  overflow-y: hidden;
   &__left {
     flex: 1;
-    padding-top: 156px;
+    padding-top: 90px;
     text-align: center;
+    position: relative;
   }
   &__logo-wrapper {
-    margin-bottom: 86px;
+    margin-bottom: 80px;
   }
   &__logo {
     width: 270px;
@@ -61,7 +63,7 @@ export default {
     width: 100%;
     padding: 140px 20px 20px;
     background: #ffffff;
-    border-radius: 100px 0px 0px 100px;
+    border-radius: 100px 0 0 100px;
   }
   &__content {
     max-width: 386px;
@@ -105,6 +107,24 @@ export default {
       right: 20px;
       width: 38px;
       height: 38px;
+    }
+  }
+  &__earth-wrapper {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    bottom: 0;
+    @media #{$xl} {
+      bottom: -140px;
+    }
+    @media (max-width: 1367px) {
+      bottom: -190px;
+    }
+  }
+  &__earth {
+    @media (max-width: 1367px) {
+      width: 120%;
     }
   }
 }

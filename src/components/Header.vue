@@ -9,14 +9,16 @@
           @click="isShowMenu = true"
         />
         <div class="header__pages">
-          <a href="#" class="header__link">Shop</a>
-          <a href="#" class="header__link">About us</a>
-          <a href="#" class="header__link">Contacts</a>
+          <router-link to="/shop" class="header__link">Shop</router-link>
+          <router-link to="/about" class="header__link">About us</router-link>
+          <router-link to="/contacts" class="header__link">Contacts</router-link>
         </div>
-        <img src="@/assets/img/icons/logo.svg" class="header__logo" />
+        <router-link to="/">
+          <img src="@/assets/img/icons/logo.svg" class="header__logo" />
+        </router-link>
         <div class="header__login-block">
           <span class="header__login">Log in</span>
-          <VButton theme="secondary">Try for free</VButton>
+          <VButton theme="secondary" @click="$router.push('/registration')">Try for free</VButton>
         </div>
       </div>
     </div>
@@ -31,16 +33,16 @@ import SignupNotification from "@/components/SignupNotification.vue";
 import ModalMenu from "@/components/ModalMenu.vue";
 
 export default {
-  components: {
-    VButton,
-    SignupNotification,
-    ModalMenu,
-  },
-  data() {
-    return {
-      isShowMenu: false,
-    };
-  },
+	components: {
+		VButton,
+		SignupNotification,
+		ModalMenu,
+	},
+	data() {
+		return {
+			isShowMenu: false,
+		};
+	},
 };
 </script>
 
@@ -69,6 +71,9 @@ export default {
     margin-right: 40px;
     &:last-child {
       margin-right: 0;
+    }
+    &.router-link-exact-active {
+      color: $lime-green;
     }
   }
 

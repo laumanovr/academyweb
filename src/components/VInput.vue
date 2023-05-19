@@ -30,69 +30,69 @@
 
 <script>
 export default {
-  name: "VInput",
-  model: {
-    prop: "modelValue",
-    event: "input",
-  },
-  props: {
-    type: {
-      type: String,
-      default: "text",
-    },
-    /**
+	name: "VInput",
+	model: {
+		prop: "modelValue",
+		event: "input",
+	},
+	props: {
+		type: {
+			type: String,
+			default: "text",
+		},
+		/**
      * Атрибут name для инпута
      */
-    name: {
-      type: String,
-      default: null,
-    },
-    modelValue: {
-      type: [String, Number],
-      default: undefined,
-    },
-    /**
+		name: {
+			type: String,
+			default: null,
+		},
+		modelValue: {
+			type: [String, Number],
+			default: undefined,
+		},
+		/**
      * Значение поля ввода
      */
-    value: {
-      type: [String, Number],
-      default: "",
-    },
-    /**
+		value: {
+			type: [String, Number],
+			default: "",
+		},
+		/**
      * Placeholder для поля ввода
      */
-    placeholder: {
-      type: String,
-      default: null,
-    },
-    error: {
-      type: Boolean,
-      default: false,
-    },
-    readonly: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  created() {
-    this.isModelValueActive = this.modelValue !== undefined;
-  },
-  data() {
-    return {
-      val: this.value,
-      inputType: this.type,
-    };
-  },
-  methods: {
-    onInput(e) {
-      this.val = e.target.value;
-      this.$emit("input", e.target.value);
-    },
-    toggleInputType() {
-      this.inputType = this.inputType === "password" ? "text" : "password";
-      this.$refs.input.focus();
-    },
-  },
+		placeholder: {
+			type: String,
+			default: null,
+		},
+		error: {
+			type: Boolean,
+			default: false,
+		},
+		readonly: {
+			type: Boolean,
+			default: false,
+		},
+	},
+	created() {
+		this.isModelValueActive = this.modelValue !== undefined;
+	},
+	data() {
+		return {
+			val: this.value,
+			inputType: this.type,
+		};
+	},
+	methods: {
+		onInput(e) {
+			this.val = e.target.value;
+			this.$emit("input", e.target.value);
+		},
+		toggleInputType() {
+			this.inputType = this.inputType === "password" ? "text" : "password";
+			this.$refs.input.focus();
+		},
+	},
 };
 </script>
 

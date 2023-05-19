@@ -9,9 +9,7 @@
         <div class="signup-notification__text">
           <b>Sign up</b> to avail <b>10% OFF</b> on all subscription plans
         </div>
-        <VButton theme="outline" class="signup-notification__btn"
-          >Sign up</VButton
-        >
+        <VButton theme="outline" class="signup-notification__btn" @click="$router.push('/registration')">Sign up</VButton>
         <img
           src="@/assets/img/icons/close.svg"
           class="signup-notification__close"
@@ -25,9 +23,9 @@
 import VButton from "@/components/VButton.vue";
 
 export default {
-  components: {
-    VButton,
-  },
+	components: {
+		VButton,
+	},
 };
 </script>
 

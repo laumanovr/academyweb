@@ -2,7 +2,7 @@
   <Auth>
     <div class="registration">
       <div class="registration__title h2">Sign up</div>
-      <form @submit.prevent="onSumbit" class="registration__form">
+      <form @submit.prevent="onSubmit" class="registration__form">
         <div class="registration__form-row">
           <VInput type="email" placeholder="Email" v-model="field.email" />
         </div>
@@ -29,9 +29,7 @@
       </form>
       <div class="registration__login">
         Have an account?
-        <router-link to="/login" class="registration__login-link"
-          >Login</router-link
-        >
+        <router-link to="/login" class="registration__login-link">Login</router-link>
       </div>
     </div>
   </Auth>
@@ -44,24 +42,26 @@ import VInput from "@/components/VInput.vue";
 import VCheckbox from "@/components/VCheckbox.vue";
 
 export default {
-  components: {
-    Auth,
-    VButton,
-    VInput,
-    VCheckbox,
-  },
-  data() {
-    return {
-      field: {
-        email: "",
-        password: "",
-        application: true,
-      },
-    };
-  },
-  methods: {
-    onSumbit() {},
-  },
+	components: {
+		Auth,
+		VButton,
+		VInput,
+		VCheckbox,
+	},
+	data() {
+		return {
+			field: {
+				email: "",
+				password: "",
+				application: true,
+			},
+		};
+	},
+	methods: {
+		onSubmit() {
+			this.$store.dispatch('auth/signUp', this.field);
+		},
+	},
 };
 </script>
 

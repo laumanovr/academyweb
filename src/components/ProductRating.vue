@@ -15,13 +15,13 @@
 
 <script>
 export default {
-  name: "ProductRating",
-  props: {
-    count: {
-      type: Number,
-      default: 0,
-    },
-  },
+	name: "ProductRating",
+	props: {
+		count: {
+			type: Number,
+			default: 0,
+		},
+	},
 };
 </script>
 

@@ -19,36 +19,36 @@
 
 <script>
 export default {
-  name: "VCheckbox",
-  model: {
-    prop: "checked",
-    event: "change",
-  },
-  props: {
-    /**
+	name: "VCheckbox",
+	model: {
+		prop: "checked",
+		event: "change",
+	},
+	props: {
+		/**
      * Атрибут name для чекбокса
      */
-    name: {
-      type: String,
-      default: "",
-    },
-    /**
+		name: {
+			type: String,
+			default: "",
+		},
+		/**
      * Атрибут value для чекбокса
      */
-    value: [String, Number],
-    /**
+		value: [String, Number],
+		/**
      * v-model
      */
-    checked: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  methods: {
-    onChange(event) {
-      this.$emit("change", event.target.checked, this.value);
-    },
-  },
+		checked: {
+			type: Boolean,
+			default: false,
+		},
+	},
+	methods: {
+		onChange(event) {
+			this.$emit("change", event.target.checked, this.value);
+		},
+	},
 };
 </script>
 
