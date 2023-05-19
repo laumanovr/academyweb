@@ -10,11 +10,11 @@ const routes = [
 		name: "main",
 		component: () => import("@/views/main/index.vue"),
 	},
-  {
-    path: "/registration",
-    name: "registration",
-    component: Registration,
-  },
+	{
+		path: "/registration",
+		name: "registration",
+		component: Registration,
+	},
 	{
 		path: "/about",
 		name: "about",
