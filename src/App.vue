@@ -1,19 +1,19 @@
 <template>
   <div id="app" class="main-container">
-    <Header />
     <router-view />
-    <Footer />
+    <Loader v-if="isLoading"/>
   </div>
 </template>
 
 <script>
-import Header from "../src/components/Header";
-import Footer from "../src/components/Footer";
-
+import {mapState} from 'vuex';
+import Loader from '@/components/Loader.vue';
 export default {
 	components: {
-		Header,
-		Footer,
+		Loader
+	},
+	computed: {
+		...mapState('loader', ['isLoading'])
 	},
 };
 </script>
