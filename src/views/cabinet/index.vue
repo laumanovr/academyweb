@@ -173,20 +173,20 @@ export default {
 			isEditPhone: false,
 		};
 	},
-  computed: {
+	computed: {
 	  ...mapState('auth', ['user'])
-  },
-  watch: {
+	},
+	watch: {
 	  user(updatedUser) {
-	    this.currentUser = updatedUser
-    }
-  },
+	    this.currentUser = updatedUser;
+		}
+	},
 	async mounted () {
 	  if (!Object.values(this.user).length) {
 	    await this.$store.dispatch('auth/getCurrentUser');
-    }
+		}
 		await this.getSubscriptions();
-    await this.getStripeProducts()
+		await this.getStripeProducts();
 	},
 	methods: {
 		openPaymentModal () {
@@ -196,9 +196,9 @@ export default {
 			try {
 				await this.$store.dispatch('loader/setLoader', true);
 				const subs = await SubscriptionApi.fetchSubscriptions();
-				subs.map((sub) => ({...sub, state: 'active'})) // TEMP
-        this.subscriptions = subs.filter((item) => item.state === 'active')
-        this.hasSub = this.subscriptions.length;
+				subs.map((sub) => ({...sub, state: 'active'})); // TEMP
+				this.subscriptions = subs.filter((item) => item.state === 'active');
+				this.hasSub = this.subscriptions.length;
 				console.log('subs-', this.subscriptions);
 				await this.$store.dispatch('loader/setLoader', false);
 			} catch (err) {
@@ -222,7 +222,7 @@ export default {
 			try {
 				await this.$store.dispatch('loader/setLoader', true);
 				await AccountApi.updateCurrentUser(this.currentUser);
-				await this.$store.dispatch('auth/getCurrentUser')
+				await this.$store.dispatch('auth/getCurrentUser');
 				this[isEditMode] = false;
 				await this.$store.dispatch('loader/setLoader', false);
 			} catch (err) {
