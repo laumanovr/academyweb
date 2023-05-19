@@ -1,150 +1,156 @@
 <template>
-  <div class="cabinet" :class="{'has-sub': hasSub}">
-    <Loader v-if="isLoading"/>
-    <div class="cabinet__container space-container">
-      <Breadcrumbs :items="links"/>
-      <h3 class="cabinet__title h3">My account</h3>
-      <div class="cabinet__account-info-wrapper">
-        <div class="cabinet__profile-wrapper">
-          <h4 class="cabinet__acc-info">Account Information</h4>
-          <div class="cabinet__profile-info-block">
-            <div class="cabinet__label-block">
-              <div class="cabinet__label">First Name</div>
-              <div class="cabinet__label-value" v-if="currentUser?.first_name && !isEditName">
-                {{currentUser?.first_name}}
-                <img src="@/assets/img/pencil-edit.svg" alt="edit" @click="onEditField('isEditName','first_name','firstName')">
+  <Default>
+    <div class="cabinet" :class="{'has-sub': hasSub}">
+      <div class="cabinet__container space-container">
+        <Breadcrumbs :items="links"/>
+        <h3 class="cabinet__title h3">My account</h3>
+        <div class="cabinet__account-info-wrapper">
+          <div class="cabinet__profile-wrapper">
+            <h4 class="cabinet__acc-info">Account Information</h4>
+            <div class="cabinet__profile-info-block">
+              <div class="cabinet__label-block">
+                <div class="cabinet__label">First Name</div>
+                <div class="cabinet__label-value" v-if="currentUser?.first_name && !isEditName">
+                  {{ currentUser?.first_name }}
+                  <img src="@/assets/img/pencil-edit.svg" alt="edit"
+                       @click="onEditField('isEditName','first_name','firstName')">
+                </div>
+                <div class="cabinet__label-link" @click="onInputFocus('isEditName')" v-else>
+                  <input
+                    ref="isEditName"
+                    type="text"
+                    class="cabinet__label-input"
+                    v-model="currentUser.firstName"
+                    @blur="updateProfile('isEditName')"
+                    v-if="isEditName"
+                  >
+                  <template v-else>
+                    <span>Add Name</span>
+                    <img src="@/assets/img/icons/add-circle-blue.svg">
+                  </template>
+                </div>
               </div>
-              <div class="cabinet__label-link" @click="onInputFocus('isEditName')" v-else>
-                <input
-                  ref="isEditName"
-                  type="text"
-                  class="cabinet__label-input"
-                  v-model="currentUser.firstName"
-                  @blur="updateProfile('isEditName')"
-                  v-if="isEditName"
-                >
-                <template v-else>
-                  <span>Add Name</span>
-                  <img src="@/assets/img/icons/add-circle-blue.svg">
-                </template>
+              <div class="cabinet__label-block">
+                <div class="cabinet__label">Last Name</div>
+                <div class="cabinet__label-value" v-if="currentUser?.last_name && !isEditLastName">
+                  {{ currentUser?.last_name }}
+                  <img src="@/assets/img/pencil-edit.svg" alt="edit"
+                       @click="onEditField('isEditLastName','last_name','lastName')">
+                </div>
+                <div class="cabinet__label-link" @click="onInputFocus('isEditLastName')" v-else>
+                  <input
+                    ref="isEditLastName"
+                    type="text"
+                    class="cabinet__label-input"
+                    v-model="currentUser.lastName"
+                    @blur="updateProfile('isEditLastName')"
+                    v-if="isEditLastName"
+                  >
+                  <template v-else>
+                    <span>Add Last Name</span>
+                    <img src="@/assets/img/icons/add-circle-blue.svg">
+                  </template>
+                </div>
+              </div>
+              <div class="cabinet__label-block">
+                <div class="cabinet__label">Email</div>
+                <div class="cabinet__label-value">{{ currentUser?.email }}</div>
+              </div>
+              <div class="cabinet__label-block">
+                <div class="cabinet__label">Mobile</div>
+                <div class="cabinet__label-value" v-if="currentUser?.phone && !isEditPhone">
+                  {{ currentUser?.phone }}
+                  <img src="@/assets/img/pencil-edit.svg" alt="edit"
+                       @click="onEditField('isEditPhone','phone','phone')">
+                </div>
+                <div class="cabinet__label-link" @click="onInputFocus('isEditPhone')" v-else>
+                  <input
+                    ref="isEditPhone"
+                    type="text"
+                    class="cabinet__label-input"
+                    v-model="currentUser.phone"
+                    @blur="updateProfile('isEditPhone')"
+                    v-if="isEditPhone"
+                  >
+                  <template v-else>
+                    <span>Add Mobile</span>
+                    <img src="@/assets/img/icons/add-circle-blue.svg">
+                  </template>
+                </div>
+              </div>
+              <div class="cabinet__label-block">
+                <div class="cabinet__label">Linked</div>
+                <div class="cabinet__label-value"></div>
               </div>
             </div>
-            <div class="cabinet__label-block">
-              <div class="cabinet__label">Last Name</div>
-              <div class="cabinet__label-value" v-if="currentUser?.last_name && !isEditLastName">
-                {{currentUser?.last_name}}
-                <img src="@/assets/img/pencil-edit.svg" alt="edit" @click="onEditField('isEditLastName','last_name','lastName')">
+          </div>
+          <div class="cabinet__profile-wrapper">
+            <h4 class="cabinet__acc-info">Subscription Details</h4>
+            <div class="cabinet__profile-info-block" v-if="hasSub">
+              <div class="cabinet__label-block">
+                <div class="cabinet__label">Plan</div>
+                <div class="cabinet__label-value">Annual plan</div>
               </div>
-              <div class="cabinet__label-link" @click="onInputFocus('isEditLastName')" v-else>
-                <input
-                  ref="isEditLastName"
-                  type="text"
-                  class="cabinet__label-input"
-                  v-model="currentUser.lastName"
-                  @blur="updateProfile('isEditLastName')"
-                  v-if="isEditLastName"
-                >
-                <template v-else>
-                  <span>Add Last Name</span>
-                  <img src="@/assets/img/icons/add-circle-blue.svg">
-                </template>
+              <div class="cabinet__label-block">
+                <div class="cabinet__label">Price</div>
+                <div class="cabinet__label-value">59.99 $</div>
               </div>
-            </div>
-            <div class="cabinet__label-block">
-              <div class="cabinet__label">Email</div>
-              <div class="cabinet__label-value">{{currentUser?.email}}</div>
-            </div>
-            <div class="cabinet__label-block">
-              <div class="cabinet__label">Mobile</div>
-              <div class="cabinet__label-value" v-if="currentUser?.phone && !isEditPhone">
-                {{currentUser?.phone}}
-                <img src="@/assets/img/pencil-edit.svg" alt="edit" @click="onEditField('isEditPhone','phone','phone')">
+              <div class="cabinet__label-block">
+                <div class="cabinet__label">Payment date</div>
+                <div class="cabinet__label-value">October 24</div>
               </div>
-              <div class="cabinet__label-link" @click="onInputFocus('isEditPhone')" v-else>
-                <input
-                  ref="isEditPhone"
-                  type="text"
-                  class="cabinet__label-input"
-                  v-model="currentUser.phone"
-                  @blur="updateProfile('isEditPhone')"
-                  v-if="isEditPhone"
-                >
-                <template v-else>
-                  <span>Add Mobile</span>
-                  <img src="@/assets/img/icons/add-circle-blue.svg">
-                </template>
+              <div class="cabinet__label-block">
+                <VButton class="cabinet__details-btn" theme="tertiary" @click="openPaymentModal">Details</VButton>
               </div>
             </div>
-            <div class="cabinet__label-block">
-              <div class="cabinet__label">Linked</div>
-              <div class="cabinet__label-value"></div>
+            <div class="cabinet__no-sub" v-else>
+              <div class="cabinet__no-sub-text">No subscription found</div>
+              <VButton class="cabinet__no-sub-btn" theme="tertiary" @click="goToShop">Start Free Trial</VButton>
             </div>
           </div>
         </div>
-        <div class="cabinet__profile-wrapper">
-          <h4 class="cabinet__acc-info">Subscription Details</h4>
-          <div class="cabinet__profile-info-block" v-if="hasSub">
-            <div class="cabinet__label-block">
-              <div class="cabinet__label">Plan</div>
-              <div class="cabinet__label-value">Annual plan</div>
-            </div>
-            <div class="cabinet__label-block">
-              <div class="cabinet__label">Price</div>
-              <div class="cabinet__label-value">59.99 $</div>
-            </div>
-            <div class="cabinet__label-block">
-              <div class="cabinet__label">Payment date</div>
-              <div class="cabinet__label-value">October 24</div>
-            </div>
-            <div class="cabinet__label-block">
-              <VButton class="cabinet__details-btn" theme="tertiary" @click="openPaymentModal">Details</VButton>
-            </div>
-          </div>
-          <div class="cabinet__no-sub" v-else>
-            <div class="cabinet__no-sub-text">No subscription found</div>
-            <VButton class="cabinet__no-sub-btn" theme="tertiary" @click="goToShop">Start Free Trial</VButton>
-          </div>
+      </div>
+      <div class="cabinet__apps" v-if="hasSub">
+        <h3 class="cabinet__apps-title h3"><span>Academy</span> in the AppStore Google Play and Amazon appstore</h3>
+        <div class="cabinet__apps-links">
+          <a href="#" class="cabinet__apps-icon"><img src="@/assets/img/store/app-store.svg"></a>
+          <a href="#" class="cabinet__apps-icon"><img src="@/assets/img/store/google-play.svg"></a>
+          <a href="#" class="cabinet__apps-icon"><img src="@/assets/img/store/amazon.svg"></a>
         </div>
       </div>
-    </div>
-    <div class="cabinet__apps" v-if="hasSub">
-      <h3 class="cabinet__apps-title h3"><span>Academy</span> in the AppStore Google Play and Amazon appstore</h3>
-      <div class="cabinet__apps-links">
-        <a href="#" class="cabinet__apps-icon"><img src="@/assets/img/store/app-store.svg"></a>
-        <a href="#" class="cabinet__apps-icon"><img src="@/assets/img/store/google-play.svg"></a>
-        <a href="#" class="cabinet__apps-icon"><img src="@/assets/img/store/amazon.svg"></a>
-      </div>
-    </div>
-    <div class="cabinet__plan" v-else>
-      <div class="cabinet__plan-image-wrapper">
-        <img src="@/assets/img/heroes/bimi.svg" class="cabinet__plan-image-hero">
-        <img src="@/assets/img/earth.svg" class="cabinet__plan-image-earth">
-      </div>
-      <div class="cabinet__plan-text-wrapper">
-        <div class="cabinet__plan-trial-block">
-          <h2 class="cabinet__plan-description h2">Choose your plan and start <span>7-Days free trial</span></h2>
-          <VButton class="cabinet__plan-btn">Start free trial</VButton>
+      <div class="cabinet__plan" v-else>
+        <div class="cabinet__plan-image-wrapper">
+          <img src="@/assets/img/heroes/bimi.svg" class="cabinet__plan-image-hero">
+          <img src="@/assets/img/earth.svg" class="cabinet__plan-image-earth">
         </div>
-        <img src="@/assets/img/union-heart.svg" class="cabinet__plan-heart-icon">
+        <div class="cabinet__plan-text-wrapper">
+          <div class="cabinet__plan-trial-block">
+            <h2 class="cabinet__plan-description h2">Choose your plan and start <span>7-Days free trial</span></h2>
+            <VButton class="cabinet__plan-btn">Start free trial</VButton>
+          </div>
+          <img src="@/assets/img/union-heart.svg" class="cabinet__plan-heart-icon">
+        </div>
       </div>
+      <PaymentModal ref="paymentDetail"/>
     </div>
-    <PaymentModal ref="paymentDetail"/>
-  </div>
+  </Default>
 </template>
 
 <script>
 import VButton from '@/components/VButton';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import PaymentModal from '@/components/PaymentModal';
-import Loader from '@/components/Loader';
-import CabinetApi from '@/api/cabinet.api';
+import SubscriptionApi from '@/api/subscription.api';
+import AccountApi from '@/api/account.api';
+import Default from '@/layouts/default.vue';
+import {mapState} from 'vuex';
 
 export default {
 	components: {
 		VButton,
 		Breadcrumbs,
 		PaymentModal,
-		Loader
+		Default
 	},
 	data () {
 		return {
@@ -158,71 +164,86 @@ export default {
 					route: '/cabinet'
 				}
 			],
-      currentUser: {},
-      subscriptions: [],
-      isLoading: false,
+			currentUser: {},
+			subscriptions: [],
+			stripeProducts: [],
 			hasSub: false,
 			isEditName: false,
 			isEditLastName: false,
 			isEditPhone: false,
 		};
 	},
-	async mounted() {
-	  await this.getCurrentUser();
-	  await this.getSubscriptions();
+  computed: {
+	  ...mapState('auth', ['user'])
+  },
+  watch: {
+	  user(updatedUser) {
+	    this.currentUser = updatedUser
+    }
+  },
+	async mounted () {
+	  if (!Object.values(this.user).length) {
+	    await this.$store.dispatch('auth/getCurrentUser');
+    }
+		await this.getSubscriptions();
+    await this.getStripeProducts()
 	},
 	methods: {
-		openPaymentModal() {
+		openPaymentModal () {
 			this.$refs.paymentDetail.togglePaymentModal();
 		},
-		async getCurrentUser () {
+		async getSubscriptions () {
 			try {
-				this.isLoading = true;
-				this.currentUser = await CabinetApi.fetchCurrentUser();
-				this.isLoading = false;
+				await this.$store.dispatch('loader/setLoader', true);
+				const subs = await SubscriptionApi.fetchSubscriptions();
+				subs.map((sub) => ({...sub, state: 'active'})) // TEMP
+        this.subscriptions = subs.filter((item) => item.state === 'active')
+        this.hasSub = this.subscriptions.length;
+				console.log('subs-', this.subscriptions);
+				await this.$store.dispatch('loader/setLoader', false);
 			} catch (err) {
 				alert(err);
-				this.isLoading = false;
+				await this.$store.dispatch('loader/setLoader', false);
 			}
 		},
-    async getSubscriptions() {
+		async getStripeProducts() {
 		  try {
-		    this.isLoading = true;
-		    this.subscriptions = await CabinetApi.fetchSubscriptions();
-		    this.hasSub = this.subscriptions.some((sub) => sub.state === 'active');
-        console.log('subs-',this.subscriptions)
-        this.isLoading = false;
-      } catch (err) {
-        alert(err);
-        this.isLoading = false;
-      }
-    },
-		async updateProfile(isEditMode) {
-		  try {
-				this.isLoading = true;
-				await CabinetApi.updateCurrentUser(this.currentUser);
-				await this.getCurrentUser();
-				this[isEditMode] = false;
-				this.isLoading = false;
+				await this.$store.dispatch('loader/setLoader', true);
+				this.stripeProducts = await SubscriptionApi.fetchStripeProducts();
+				console.log('stripeProducts',this.stripeProducts);
+				// debugger;
+				await this.$store.dispatch('loader/setLoader', false);
 			} catch (err) {
-        alert(err);
-				this.isLoading = false;
+				alert(err);
+				await this.$store.dispatch('loader/setLoader', false);
 			}
 		},
-		onEditField(isEdit, value, input) {
-		  this[isEdit] = true;
-		  this.currentUser[input] = this.currentUser[value];
-		  this.onInputFocus(isEdit);
+		async updateProfile (isEditMode) {
+			try {
+				await this.$store.dispatch('loader/setLoader', true);
+				await AccountApi.updateCurrentUser(this.currentUser);
+				await this.$store.dispatch('auth/getCurrentUser')
+				this[isEditMode] = false;
+				await this.$store.dispatch('loader/setLoader', false);
+			} catch (err) {
+				alert(err);
+				await this.$store.dispatch('loader/setLoader', false);
+			}
 		},
-		onInputFocus(inputField) {
+		onEditField (isEdit, value, input) {
+			this[isEdit] = true;
+			this.currentUser[input] = this.currentUser[value];
+			this.onInputFocus(isEdit);
+		},
+		onInputFocus (inputField) {
 			this[inputField] = true;
-		  this.$nextTick(() => {
+			this.$nextTick(() => {
 				this.$refs[inputField].focus();
 			});
 		},
-    goToShop() {
-		  this.$router.push('/shop')
-    }
+		goToShop () {
+			this.$router.push('/shop');
+		}
 	}
 };
 </script>
@@ -335,6 +356,7 @@ export default {
     display: flex;
     align-items: center;
     height: 20px;
+
     img {
       margin-left: 10px;
       cursor: pointer;
