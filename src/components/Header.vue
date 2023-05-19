@@ -18,7 +18,7 @@
         </router-link>
         <div class="header__login-block">
           <span class="header__login">Log in</span>
-          <VButton theme="secondary">Try for free</VButton>
+          <VButton theme="secondary" @click="$router.push('/registration')">Try for free</VButton>
         </div>
       </div>
     </div>
