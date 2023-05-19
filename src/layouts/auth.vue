@@ -24,12 +24,12 @@
 
 <script>
 export default {
-  name: "AuthLayout",
-  methods: {
-    onClose() {
-      this.$router.push("/");
-    },
-  },
+	name: "AuthLayout",
+	methods: {
+		onClose() {
+			this.$router.push("/");
+		},
+	},
 };
 </script>
 
