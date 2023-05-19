@@ -1,35 +1,47 @@
-import { signUp } from "@/api/auth";
+import AccountApi from '@/api/account.api';
+import router from '@/router';
 
 const state = {
-  list: [],
-  loading: false,
+  user: {}
 };
 
 const mutations = {
-  SET_LOADING(state, value) {
-    state.loading = value;
-  },
+  SET_USER(state, value) {
+    state.user = value;
+  }
 };
 
 const actions = {
-  async signUp({ commit }, payload) {
-    try {
-      commit("SET_LOADING", true);
-      const { data } = await signUp(payload);
-      console.log(data);
+	async signUp({dispatch}, payload) {
+		try {
+			dispatch('loader/setLoader', true, {root: true});
+			const resp = await AccountApi.signUp(payload);
+			window.localStorage.setItem('token', resp?.access_token);
+      dispatch('getCurrentUser')
+			dispatch('loader/setLoader', false, {root: true});
+			await router.push('/cabinet');
+		} catch (e) {
+			console.error(e);
+			dispatch('loader/setLoader', false, {root: true});
+		}
+	},
+  async getCurrentUser({dispatch, commit}) {
+	  try {
+      dispatch('loader/setLoader', true, {root: true});
+	    const user = await AccountApi.fetchCurrentUser()
+      commit('SET_USER', user)
+      dispatch('loader/setLoader', false, {root: true});
     } catch (e) {
-      console.error(e);
-    } finally {
-      commit("SET_LOADING", false);
+	    console.error(e)
+      dispatch('loader/setLoader', false, {root: true});
     }
-  },
+  }
 };
 
-const getters = {};
 
 export default {
-  state,
-  getters,
-  actions,
-  mutations,
+  namespaced: true,
+	state,
+	actions,
+	mutations
 };
