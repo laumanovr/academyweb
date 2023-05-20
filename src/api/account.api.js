@@ -10,6 +10,11 @@ export class AccountApi {
 		return sendPostRequest(url, body);
 	}
 
+	login(body) {
+	  const url = `${this.clientId}/login`;
+	  return sendPostRequest(url, body);
+  }
+
 	fetchCurrentUser () {
 		const url = `${this.clientId}/me`;
 		return sendGetRequest(url);
