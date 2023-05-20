@@ -2,7 +2,7 @@
   <Auth>
     <div class="login">
       <div class="login__title h2">Log in</div>
-      <form @submit.prevent="onSumbit" class="login__form">
+      <form @submit.prevent="onSubmit" class="login__form">
         <div class="login__form-row">
           <VInput
             type="email"
@@ -18,18 +18,12 @@
           />
         </div>
         <div class="login__form-bottom">
-          <VCheckbox v-model="field.application"> Remember me</VCheckbox>
-          <router-link to="/forgot" class="login__form-forgot"
-            >Forgot your password?</router-link
-          >
+          <VCheckbox v-model="field.application">Remember me</VCheckbox>
+          <router-link to="/forgot" class="login__form-forgot">Forgot your password?</router-link>
         </div>
         <VButton theme="secondary" fluid>Log in</VButton>
       </form>
-      <div class="login__login">
-        Do not have an account?
-        <router-link to="/registration" class="login__login-link"
-          >Sign Up</router-link
-        >
+      <div class="login__login">Do not have an account?<router-link to="/registration" class="login__login-link">Sign Up</router-link>
       </div>
     </div>
   </Auth>
@@ -58,7 +52,9 @@ export default {
     };
   },
   methods: {
-    onSumbit() {},
+    onSubmit() {
+      this.$store.dispatch('auth/login', this.field)
+    },
   },
 };
 </script>
@@ -91,6 +87,7 @@ export default {
   &__login-link {
     color: #477eeb;
     text-decoration: none;
+    margin-left: 5px;
   }
   &__form-forgot {
     font-weight: 400;
