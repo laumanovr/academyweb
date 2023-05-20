@@ -84,26 +84,31 @@
               </div>
             </div>
           </div>
-          <div class="cabinet__profile-wrapper">
-            <h4 class="cabinet__acc-info">Subscription Details</h4>
-            <div class="cabinet__profile-info-block" v-if="hasSub">
-              <div class="cabinet__label-block">
-                <div class="cabinet__label">Plan</div>
-                <div class="cabinet__label-value">Annual plan</div>
-              </div>
-              <div class="cabinet__label-block">
-                <div class="cabinet__label">Price</div>
-                <div class="cabinet__label-value">59.99 $</div>
-              </div>
-              <div class="cabinet__label-block">
-                <div class="cabinet__label">Payment date</div>
-                <div class="cabinet__label-value">October 24</div>
-              </div>
-              <div class="cabinet__label-block">
-                <VButton class="cabinet__details-btn" theme="tertiary" @click="openPaymentModal">Details</VButton>
+          <template v-if="hasSub">
+            <div class="cabinet__profile-wrapper" v-for="(sub, i) in activeSubscriptions" :key="i">
+              <h4 class="cabinet__acc-info">Subscription Details</h4>
+              <div class="cabinet__profile-info-block">
+                <div class="cabinet__label-block">
+                  <div class="cabinet__label">Plan</div>
+                  <div class="cabinet__label-value">{{sub?.extra?.interval}}</div>
+                </div>
+                <div class="cabinet__label-block">
+                  <div class="cabinet__label">Price</div>
+                  <div class="cabinet__label-value">{{sub?.extra?.price}} $</div>
+                </div>
+                <div class="cabinet__label-block">
+                  <div class="cabinet__label">Payment date</div>
+                  <div class="cabinet__label-value">{{sub?.start_date?.slice(0, 10)}}</div>
+                </div>
+                <div class="cabinet__label-block">
+                  <VButton class="cabinet__details-btn" theme="tertiary" @click="openPaymentModal(sub)">Details</VButton>
+                </div>
               </div>
             </div>
-            <div class="cabinet__no-sub" v-else>
+          </template>
+          <div class="cabinet__profile-wrapper" v-else>
+            <h4 class="cabinet__acc-info">Subscription Details</h4>
+            <div class="cabinet__no-sub">
               <div class="cabinet__no-sub-text">No subscription found</div>
               <VButton class="cabinet__no-sub-btn" theme="tertiary" @click="goToShop">Start Free Trial</VButton>
             </div>
@@ -131,7 +136,7 @@
           <img src="@/assets/img/union-heart.svg" class="cabinet__plan-heart-icon">
         </div>
       </div>
-      <PaymentModal ref="paymentDetail"/>
+      <PaymentModal :selectedSub="selectedSub" ref="paymentDetail"/>
     </div>
   </Default>
 </template>
@@ -165,7 +170,9 @@ export default {
 				}
 			],
 			currentUser: {},
+      selectedSub: {},
 			subscriptions: [],
+      activeSubscriptions: [],
 			stripeProducts: [],
 			hasSub: false,
 			isEditName: false,
@@ -189,17 +196,18 @@ export default {
 		await this.getStripeProducts();
 	},
 	methods: {
-		openPaymentModal () {
+		openPaymentModal(sub) {
+		  this.selectedSub = sub;
 			this.$refs.paymentDetail.togglePaymentModal();
 		},
 		async getSubscriptions () {
 			try {
+			  let subs = [];
 				await this.$store.dispatch('loader/setLoader', true);
-				const subs = await SubscriptionApi.fetchSubscriptions();
-				subs.map((sub) => ({...sub, state: 'active'})); // TEMP
+				subs = await SubscriptionApi.fetchSubscriptions();
+				// subs = subs.map((sub) => ({...sub, state: 'active'})); // TEMP
 				this.subscriptions = subs.filter((item) => item.state === 'active');
 				this.hasSub = this.subscriptions.length;
-				console.log('subs-', this.subscriptions);
 				await this.$store.dispatch('loader/setLoader', false);
 			} catch (err) {
 				alert(err);
@@ -210,9 +218,14 @@ export default {
 		  try {
 				await this.$store.dispatch('loader/setLoader', true);
 				this.stripeProducts = await SubscriptionApi.fetchStripeProducts();
-				console.log('stripeProducts',this.stripeProducts);
-				// debugger;
-				await this.$store.dispatch('loader/setLoader', false);
+				if (this.hasSub) {
+          this.activeSubscriptions = this.subscriptions.filter(item1 => this.stripeProducts.some(item2 => item1.product_sku === item2.id))
+            .map((item1) => {
+              const matchingItem = this.stripeProducts.find(item2 => item2.id === item1.product_sku);
+              return {...item1, ...matchingItem};
+            });
+        }
+        await this.$store.dispatch('loader/setLoader', false);
 			} catch (err) {
 				alert(err);
 				await this.$store.dispatch('loader/setLoader', false);
