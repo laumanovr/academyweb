@@ -36,26 +36,26 @@ import VInput from "@/components/VInput.vue";
 import VCheckbox from "@/components/VCheckbox.vue";
 
 export default {
-  components: {
-    Auth,
-    VButton,
-    VInput,
-    VCheckbox,
-  },
-  data() {
-    return {
-      field: {
-        email: "",
-        password: "",
-        application: true,
-      },
-    };
-  },
-  methods: {
-    onSubmit() {
-      this.$store.dispatch('auth/login', this.field)
-    },
-  },
+	components: {
+		Auth,
+		VButton,
+		VInput,
+		VCheckbox,
+	},
+	data() {
+		return {
+			field: {
+				email: "",
+				password: "",
+				application: true,
+			},
+		};
+	},
+	methods: {
+		onSubmit() {
+			this.$store.dispatch('auth/login', this.field);
+		},
+	},
 };
 </script>
 

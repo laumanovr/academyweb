@@ -54,17 +54,17 @@ export default {
 			isShowMenu: false,
 		};
 	},
-  computed: {
+	computed: {
 	  ...mapState('auth', ['user']),
-    isLoggedIn() {
+		isLoggedIn() {
 	    return Object.values(this.user).length;
-    }
-  },
-  methods: {
+		}
+	},
+	methods: {
 	  logout() {
-      this.$store.dispatch('auth/logout');
-    }
-  }
+			this.$store.dispatch('auth/logout');
+		}
+	}
 };
 </script>
 

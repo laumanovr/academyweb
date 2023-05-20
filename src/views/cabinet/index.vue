@@ -170,9 +170,9 @@ export default {
 				}
 			],
 			currentUser: {},
-      selectedSub: {},
+			selectedSub: {},
 			subscriptions: [],
-      activeSubscriptions: [],
+			activeSubscriptions: [],
 			stripeProducts: [],
 			hasSub: false,
 			isEditName: false,
@@ -219,13 +219,13 @@ export default {
 				await this.$store.dispatch('loader/setLoader', true);
 				this.stripeProducts = await SubscriptionApi.fetchStripeProducts();
 				if (this.hasSub) {
-          this.activeSubscriptions = this.subscriptions.filter(item1 => this.stripeProducts.some(item2 => item1.product_sku === item2.id))
-            .map((item1) => {
-              const matchingItem = this.stripeProducts.find(item2 => item2.id === item1.product_sku);
-              return {...item1, ...matchingItem};
-            });
-        }
-        await this.$store.dispatch('loader/setLoader', false);
+					this.activeSubscriptions = this.subscriptions.filter(item1 => this.stripeProducts.some(item2 => item1.product_sku === item2.id))
+						.map((item1) => {
+							const matchingItem = this.stripeProducts.find(item2 => item2.id === item1.product_sku);
+							return {...item1, ...matchingItem};
+						});
+				}
+				await this.$store.dispatch('loader/setLoader', false);
 			} catch (err) {
 				alert(err);
 				await this.$store.dispatch('loader/setLoader', false);

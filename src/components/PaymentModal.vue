@@ -59,12 +59,12 @@
 import VButton from '@/components/VButton';
 
 export default {
-  props: {
-    selectedSub: {
-      type: Object,
-      default: () => ({})
-    }
-  },
+	props: {
+		selectedSub: {
+			type: Object,
+			default: () => ({})
+		}
+	},
 	components: {
 		VButton
 	},

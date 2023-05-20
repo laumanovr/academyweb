@@ -36,22 +36,22 @@ import VButton from "@/components/VButton.vue";
 import VInput from "@/components/VInput.vue";
 
 export default {
-  components: {
-    Auth,
-    VButton,
-    VInput,
-  },
-  data() {
-    return {
-      field: {
-        email: "",
-        password: "",
-      },
-    };
-  },
-  methods: {
-    onSumbit() {},
-  },
+	components: {
+		Auth,
+		VButton,
+		VInput,
+	},
+	data() {
+		return {
+			field: {
+				email: "",
+				password: "",
+			},
+		};
+	},
+	methods: {
+		onSumbit() {},
+	},
 };
 </script>
 

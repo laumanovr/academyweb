@@ -17,16 +17,16 @@ const routes = [
 		name: "registration",
 		component: Registration,
 	},
-  {
-    path: "/login",
-    name: "login",
-    component: Login,
-  },
-  {
-    path: "/forgot",
-    name: "forgot",
-    component: Forgot,
-  },
+	{
+		path: "/login",
+		name: "login",
+		component: Login,
+	},
+	{
+		path: "/forgot",
+		name: "forgot",
+		component: Forgot,
+	},
 	{
 		path: "/about",
 		name: "about",
