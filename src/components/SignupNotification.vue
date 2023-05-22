@@ -27,11 +27,11 @@ export default {
 	components: {
 		VButton,
 	},
-  data() {
+	data() {
 	  return {
 	    isShow: true
-    }
-  }
+		};
+	}
 };
 </script>
 
