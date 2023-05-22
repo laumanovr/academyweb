@@ -1,5 +1,5 @@
 <template>
-  <div class="signup-notification">
+  <div class="signup-notification" v-if="isShow">
     <div class="container">
       <div class="signup-notification__wrapper">
         <img
@@ -13,6 +13,7 @@
         <img
           src="@/assets/img/icons/close.svg"
           class="signup-notification__close"
+          @click="isShow = false"
         />
       </div>
     </div>
@@ -26,6 +27,11 @@ export default {
 	components: {
 		VButton,
 	},
+  data() {
+	  return {
+	    isShow: true
+    }
+  }
 };
 </script>
 

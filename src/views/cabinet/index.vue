@@ -205,7 +205,6 @@ export default {
 			  let subs = [];
 				await this.$store.dispatch('loader/setLoader', true);
 				subs = await SubscriptionApi.fetchSubscriptions();
-				// subs = subs.map((sub) => ({...sub, state: 'active'})); // TEMP
 				this.subscriptions = subs.filter((item) => item.state === 'active');
 				this.hasSub = this.subscriptions.length;
 				await this.$store.dispatch('loader/setLoader', false);
