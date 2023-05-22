@@ -1,7 +1,7 @@
 <template>
   <div class="auth-layout">
     <div class="auth-layout__left">
-      <div class="auth-layout__logo-wrapper">
+      <div class="auth-layout__logo-wrapper" @click="$router.push('/')">
         <img src="@/assets/img/icons/logo.svg" class="auth-layout__logo" />
       </div>
       <div class="auth-layout__rocket-wrapper">
@@ -48,6 +48,7 @@ export default {
   }
   &__logo-wrapper {
     margin-bottom: 80px;
+    cursor: pointer;
   }
   &__logo {
     width: 270px;
