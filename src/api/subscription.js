@@ -1,6 +1,6 @@
 import {sendDeleteRequest, sendGetRequest} from '@/api/api.service';
 
-export class SubscriptionApi {
+export class Subscription {
 	constructor () {
 	}
 
@@ -20,4 +20,4 @@ export class SubscriptionApi {
 	}
 }
 
-export default new SubscriptionApi();
+export default new Subscription();

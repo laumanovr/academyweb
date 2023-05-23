@@ -1,6 +1,6 @@
 import {sendGetRequest, sendPostRequest, sendPutRequest} from '@/api/api.service';
 
-export class AccountApi {
+export class Account {
 	constructor () {
 		this.clientId = 'accounts/com.bimiboo.learning.games';
 	}
@@ -26,4 +26,4 @@ export class AccountApi {
 	}
 }
 
-export default new AccountApi();
+export default new Account();

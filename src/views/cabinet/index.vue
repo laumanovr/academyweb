@@ -145,8 +145,8 @@
 import VButton from '@/components/VButton';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import PaymentModal from '@/components/PaymentModal';
-import SubscriptionApi from '@/api/subscription.api';
-import AccountApi from '@/api/account.api';
+import Subscription from '@/api/subscription';
+import Account from '@/api/account';
 import Default from '@/layouts/default.vue';
 import {mapState} from 'vuex';
 
@@ -204,7 +204,7 @@ export default {
 			try {
 			  let subs = [];
 				await this.$store.dispatch('loader/setLoader', true);
-				subs = await SubscriptionApi.fetchSubscriptions();
+				subs = await Subscription.fetchSubscriptions();
 				this.subscriptions = subs.filter((item) => item.state === 'active');
 				this.hasSub = this.subscriptions.length;
 				await this.$store.dispatch('loader/setLoader', false);
@@ -216,7 +216,7 @@ export default {
 		async getStripeProducts() {
 		  try {
 				await this.$store.dispatch('loader/setLoader', true);
-				this.stripeProducts = await SubscriptionApi.fetchStripeProducts();
+				this.stripeProducts = await Subscription.fetchStripeProducts();
 				if (this.hasSub) {
 					this.activeSubscriptions = this.subscriptions.filter(item1 => this.stripeProducts.some(item2 => item1.product_sku === item2.id))
 						.map((item1) => {
@@ -233,7 +233,7 @@ export default {
 		async updateProfile (isEditMode) {
 			try {
 				await this.$store.dispatch('loader/setLoader', true);
-				await AccountApi.updateCurrentUser(this.currentUser);
+				await Account.updateCurrentUser(this.currentUser);
 				await this.$store.dispatch('auth/getCurrentUser');
 				this[isEditMode] = false;
 				await this.$store.dispatch('loader/setLoader', false);

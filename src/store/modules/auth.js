@@ -1,4 +1,4 @@
-import AccountApi from '@/api/account.api';
+import Account from '@/api/account';
 import router from '@/router';
 
 const state = {
@@ -18,7 +18,7 @@ const actions = {
 	async signUp({dispatch}, payload) {
 		try {
 			dispatch('loader/setLoader', true, {root: true});
-			const resp = await AccountApi.signUp(payload);
+			const resp = await Account.signUp(payload);
 			window.localStorage.setItem('token', resp?.access_token);
 			dispatch('getCurrentUser');
 			dispatch('loader/setLoader', false, {root: true});
@@ -31,7 +31,7 @@ const actions = {
 	async login({dispatch}, payload) {
 	  try {
 			dispatch('loader/setLoader', true, {root: true});
-			const resp = await AccountApi.login(payload);
+			const resp = await Account.login(payload);
 			window.localStorage.setItem('token', resp?.access_token);
 			dispatch('getCurrentUser');
 			dispatch('loader/setLoader', false, {root: true});
@@ -44,7 +44,7 @@ const actions = {
 	async getCurrentUser({dispatch, commit}) {
 	  try {
 			dispatch('loader/setLoader', true, {root: true});
-	    const user = await AccountApi.fetchCurrentUser();
+	    const user = await Account.fetchCurrentUser();
 			commit('SET_USER', user);
 			dispatch('loader/setLoader', false, {root: true});
 		} catch (e) {
