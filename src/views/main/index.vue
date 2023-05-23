@@ -1,4 +1,5 @@
 <template>
+  <Default>
   <div class="main-page">
     <section class="main-page__header main-page__seaction">
       <div class="container">
@@ -455,6 +456,7 @@
     </section>
     <AmazingSection />
   </div>
+  </Default>
 </template>
 
 <script>
@@ -465,6 +467,7 @@ import {Swiper, SwiperSlide} from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
 import AmazingSection from "@/components/AmazingSection";
 import ChoosePlan from "@/components/ChoosePlan.vue";
+import Default from "@/layouts/default.vue";
 
 export default {
 	feedback: [
@@ -527,6 +530,7 @@ export default {
 		SwiperSlide,
 		AmazingSection,
 		ChoosePlan,
+		Default
 	},
 	data() {
 		return {
@@ -989,6 +993,42 @@ export default {
   }
   &__tariffs {
     text-align: center;
+  }
+  &__tariffs-title {
+    position: relative;
+    margin-bottom: 50px;
+    color: $dark-blue;
+    span {
+      display: block;
+      color: $lime-green;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -29px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: block;
+      flex-shrink: 0;
+      width: 317.39px;
+      height: 40.73px;
+      background-image: url("~@/assets/img/tariff-line.svg");
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: contain;
+      display: inline-block;
+    }
+  }
+  &__tariffs-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__tariffs-item {
+    margin-right: 20px;
+    &:last-child {
+      margin-right: 0;
+    }
   }
   &__faq {
     margin-bottom: 126px;
@@ -1468,6 +1508,15 @@ export default {
         img {
           width: 95.6px;
         }
+      }
+    }
+    &__tariffs-items {
+      flex-direction: column;
+    }
+    &__tariffs-item {
+      margin-bottom: 20px;
+      &:last-child {
+        margin-bottom: 0;
       }
     }
     &__amazing {

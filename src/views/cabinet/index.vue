@@ -1,98 +1,164 @@
 <template>
-  <div class="cabinet" :class="{'has-sub': hasSub}">
-    <div class="cabinet__container space-container">
-      <Breadcrumbs :items="links"/>
-      <h3 class="cabinet__title h3">My account</h3>
-      <div class="cabinet__account-info-wrapper">
-        <div class="cabinet__profile-wrapper">
-          <h4 class="cabinet__acc-info">Account Information</h4>
-          <div class="cabinet__profile-info-block">
-            <div class="cabinet__label-block">
-              <div class="cabinet__label">Name</div>
-              <div class="cabinet__label-value">Alice</div>
-            </div>
-            <div class="cabinet__label-block">
-              <div class="cabinet__label">Email</div>
-              <div class="cabinet__label-value">alice@bimiboo.com</div>
-            </div>
-            <div class="cabinet__label-block">
-              <div class="cabinet__label">Mobile</div>
-              <div class="cabinet__label-link">
-                <span>Add mobile</span>
-                <img src="@/assets/img/icons/add-circle-blue.svg">
+  <Default>
+    <div class="cabinet" :class="{'has-sub': hasSub}">
+      <div class="cabinet__container space-container">
+        <Breadcrumbs :items="links"/>
+        <h3 class="cabinet__title h3">My account</h3>
+        <div class="cabinet__account-info-wrapper">
+          <div class="cabinet__profile-wrapper">
+            <h4 class="cabinet__acc-info">Account Information</h4>
+            <div class="cabinet__profile-info-block">
+              <div class="cabinet__label-block">
+                <div class="cabinet__label">First Name</div>
+                <div class="cabinet__label-value" v-if="currentUser?.first_name && !isEditName">
+                  {{ currentUser?.first_name }}
+                  <img src="@/assets/img/pencil-edit.svg" alt="edit"
+                       @click="onEditField('isEditName','first_name','firstName')">
+                </div>
+                <div class="cabinet__label-link" @click="onInputFocus('isEditName')" v-else>
+                  <input
+                    ref="isEditName"
+                    type="text"
+                    class="cabinet__label-input"
+                    v-model="currentUser.firstName"
+                    @blur="updateProfile('isEditName')"
+                    v-if="isEditName"
+                  >
+                  <template v-else>
+                    <span>Add Name</span>
+                    <img src="@/assets/img/icons/add-circle-blue.svg">
+                  </template>
+                </div>
+              </div>
+              <div class="cabinet__label-block">
+                <div class="cabinet__label">Last Name</div>
+                <div class="cabinet__label-value" v-if="currentUser?.last_name && !isEditLastName">
+                  {{ currentUser?.last_name }}
+                  <img src="@/assets/img/pencil-edit.svg" alt="edit"
+                       @click="onEditField('isEditLastName','last_name','lastName')">
+                </div>
+                <div class="cabinet__label-link" @click="onInputFocus('isEditLastName')" v-else>
+                  <input
+                    ref="isEditLastName"
+                    type="text"
+                    class="cabinet__label-input"
+                    v-model="currentUser.lastName"
+                    @blur="updateProfile('isEditLastName')"
+                    v-if="isEditLastName"
+                  >
+                  <template v-else>
+                    <span>Add Last Name</span>
+                    <img src="@/assets/img/icons/add-circle-blue.svg">
+                  </template>
+                </div>
+              </div>
+              <div class="cabinet__label-block">
+                <div class="cabinet__label">Email</div>
+                <div class="cabinet__label-value">{{ currentUser?.email }}</div>
+              </div>
+              <div class="cabinet__label-block">
+                <div class="cabinet__label">Mobile</div>
+                <div class="cabinet__label-value" v-if="currentUser?.phone && !isEditPhone">
+                  {{ currentUser?.phone }}
+                  <img src="@/assets/img/pencil-edit.svg" alt="edit"
+                       @click="onEditField('isEditPhone','phone','phone')">
+                </div>
+                <div class="cabinet__label-link" @click="onInputFocus('isEditPhone')" v-else>
+                  <input
+                    ref="isEditPhone"
+                    type="text"
+                    class="cabinet__label-input"
+                    v-model="currentUser.phone"
+                    @blur="updateProfile('isEditPhone')"
+                    v-if="isEditPhone"
+                  >
+                  <template v-else>
+                    <span>Add Mobile</span>
+                    <img src="@/assets/img/icons/add-circle-blue.svg">
+                  </template>
+                </div>
+              </div>
+              <div class="cabinet__label-block">
+                <div class="cabinet__label">Linked</div>
+                <div class="cabinet__label-value"></div>
               </div>
             </div>
-            <div class="cabinet__label-block">
-              <div class="cabinet__label">Linked</div>
-              <div class="cabinet__label-value">999</div>
+          </div>
+          <template v-if="hasSub">
+            <div class="cabinet__profile-wrapper" v-for="(sub, i) in activeSubscriptions" :key="i">
+              <h4 class="cabinet__acc-info">Subscription Details</h4>
+              <div class="cabinet__profile-info-block">
+                <div class="cabinet__label-block">
+                  <div class="cabinet__label">Plan</div>
+                  <div class="cabinet__label-value">{{sub?.extra?.interval}}</div>
+                </div>
+                <div class="cabinet__label-block">
+                  <div class="cabinet__label">Price</div>
+                  <div class="cabinet__label-value">{{sub?.extra?.price}} $</div>
+                </div>
+                <div class="cabinet__label-block">
+                  <div class="cabinet__label">Payment date</div>
+                  <div class="cabinet__label-value">{{sub?.start_date?.slice(0, 10)}}</div>
+                </div>
+                <div class="cabinet__label-block">
+                  <VButton class="cabinet__details-btn" theme="tertiary" @click="openPaymentModal(sub)">Details</VButton>
+                </div>
+              </div>
+            </div>
+          </template>
+          <div class="cabinet__profile-wrapper" v-else>
+            <h4 class="cabinet__acc-info">Subscription Details</h4>
+            <div class="cabinet__no-sub">
+              <div class="cabinet__no-sub-text">No subscription found</div>
+              <VButton class="cabinet__no-sub-btn" theme="tertiary" @click="goToShop">Start Free Trial</VButton>
             </div>
           </div>
         </div>
-        <div class="cabinet__profile-wrapper">
-          <h4 class="cabinet__acc-info">Subscription Details</h4>
-          <div class="cabinet__profile-info-block" v-if="hasSub">
-            <div class="cabinet__label-block">
-              <div class="cabinet__label">Plan</div>
-              <div class="cabinet__label-value">Annual plan</div>
-            </div>
-            <div class="cabinet__label-block">
-              <div class="cabinet__label">Price</div>
-              <div class="cabinet__label-value">59.99 $</div>
-            </div>
-            <div class="cabinet__label-block">
-              <div class="cabinet__label">Payment date</div>
-              <div class="cabinet__label-value">October 24</div>
-            </div>
-            <div class="cabinet__label-block">
-              <VButton class="cabinet__details-btn" theme="tertiary" @click="openPaymentModal">Details</VButton>
-            </div>
-          </div>
-          <div class="cabinet__no-sub" v-else>
-            <div class="cabinet__no-sub-text">No subscription found</div>
-            <VButton class="cabinet__no-sub-btn" theme="tertiary">Start Free Trial</VButton>
-          </div>
+      </div>
+      <div class="cabinet__apps" v-if="hasSub">
+        <h3 class="cabinet__apps-title h3"><span>Academy</span> in the AppStore Google Play and Amazon appstore</h3>
+        <div class="cabinet__apps-links">
+          <a href="#" class="cabinet__apps-icon"><img src="@/assets/img/store/app-store.svg"></a>
+          <a href="#" class="cabinet__apps-icon"><img src="@/assets/img/store/google-play.svg"></a>
+          <a href="#" class="cabinet__apps-icon"><img src="@/assets/img/store/amazon.svg"></a>
         </div>
       </div>
-    </div>
-    <div class="cabinet__apps" v-if="hasSub">
-      <h3 class="cabinet__apps-title h3"><span>Academy</span> in the AppStore Google Play and Amazon appstore</h3>
-      <div class="cabinet__apps-links">
-        <a href="#" class="cabinet__apps-icon"><img src="@/assets/img/store/app-store.svg"></a>
-        <a href="#" class="cabinet__apps-icon"><img src="@/assets/img/store/google-play.svg"></a>
-        <a href="#" class="cabinet__apps-icon"><img src="@/assets/img/store/amazon.svg"></a>
-      </div>
-    </div>
-    <div class="cabinet__plan" v-else>
-      <div class="cabinet__plan-image-wrapper">
-        <img src="@/assets/img/heroes/bimi.svg" class="cabinet__plan-image-hero">
-        <img src="@/assets/img/earth.svg" class="cabinet__plan-image-earth">
-      </div>
-      <div class="cabinet__plan-text-wrapper">
-        <div class="cabinet__plan-trial-block">
-          <h2 class="cabinet__plan-description h2">Choose your plan and start <span>7-Days free trial</span></h2>
-          <VButton class="cabinet__plan-btn">Start free trial</VButton>
+      <div class="cabinet__plan" v-else>
+        <div class="cabinet__plan-image-wrapper">
+          <img src="@/assets/img/heroes/bimi.svg" class="cabinet__plan-image-hero">
+          <img src="@/assets/img/earth.svg" class="cabinet__plan-image-earth">
         </div>
-        <img src="@/assets/img/union-heart.svg" class="cabinet__plan-heart-icon">
+        <div class="cabinet__plan-text-wrapper">
+          <div class="cabinet__plan-trial-block">
+            <h2 class="cabinet__plan-description h2">Choose your plan and start <span>7-Days free trial</span></h2>
+            <VButton class="cabinet__plan-btn">Start free trial</VButton>
+          </div>
+          <img src="@/assets/img/union-heart.svg" class="cabinet__plan-heart-icon">
+        </div>
       </div>
+      <PaymentModal :selectedSub="selectedSub" ref="paymentDetail"/>
     </div>
-    <PaymentModal ref="paymentDetail"/>
-  </div>
+  </Default>
 </template>
 
 <script>
 import VButton from '@/components/VButton';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import PaymentModal from '@/components/PaymentModal';
+import Subscription from '@/api/subscription';
+import Account from '@/api/account';
+import Default from '@/layouts/default.vue';
+import {mapState} from 'vuex';
 
 export default {
 	components: {
 		VButton,
 		Breadcrumbs,
-		PaymentModal
+		PaymentModal,
+		Default
 	},
 	data () {
 		return {
-			hasSub: true,
 			links: [
 				{
 					name: 'Home',
@@ -102,12 +168,93 @@ export default {
 					name: 'My account',
 					route: '/cabinet'
 				}
-			]
+			],
+			currentUser: {},
+			selectedSub: {},
+			subscriptions: [],
+			activeSubscriptions: [],
+			stripeProducts: [],
+			hasSub: false,
+			isEditName: false,
+			isEditLastName: false,
+			isEditPhone: false,
 		};
 	},
+	computed: {
+	  ...mapState('auth', ['user'])
+	},
+	watch: {
+	  user(updatedUser) {
+	    this.currentUser = updatedUser;
+		}
+	},
+	async mounted () {
+	  if (!Object.values(this.user).length) {
+	    await this.$store.dispatch('auth/getCurrentUser');
+		}
+		await this.getSubscriptions();
+		await this.getStripeProducts();
+	},
 	methods: {
-		openPaymentModal() {
+		openPaymentModal(sub) {
+		  this.selectedSub = sub;
 			this.$refs.paymentDetail.togglePaymentModal();
+		},
+		async getSubscriptions () {
+			try {
+			  let subs = [];
+				await this.$store.dispatch('loader/setLoader', true);
+				subs = await Subscription.fetchSubscriptions();
+				this.subscriptions = subs.filter((item) => item.state === 'active');
+				this.hasSub = this.subscriptions.length;
+				await this.$store.dispatch('loader/setLoader', false);
+			} catch (err) {
+				alert(err);
+				await this.$store.dispatch('loader/setLoader', false);
+			}
+		},
+		async getStripeProducts() {
+		  try {
+				await this.$store.dispatch('loader/setLoader', true);
+				this.stripeProducts = await Subscription.fetchStripeProducts();
+				if (this.hasSub) {
+					this.activeSubscriptions = this.subscriptions.filter(item1 => this.stripeProducts.some(item2 => item1.product_sku === item2.id))
+						.map((item1) => {
+							const matchingItem = this.stripeProducts.find(item2 => item2.id === item1.product_sku);
+							return {...item1, ...matchingItem};
+						});
+				}
+				await this.$store.dispatch('loader/setLoader', false);
+			} catch (err) {
+				alert(err);
+				await this.$store.dispatch('loader/setLoader', false);
+			}
+		},
+		async updateProfile (isEditMode) {
+			try {
+				await this.$store.dispatch('loader/setLoader', true);
+				await Account.updateCurrentUser(this.currentUser);
+				await this.$store.dispatch('auth/getCurrentUser');
+				this[isEditMode] = false;
+				await this.$store.dispatch('loader/setLoader', false);
+			} catch (err) {
+				alert(err);
+				await this.$store.dispatch('loader/setLoader', false);
+			}
+		},
+		onEditField (isEdit, value, input) {
+			this[isEdit] = true;
+			this.currentUser[input] = this.currentUser[value];
+			this.onInputFocus(isEdit);
+		},
+		onInputFocus (inputField) {
+			this[inputField] = true;
+			this.$nextTick(() => {
+				this.$refs[inputField].focus();
+			});
+		},
+		goToShop () {
+			this.$router.push('/shop');
 		}
 	}
 };
@@ -218,19 +365,39 @@ export default {
   &__label-value {
     font-size: 16px;
     font-weight: 400;
+    display: flex;
+    align-items: center;
+    height: 20px;
+
+    img {
+      margin-left: 10px;
+      cursor: pointer;
+    }
   }
 
   &__label-link {
-    font-size: 15px;
+    font-size: 14px;
     color: $blue-link;
     font-weight: 400;
     cursor: pointer;
     display: flex;
     align-items: center;
+    height: 20px;
 
     img {
       margin-left: 10px;
     }
+  }
+
+  &__label-input {
+    max-width: 110px;
+    border: none;
+    border-bottom: 1px solid $cool-gray;
+    outline: none;
+    color: $dark-blue;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: -1px;
   }
 
   &__details-btn {

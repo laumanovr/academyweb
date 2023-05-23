@@ -36,17 +36,17 @@
       <div class="payment-modal__subscription-block">
         <div class="payment-modal__top-block">
           <div class="payment-modal__method-title">Your subscription</div>
-          <div class="payment-modal__date">Payment date October 24</div>
+          <div class="payment-modal__date">Payment date: {{selectedSub?.start_date?.slice(0, 10)}}</div>
         </div>
         <div class="payment-modal__bottom-block">
-          <img src="@/assets/img/math.jpg" alt="img" class="payment-modal__app-image">
+          <img :src="selectedSub?.images[0]" class="payment-modal__app-image" v-if="selectedSub?.images">
           <div class="payment-modal__info-block">
-            <div class="payment-modal__name">Kids Academy</div>
-            <div class="payment-modal__description">Learning Games for Toddlers</div>
+            <div class="payment-modal__name">{{selectedSub?.name}}</div>
+            <div class="payment-modal__description">{{selectedSub?.description}}</div>
           </div>
           <div class="payment-modal__price-block">
-            <div class="payment-modal__price">$49.99</div>
-            <div class="payment-modal__year">Year</div>
+            <div class="payment-modal__price">{{selectedSub?.extra?.price}} $</div>
+            <div class="payment-modal__year">{{selectedSub?.extra?.interval}}</div>
           </div>
         </div>
       </div>
@@ -59,6 +59,12 @@
 import VButton from '@/components/VButton';
 
 export default {
+	props: {
+		selectedSub: {
+			type: Object,
+			default: () => ({})
+		}
+	},
 	components: {
 		VButton
 	},
@@ -221,6 +227,7 @@ export default {
     font-weight: 400;
     font-size: 20px;
     margin-bottom: 8px;
+    overflow: hidden;
     @media #{$xs} {
       font-size: 14px;
       margin-bottom: 5px;
@@ -240,6 +247,7 @@ export default {
     font-weight: 400;
     font-size: 20px;
     margin-bottom: 8px;
+    white-space: nowrap;
     @media #{$xs} {
       font-size: 14px;
       margin-bottom: 5px;
