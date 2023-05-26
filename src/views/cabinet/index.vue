@@ -206,6 +206,7 @@ export default {
 				this.subscriptions = subs?.filter((item) => item.state === 'active');
 				this.hasSub = this.subscriptions?.length;
 				await this.$store.dispatch('loader/setLoader', false);
+				this.$forceUpdate();
 			} catch (err) {
 				this.$toast.error(err);
 				await this.$store.dispatch('loader/setLoader', false);
