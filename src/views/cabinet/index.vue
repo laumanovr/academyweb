@@ -78,10 +78,10 @@
                   </template>
                 </div>
               </div>
-              <div class="cabinet__label-block">
-                <div class="cabinet__label">Linked</div>
-                <div class="cabinet__label-value"></div>
-              </div>
+<!--              <div class="cabinet__label-block">-->
+<!--                <div class="cabinet__label">Linked</div>-->
+<!--                <div class="cabinet__label-value"></div>-->
+<!--              </div>-->
             </div>
           </div>
           <template v-if="hasSub">
