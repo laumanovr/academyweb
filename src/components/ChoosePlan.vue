@@ -6,12 +6,9 @@
     <div class="choose-plan__items">
       <TariffCard
         class="choose-plan__item"
-        v-for="tariff in $options.tariffs"
+        v-for="tariff in tariffPrices"
         :key="tariff.id"
-        :title="tariff.title"
-        :items="tariff.items"
-        :price="tariff.price"
-        :best="tariff.best"
+        :tariff="tariff"
       />
     </div>
   </div>
@@ -19,34 +16,41 @@
 
 <script>
 import TariffCard from "@/components/TariffCard.vue";
+import Subscription from '@/api/subscription';
 
 export default {
-	tariffs: [
-		{
-			id: 1,
-			title: "Monthly plan",
-			items: ["Unlimited access", "Cancel any time"],
-			price: {
-				main: "6.99",
-				old: "9.99",
-				time: "month",
-			},
-		},
-		{
-			id: 2,
-			title: "Annual plan",
-			items: ["Big savings", "Unlimited access", "Cancel any time"],
-			price: {
-				main: "49.99",
-				old: "69.99",
-				time: "year",
-			},
-			best: true,
-		},
-	],
 	components: {
 		TariffCard,
 	},
+	data() {
+		return {
+			tariffPrices: [],
+			yearItems: ["Big savings", "Unlimited access", "Cancel any time"],
+			monthItems: ["Unlimited access", "Cancel any time"]
+		};
+	},
+	mounted () {
+		this.getStripeProducts();
+	},
+	methods: {
+		async getStripeProducts() {
+			try {
+				await this.$store.dispatch('loader/setLoader', true);
+				const products = await Subscription.fetchStripeProducts();
+				this.tariffPrices = products[0]?.prices.map((priceObj) => {
+					const yearly = priceObj?.recurring?.interval === 'year';
+					priceObj.title = yearly ? 'Annual plan' : 'Monthly plan';
+					priceObj.textItems = yearly ? this.yearItems : this.monthItems;
+					priceObj.bestOffer = yearly;
+					return priceObj;
+				});
+				await this.$store.dispatch('loader/setLoader', false);
+			} catch (err) {
+				this.$toast.error(err);
+				await this.$store.dispatch('loader/setLoader', false);
+			}
+		}
+	}
 };
 </script>
 

@@ -1,43 +1,55 @@
 import Account from '@/api/account';
 import router from '@/router';
+import Vue from 'vue';
 
 const state = {
-	user: {}
+	user: {},
+	token: '',
+	redirectRoute: ''
 };
 
 const mutations = {
 	SET_USER(state, value) {
 		state.user = value;
 	},
+	SET_TOKEN(state, value) {
+	  state.token = value;
+	},
 	REMOVE_USER(state) {
 	  state.user = {};
+	  state.token = '';
+	},
+	SET_REDIRECT_ROUTE(state, value) {
+	 state.redirectRoute = value;
 	}
 };
 
 const actions = {
-	async signUp({dispatch}, payload) {
+	async signUp({dispatch, commit}, payload) {
 		try {
 			dispatch('loader/setLoader', true, {root: true});
-			const resp = await Account.signUp(payload);
-			window.localStorage.setItem('token', resp?.access_token);
+			const resp = await Account.signUp(payload.field);
+			commit('SET_TOKEN', resp?.access_token);
 			dispatch('getCurrentUser');
 			dispatch('loader/setLoader', false, {root: true});
-			await router.push('/cabinet');
-		} catch (e) {
-			console.error(e);
+			await router.push(payload.route);
+			dispatch('setRedirectRoute', '');
+		} catch (err) {
+			Vue.$toast.error(err);
 			dispatch('loader/setLoader', false, {root: true});
 		}
 	},
-	async login({dispatch}, payload) {
+	async login({dispatch, commit}, payload) {
 	  try {
 			dispatch('loader/setLoader', true, {root: true});
-			const resp = await Account.login(payload);
-			window.localStorage.setItem('token', resp?.access_token);
+			const resp = await Account.login(payload.field);
+			commit('SET_TOKEN', resp?.access_token);
 			dispatch('getCurrentUser');
 			dispatch('loader/setLoader', false, {root: true});
-			await router.push('/cabinet');
-		} catch (e) {
-			console.error(e);
+			await router.push(payload.route);
+			dispatch('setRedirectRoute', '');
+		} catch (err) {
+			Vue.$toast.error(err);
 			dispatch('loader/setLoader', false, {root: true});
 		}
 	},
@@ -53,9 +65,12 @@ const actions = {
 		}
 	},
 	async logout({commit}) {
-	  window.localStorage.removeItem('token');
 		commit('REMOVE_USER');
 		await router.push('/login');
+		window.localStorage.removeItem('vuex');
+	},
+	async setRedirectRoute({commit}, payload) {
+	  commit('SET_REDIRECT_ROUTE', payload);
 	}
 };
 

@@ -78,10 +78,10 @@
                   </template>
                 </div>
               </div>
-              <div class="cabinet__label-block">
-                <div class="cabinet__label">Linked</div>
-                <div class="cabinet__label-value"></div>
-              </div>
+<!--              <div class="cabinet__label-block">-->
+<!--                <div class="cabinet__label">Linked</div>-->
+<!--                <div class="cabinet__label-value"></div>-->
+<!--              </div>-->
             </div>
           </div>
           <template v-if="hasSub">
@@ -136,7 +136,7 @@
           <img src="@/assets/img/union-heart.svg" class="cabinet__plan-heart-icon">
         </div>
       </div>
-      <PaymentModal :selectedSub="selectedSub" ref="paymentDetail"/>
+      <PaymentModal :selectedSub="selectedSub" @onRefresh="getSubscriptions" ref="paymentDetail"/>
     </div>
   </Default>
 </template>
@@ -189,15 +189,13 @@ export default {
 		}
 	},
 	async mounted () {
-	  if (!Object.values(this.user).length) {
-	    await this.$store.dispatch('auth/getCurrentUser');
-		}
+	  this.currentUser = this.user;
 		await this.getSubscriptions();
 		await this.getStripeProducts();
 	},
 	methods: {
 		openPaymentModal(sub) {
-		  this.selectedSub = sub;
+			this.selectedSub = sub;
 			this.$refs.paymentDetail.togglePaymentModal();
 		},
 		async getSubscriptions () {
@@ -205,11 +203,11 @@ export default {
 			  let subs = [];
 				await this.$store.dispatch('loader/setLoader', true);
 				subs = await Subscription.fetchSubscriptions();
-				this.subscriptions = subs.filter((item) => item.state === 'active');
-				this.hasSub = this.subscriptions.length;
+				this.subscriptions = subs?.filter((item) => item.state === 'active');
+				this.hasSub = this.subscriptions?.length;
 				await this.$store.dispatch('loader/setLoader', false);
 			} catch (err) {
-				alert(err);
+				this.$toast.error(err);
 				await this.$store.dispatch('loader/setLoader', false);
 			}
 		},
@@ -226,7 +224,7 @@ export default {
 				}
 				await this.$store.dispatch('loader/setLoader', false);
 			} catch (err) {
-				alert(err);
+				this.$toast.error(err);
 				await this.$store.dispatch('loader/setLoader', false);
 			}
 		},
@@ -238,7 +236,7 @@ export default {
 				this[isEditMode] = false;
 				await this.$store.dispatch('loader/setLoader', false);
 			} catch (err) {
-				alert(err);
+				this.$toast.error(err);
 				await this.$store.dispatch('loader/setLoader', false);
 			}
 		},

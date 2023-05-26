@@ -55,9 +55,9 @@ export default {
 		};
 	},
 	computed: {
-	  ...mapState('auth', ['user']),
+	  ...mapState('auth', ['user', 'token']),
 		isLoggedIn() {
-	    return Object.values(this.user).length;
+	    return this.token.length;
 		}
 	},
 	methods: {
@@ -149,6 +149,7 @@ export default {
     position: absolute;
     top: 30px;
     right: 0;
+    z-index: 999;
   }
 
   &__logout-block {
