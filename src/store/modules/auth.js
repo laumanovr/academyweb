@@ -2,7 +2,8 @@ import Account from '@/api/account';
 import router from '@/router';
 
 const state = {
-	user: {}
+	user: {},
+	redirectRoute: ''
 };
 
 const mutations = {
@@ -11,6 +12,9 @@ const mutations = {
 	},
 	REMOVE_USER(state) {
 	  state.user = {};
+	},
+	SET_REDIRECT_ROUTE(state, value) {
+	 state.redirectRoute = value;
 	}
 };
 
@@ -18,11 +22,12 @@ const actions = {
 	async signUp({dispatch}, payload) {
 		try {
 			dispatch('loader/setLoader', true, {root: true});
-			const resp = await Account.signUp(payload);
+			const resp = await Account.signUp(payload.field);
 			window.localStorage.setItem('token', resp?.access_token);
 			dispatch('getCurrentUser');
 			dispatch('loader/setLoader', false, {root: true});
-			await router.push('/cabinet');
+			await router.push(payload.route);
+			dispatch('setRedirectRoute', '');
 		} catch (e) {
 			console.error(e);
 			dispatch('loader/setLoader', false, {root: true});
@@ -31,11 +36,12 @@ const actions = {
 	async login({dispatch}, payload) {
 	  try {
 			dispatch('loader/setLoader', true, {root: true});
-			const resp = await Account.login(payload);
+			const resp = await Account.login(payload.field);
 			window.localStorage.setItem('token', resp?.access_token);
 			dispatch('getCurrentUser');
 			dispatch('loader/setLoader', false, {root: true});
-			await router.push('/cabinet');
+			await router.push(payload.route);
+			dispatch('setRedirectRoute', '');
 		} catch (e) {
 			console.error(e);
 			dispatch('loader/setLoader', false, {root: true});
@@ -56,6 +62,9 @@ const actions = {
 	  window.localStorage.removeItem('token');
 		commit('REMOVE_USER');
 		await router.push('/login');
+	},
+	async setRedirectRoute({commit}, payload) {
+	  commit('SET_REDIRECT_ROUTE', payload);
 	}
 };
 
