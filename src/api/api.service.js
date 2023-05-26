@@ -1,5 +1,6 @@
 import axios from "axios";
 import {authHeader} from "@/utils/authHeader";
+import store from "@/store/index";
 
 const BASE_URL = 'https://apiacademy.mybimiboo.dev';
 
@@ -28,8 +29,7 @@ const sendRequest = async (method, finalUrl, data={}) => {
 		return res.data;
 	} catch (err) {
 	  if (err?.response?.status === 401) {
-	    window.localStorage.removeItem('token');
-			window.location.replace(window.location.origin + '/#/login');
+	    await store.dispatch('auth/logout');
 			return;
 		}
 		return Promise.reject(err?.message);
