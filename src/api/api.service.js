@@ -1,8 +1,7 @@
 import axios from "axios";
 import {authHeader} from "@/utils/authHeader";
 
-// const BASE_URL = 'https://apiacademy.mybimiboo.dev:9080';
-const BASE_URL = 'http://3.123.232.84:9080';
+const BASE_URL = 'https://apiacademy.mybimiboo.dev';
 
 export const sendGetRequest = (url) => sendRequest('GET', url);
 
@@ -28,6 +27,11 @@ const sendRequest = async (method, finalUrl, data={}) => {
 		const res = await axios(config);
 		return res.data;
 	} catch (err) {
+	  if (err?.response?.status === 401) {
+	    window.localStorage.removeItem('token');
+			window.location.replace(window.location.origin + '/#/login');
+			return;
+		}
 		return Promise.reject(err?.message);
 	}
 };
