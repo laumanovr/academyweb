@@ -85,7 +85,7 @@ export default {
 				this.togglePaymentModal();
 				this.$emit('onRefresh');
 			} catch (err) {
-				alert(err);
+				this.$toast.error(err);
 				await this.$store.dispatch('loader/setLoader', false);
 			}
 		}

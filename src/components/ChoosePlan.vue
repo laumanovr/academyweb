@@ -46,7 +46,7 @@ export default {
 				});
 				await this.$store.dispatch('loader/setLoader', false);
 			} catch (err) {
-				alert(err);
+				this.$toast.error(err);
 				await this.$store.dispatch('loader/setLoader', false);
 			}
 		}
