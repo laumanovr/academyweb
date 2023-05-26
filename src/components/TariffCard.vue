@@ -26,6 +26,7 @@
 <script>
 import VButton from "@/components/VButton.vue";
 import Subscription from '@/api/subscription';
+import {mapState} from 'vuex';
 
 export default {
 	name: "FeedbackCard",
@@ -39,8 +40,9 @@ export default {
 		}
 	},
 	computed: {
+		...mapState('auth', ['token']),
 		isLoggedIn() {
-			return window.localStorage?.token;
+			return this.token.length;
 		}
 	},
 	methods: {
@@ -51,7 +53,7 @@ export default {
 					const resp = await Subscription.createSubscription({price_id: priceId});
 					window.location.href = resp.management_url;
 				} catch (err) {
-					alert(err);
+					this.$toast.error(err);
 					await this.$store.dispatch('loader/setLoader', false);
 				}
 				return;

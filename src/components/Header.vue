@@ -55,14 +55,9 @@ export default {
 		};
 	},
 	computed: {
-	  ...mapState('auth', ['user']),
+	  ...mapState('auth', ['user', 'token']),
 		isLoggedIn() {
-	    return window.localStorage?.token;
-		}
-	},
-	mounted () {
-	  if (this.isLoggedIn) {
-			this.$store.dispatch('auth/getCurrentUser');
+	    return this.token.length;
 		}
 	},
 	methods: {
