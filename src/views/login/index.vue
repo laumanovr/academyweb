@@ -34,6 +34,7 @@ import Auth from "@/layouts/auth.vue";
 import VButton from "@/components/VButton.vue";
 import VInput from "@/components/VInput.vue";
 import VCheckbox from "@/components/VCheckbox.vue";
+import {mapState} from 'vuex';
 
 export default {
 	components: {
@@ -51,9 +52,12 @@ export default {
 			},
 		};
 	},
+	computed: {
+		...mapState('auth', ['redirectRoute'])
+	},
 	methods: {
 		onSubmit() {
-			this.$store.dispatch('auth/login', this.field);
+			this.$store.dispatch('auth/login', {field: this.field, route: this.redirectRoute || '/cabinet'});
 		},
 	},
 };
