@@ -25,7 +25,7 @@
               <img src="@/assets/img/card-tick.svg" alt="card">
               <img src="@/assets/img/trash-small.svg" alt="trash">
             </div>
-            <div class="payment-modal__card-number">8080 main</div>
+            <div class="payment-modal__card-number">{{selectedSub?.extra?.card_last4}} main</div>
           </div>
           <div class="payment-modal__add-card">
             <img src="@/assets/img/card-add.svg" alt="card">
@@ -50,13 +50,14 @@
           </div>
         </div>
       </div>
-      <VButton class="payment-modal__unsubscribe" theme="outline">Unsubscribe</VButton>
+      <VButton class="payment-modal__unsubscribe" theme="outline" @click="cancelSubscription(selectedSub?.uuid)">Unsubscribe</VButton>
     </div>
   </modal>
 </template>
 
 <script>
 import VButton from '@/components/VButton';
+import Subscription from '@/api/subscription';
 
 export default {
 	props: {
@@ -76,6 +77,17 @@ export default {
 	methods: {
 		togglePaymentModal () {
 			this.$modal.toggle('payment-detail-modal');
+		},
+		async cancelSubscription(subId) {
+		  try {
+				await this.$store.dispatch('loader/setLoader', true);
+				await Subscription.cancelSubscription(subId);
+				this.togglePaymentModal();
+				this.$emit('onRefresh');
+			} catch (err) {
+				alert(err);
+				await this.$store.dispatch('loader/setLoader', false);
+			}
 		}
 	}
 };
