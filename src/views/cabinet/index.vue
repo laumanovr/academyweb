@@ -136,7 +136,7 @@
           <img src="@/assets/img/union-heart.svg" class="cabinet__plan-heart-icon">
         </div>
       </div>
-      <PaymentModal :selectedSub="selectedSub" ref="paymentDetail"/>
+      <PaymentModal :selectedSub="selectedSub" @onRefresh="getSubscriptions" ref="paymentDetail"/>
     </div>
   </Default>
 </template>
@@ -189,7 +189,8 @@ export default {
 		}
 	},
 	async mounted () {
-	  if (!Object.values(this.user).length) {
+	  this.currentUser = this.user;
+	  if (!this.user?.email) {
 	    await this.$store.dispatch('auth/getCurrentUser');
 		}
 		await this.getSubscriptions();
@@ -197,7 +198,7 @@ export default {
 	},
 	methods: {
 		openPaymentModal(sub) {
-		  this.selectedSub = sub;
+			this.selectedSub = sub;
 			this.$refs.paymentDetail.togglePaymentModal();
 		},
 		async getSubscriptions () {
