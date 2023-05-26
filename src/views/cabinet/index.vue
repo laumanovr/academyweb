@@ -190,9 +190,6 @@ export default {
 	},
 	async mounted () {
 	  this.currentUser = this.user;
-	  if (!this.user?.email) {
-	    await this.$store.dispatch('auth/getCurrentUser');
-		}
 		await this.getSubscriptions();
 		await this.getStripeProducts();
 	},
@@ -206,11 +203,11 @@ export default {
 			  let subs = [];
 				await this.$store.dispatch('loader/setLoader', true);
 				subs = await Subscription.fetchSubscriptions();
-				this.subscriptions = subs.filter((item) => item.state === 'active');
-				this.hasSub = this.subscriptions.length;
+				this.subscriptions = subs?.filter((item) => item.state === 'active');
+				this.hasSub = this.subscriptions?.length;
 				await this.$store.dispatch('loader/setLoader', false);
 			} catch (err) {
-				alert(err);
+				this.$toast.error(err);
 				await this.$store.dispatch('loader/setLoader', false);
 			}
 		},
@@ -227,7 +224,7 @@ export default {
 				}
 				await this.$store.dispatch('loader/setLoader', false);
 			} catch (err) {
-				alert(err);
+				this.$toast.error(err);
 				await this.$store.dispatch('loader/setLoader', false);
 			}
 		},
@@ -239,7 +236,7 @@ export default {
 				this[isEditMode] = false;
 				await this.$store.dispatch('loader/setLoader', false);
 			} catch (err) {
-				alert(err);
+				this.$toast.error(err);
 				await this.$store.dispatch('loader/setLoader', false);
 			}
 		},
