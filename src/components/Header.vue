@@ -57,7 +57,12 @@ export default {
 	computed: {
 	  ...mapState('auth', ['user']),
 		isLoggedIn() {
-	    return Object.values(this.user).length;
+	    return window.localStorage?.token;
+		}
+	},
+	mounted () {
+	  if (this.isLoggedIn) {
+			this.$store.dispatch('auth/getCurrentUser');
 		}
 	},
 	methods: {
@@ -149,6 +154,7 @@ export default {
     position: absolute;
     top: 30px;
     right: 0;
+    z-index: 999;
   }
 
   &__logout-block {
