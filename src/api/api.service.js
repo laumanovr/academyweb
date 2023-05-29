@@ -30,7 +30,10 @@ const sendRequest = async (method, finalUrl, data={}) => {
 	} catch (err) {
 	  if (err?.response?.status === 401) {
 	    await store.dispatch('auth/logout');
-			await window.location.reload();
+	    setTimeout(() => {
+				store.dispatch('loader/setLoader', false);
+				window.location.reload();
+			}, 500);
 			return;
 		}
 		return Promise.reject(err?.message);
