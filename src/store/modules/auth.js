@@ -64,9 +64,10 @@ const actions = {
 			dispatch('loader/setLoader', false, {root: true});
 		}
 	},
-	async logout({commit}) {
+	async logout({commit, dispatch}) {
 		commit('REMOVE_USER');
 		await router.push('/login');
+		dispatch('loader/setLoader', false, {root: true});
 		window.localStorage.removeItem('vuex');
 	},
 	async setRedirectRoute({commit}, payload) {
